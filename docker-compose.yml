@@ -10,3 +10,4 @@ services:
       dockerfile: FileOnTheCloud/Server/Dockerfile
     ports:
       - 5005:2021
+      - 5005:2022
