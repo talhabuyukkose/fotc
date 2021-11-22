@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "98912bbb-1107-4441-b48b-d075d64c2490": {
+      "ProjectGuid": "98912bbb-1107-4441-b48b-d075d64c2490",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 0
+    },
+    "c110e965-ed7e-49c3-9c68-5322c91c9c64": {
+      "ProjectGuid": "c110e965-ed7e-49c3-9c68-5322c91c9c64",
+      "DisplayName": "FileOnTheCloud.Server",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
