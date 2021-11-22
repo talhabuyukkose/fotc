@@ -1,0 +1,16 @@
+services:
+  fotc:
+    build:
+      context: C:\Users\talha\source\repos\FTC
+      dockerfile: FileOnTheCloud/Server/Dockerfile
+    image: fotc
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 2021
+      published: 5005
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose8126484570225489631_default

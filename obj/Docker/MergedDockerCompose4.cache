@@ -1,0 +1,16 @@
+services:
+  fileonthecloudserver:
+    build:
+      context: C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud
+      dockerfile: FileOnTheCloud/Server/Dockerfile
+    image: fileonthecloudserver
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 5000
+      published: 5005
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose2513954842357933188_default

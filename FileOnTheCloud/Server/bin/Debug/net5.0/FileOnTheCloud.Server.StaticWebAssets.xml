@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Blazored.Modal" Path="/root/.nuget/packages/blazored.modal/6.0.1/staticwebassets/" />
+  <ContentRoot BasePath="_content/Blazored.Toast" Path="/root/.nuget/packages/blazored.toast/3.2.2/staticwebassets/" />
+  <ContentRoot BasePath="_content/MudBlazor" Path="/root/.nuget/packages/mudblazor/5.2.0/staticwebassets/" />
+  <ContentRoot BasePath="/" Path="/src/fileonthecloud/Client/bin/Debug/net5.0/wwwroot/" />
+  <ContentRoot BasePath="/" Path="/src/fileonthecloud/Client/obj/Debug/net5.0/scopedcss/bundle/" />
+  <ContentRoot BasePath="/" Path="/src/fileonthecloud/Client/wwwroot/" />
+</StaticWebAssets>

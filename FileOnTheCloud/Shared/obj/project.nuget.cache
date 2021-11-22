@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OGg8cHPA2GDzn5J0AtvdAM3lEB8Gq1iMYgI7G/DyEzqMXUsESosEMuVN2YRt0QvHDs99UFSr5kbgUAu7DLN+/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.12\\microsoft.aspnetcore.http.features.5.0.12.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,37 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.JSInterop
+@using FileOnTheCloud.Client
+@using FileOnTheCloud.Client.Shared
+
+@using FileOnTheCloud.Client.Authentication
+
+@using Blazored.SessionStorage
+
+@using FileOnTheCloud.Client.Instrument
+
+@using FileOnTheCloud.Client.CustomComponents.Modal
+@using FileOnTheCloud.Client.CustomComponents.Button
+
+@using Blazored.Modal
+@using Blazored.Modal.Services
+
+@using MudBlazor
+
+@inject HttpClient _httpclient
+
+@inject IAuthenticationService AuthService
+
+@inject NavigationManager navigation
+
+@inject ISessionStorageService _sessionStorage
+
+@inject IModalManager modalManager
+
+@inject IJSRuntime JsRuntime

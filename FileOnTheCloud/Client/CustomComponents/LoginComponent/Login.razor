@@ -1,0 +1,52 @@
+﻿<div class="wrapper">
+    <div class="container">
+        <div class="row aln-center">
+            <section class="col-6 col-12-narrower loginPanel">
+                <div class="col-12 loginTitle">DOSYA YÜKLEYİCİ <b>YETKİLİ</b> GİRİŞ SİSTEMİ</div>
+                <form action="" method="post" class="col-12">
+                    <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin">
+                        <DataAnnotationsValidator />
+                        <input type="text" placeholder="Kullanıcı Adı" @bind-value="loginmodel.username">
+                        <ValidationMessage For="@(()=> loginmodel.username)" />
+                        <input type="password" name="password" placeholder="Şifreniz" @bind-value="loginmodel.password">
+                        <ValidationMessage For="@(()=> loginmodel.password)" />
+                        <button type="submit" value="GİRİŞ"/>
+                    </EditForm>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+@*<form class="card card-body">
+    <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+    <label for="formGroupExampleInput">E-posta adresi</label>
+    <div class="form-floating mb-3">
+    <InputText type="email" class="form-control" id="formGroupExampleInput" placeholder="name@example.com" @bind-Value="loginmodel.username"></InputText>
+    <ValidationMessage For="@(()=> loginmodel.username)" />
+    </div>
+    </div>
+
+    <div class="form-group">
+    <label for="formGroupExampleInput2">Şifre</label>
+    <InputText type="password" id="formGroupExampleInput2" class="form-control" @bind-Value="loginmodel.password" />
+    <small id="emailHelp" class="form-text text-muted">Bilgilerinizi kimseyle paylaşmayınız.</small>
+    <ValidationMessage For="@(()=> loginmodel.password)" />
+    </div>
+
+    @*<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Beni hatırla</label>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-success btn-block" title="Giriş yapmak için tıklayınız. Şifrenizi unutmanız halinde yöneticiniz ile ileşime geçiniz">
+    Giriş yap
+    <span class="oi oi-account-login"></span>
+    </button>
+
+    </EditForm>
+    </form>
+*@
