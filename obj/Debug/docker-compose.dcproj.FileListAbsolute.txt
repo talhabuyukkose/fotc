@@ -43,6 +43,13 @@ C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\bin\Debug\FileOnTheClo
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.Views.dll
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.Views.pdb
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.deps.json
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.runtimeconfig.json
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.runtimeconfig.dev.json
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Client.StaticWebAssets.xml
+C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.StaticWebAssets.xml
 C:\Users\talha\source\repos\FTC\bin\Debug\appsettings.Development.json
 C:\Users\talha\source\repos\FTC\bin\Debug\appsettings.json
 C:\Users\talha\source\repos\FTC\bin\Debug\BlazorDebugProxy\BrowserDebugHost.dll
@@ -54,13 +61,6 @@ C:\Users\talha\source\repos\FTC\bin\Debug\BlazorDebugProxy\Mono.Cecil.dll
 C:\Users\talha\source\repos\FTC\bin\Debug\BlazorDebugProxy\Mono.Cecil.Pdb.dll
 C:\Users\talha\source\repos\FTC\bin\Debug\BlazorDebugProxy\Mono.Cecil.Rocks.dll
 C:\Users\talha\source\repos\FTC\bin\Debug\BlazorDebugProxy\Newtonsoft.Json.dll
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.Views.dll
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.Views.pdb
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.deps.json
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.runtimeconfig.json
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.runtimeconfig.dev.json
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Client.StaticWebAssets.xml
-C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.StaticWebAssets.xml
 C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.exe
 C:\Users\talha\source\repos\FTC\bin\Debug\FileOnTheCloud.Server.dll
 C:\Users\talha\source\repos\FTC\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll

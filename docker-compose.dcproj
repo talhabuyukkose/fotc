@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>d37e8025-fb15-4e11-9423-b8ccc4166152</ProjectGuid>
+    <ProjectGuid>33a747d9-ed15-4185-8fa7-c24bd8501b7e</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>fileonthecloud.server</DockerServiceName>

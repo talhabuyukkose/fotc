@@ -14,7 +14,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\bin\Debug\net5.0\FileOnThe
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\bin\Debug\net5.0\FileOnTheCloud.Shared.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\bin\Debug\net5.0\ref\FileOnTheCloud.Shared.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\bin\Debug\net5.0\FileOnTheCloud.Shared.pdb
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\obj\Debug\net5.0\FileOnTheCloud.Shared.csproj.AssemblyReference.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\obj\Debug\net5.0\FileOnTheCloud.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\obj\Debug\net5.0\FileOnTheCloud.Shared.AssemblyInfoInputs.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Shared\obj\Debug\net5.0\FileOnTheCloud.Shared.AssemblyInfo.cs

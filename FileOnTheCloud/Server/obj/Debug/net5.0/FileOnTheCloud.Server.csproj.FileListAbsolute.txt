@@ -79,6 +79,7 @@ C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\FileOnTheCloud\Server\
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\FileOnTheCloud\Server\bin\Debug\net5.0\MudBlazor.dll
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\FileOnTheCloud\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\talha\source\repos\fileonthecloud\FileOnTheCloud\FileOnTheCloud\Server\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Client.StaticWebAssets.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\appsettings.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\BlazorDebugProxy\BrowserDebugHost.dll
@@ -90,7 +91,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\BlazorDeb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\BlazorDebugProxy\Mono.Cecil.Pdb.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\BlazorDebugProxy\Mono.Cecil.Rocks.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\BlazorDebugProxy\Newtonsoft.Json.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Client.StaticWebAssets.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.StaticWebAssets.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.exe
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.deps.json
