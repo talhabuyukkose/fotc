@@ -7,29 +7,45 @@
 	$.fn.navList = function() {
 
 		var	$this = $(this);
-			$a = $this.find('a'),
+			$a = $this.find('.button'),
 			b = [];
 
 		$a.each(function() {
 
 			var	$this = $(this),
-				indent = Math.max(0, $this.parents('li').length - 1),
+				indent = Math.max(0, $this.length - 1),
 				href = $this.attr('href'),
-				target = $this.attr('target');
+				target = $this.attr('target'),
+				onClick = $this.attr('onclick');
+			
+			if($this.prop("tagName").toLowerCase() == 'a'){
+				b.push(
+					
+					'<a ' +
+						'class="link depth-' + indent + '"' +
+						( (typeof target !== 'undefined') ? ' target="' + target + '"' : '') +
+						( (typeof href !== 'undefined') ? ' href="' + href + '"' : '') +
+					'>' +
+						'<span class="indent-' + indent + '"></span>' +
+						$this.text() +
+					'</a>'
+				);
 
-			b.push(
-				'<a ' +
-					'class="link depth-' + indent + '"' +
-					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
-					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
-				'>' +
-					'<span class="indent-' + indent + '"></span>' +
-					$this.text() +
-				'</a>'
-			);
-
+			}else if($this.prop("tagName").toLowerCase() == 'button'){
+				b.push(
+					'<buttonn ' +
+						'class="link depth-' + indent + '"' +
+						( (typeof onClick !== 'undefined' && onClick != '') ? ' onclick="' + onClick + '"' : '') +
+					'>' +
+						'<span class="indent-' + indent + '"></span>' +
+						$this.text() +
+					'</button>'
+				);
+			}
+			
+		console.log("$this.attr('href') \n"+$this.attr('href'));
 		});
-
+		console.log(b);
 		return b.join('');
 
 	};

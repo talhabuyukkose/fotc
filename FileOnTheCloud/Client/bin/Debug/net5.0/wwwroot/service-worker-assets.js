@@ -25,7 +25,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-6h7jNPiqf5YfQkY3lVj0N3+QulB4v+JBXbxzzqzGVu8=",
+      "hash": "sha256-DM+OFqkbrgzr\/o1ZqEAuEw6hEKQvOsCC0U4ix+5lQMA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -849,19 +849,19 @@
       "url": "_framework\/dotnet.5.0.12.js"
     },
     {
-      "hash": "sha256-1Y3SYnvKfOEIC\/zxnQRZdFJMtYquwKE9NT84OaEj\/JY=",
+      "hash": "sha256-foyg8marUStXprEXwfDJzqrytP\/PJr6Xri8n92BUOks=",
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-thH3jWpx3n+YAlU8boNlFDyBIQ20oIvSyHMzPosXdoE=",
+      "hash": "sha256-XFCzmQZ3zwitGweJp3Z6xKXFLlKNhr6D5k\/YJjxAPOU=",
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-fQrI3K\/seIRlLobx2Des9URUdQj3AO48TGNYFAhkwyc=",
+      "hash": "sha256-YLPVjQcui6rL1YyPBammSJ6keCs6bhjcKp42LCy9UGM=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-\/ztH4FwHVwIUgRg8+347jRtdbnOoNZvel\/d\/1uPEcmE=",
+      "hash": "sha256-dAfqRlUJFG+LtPzv\/XQKjrBQ70hlqqGjFaMgLK6R+QI=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -1689,7 +1689,7 @@
       "url": "_framework\/dotnet.5.0.12.js.gz"
     },
     {
-      "hash": "sha256-VZOcB+9rEaIpdPFGGh6Vc7PzWarwNXeGEhPJoqHxfYg=",
+      "hash": "sha256-O9JeNzP+RdGw4Fjp6Gonbr\/+iG+9N2qEtx7GIubhnxg=",
       "url": "_framework\/FileOnTheCloud.Shared.dll.gz"
     },
     {
@@ -1725,7 +1725,7 @@
       "url": "assets\/css\/images\/search.png"
     },
     {
-      "hash": "sha256-YcXUJBBxiMGwBBABz+hxHRVtcVir1YCdKDJpKLpXoXw=",
+      "hash": "sha256-t+Uo\/WJRDDgocQRjBZubrK93T1tOcvaxKKo9McfSVfs=",
       "url": "assets\/css\/main.css"
     },
     {
@@ -1743,6 +1743,10 @@
     {
       "hash": "sha256-d0CQp2cZNTASt1chEUWQbPKELfBX\/U04c8Tv+y9COcU=",
       "url": "assets\/img\/instagram.png"
+    },
+    {
+      "hash": "sha256-QMXot0zTmpHVdQAdmqPmxjQTGy5edE2K4o+ye+IhFjA=",
+      "url": "assets\/img\/menu-icon.svg"
     },
     {
       "hash": "sha256-TtU6rnMsTIQ35Rm79TknpgNqzAzbHKin5RUgya4wr94=",
@@ -1777,7 +1781,7 @@
       "url": "assets\/js\/jquery.min.js"
     },
     {
-      "hash": "sha256-eZie46XF1ATnU2K0QpEKQDyR3xIHDrn2eGynJ2WDFfw=",
+      "hash": "sha256-p9Uar5UcYaDpTH1aRQWPq6LMJz+OlRkrirZ2Hu0hvXw=",
       "url": "assets\/js\/main.js"
     },
     {
@@ -1793,7 +1797,7 @@
       "url": "assets\/js\/uploader\/js\/jquery.dm-uploader.min.js"
     },
     {
-      "hash": "sha256-wuHnKw3jVvbOGE469PqKtlkKJYEWKQWifXeIay2WDgA=",
+      "hash": "sha256-DduvqQQgXZd8easMhSdEAFhXtQJjx9M8EXiuKtXIiIU=",
       "url": "assets\/js\/util.js"
     },
     {
@@ -1853,21 +1857,13 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-0e6rDAiZynFSAsBlVgp89hPN\/X9DF51MWcr8r5O\/WA4=",
+      "hash": "sha256-6KwhMeOd5HT3yWduo3LSPZVnc\/y9F4u\/hxm0ViNwk9I=",
       "url": "index.html"
     },
     {
       "hash": "sha256-lq6kRa80KVPAgyPbjWPlGyAaqk5WKY9uO83X0Cv7+Ds=",
       "url": "manifest.json"
-    },
-    {
-      "hash": "sha256-OheCkVB0d3ty6X40U9Q614bylWipvoSDgi7NfJUT\/j8=",
-      "url": "FileOnTheCloud.Client.styles.css"
-    },
-    {
-      "hash": "sha256-S2fLTrHBW4GBGOttrMeGmM2NyqPH7pwcLNRAzJWhjzY=",
-      "url": "FileOnTheCloud.Client.bundle.scp.css"
     }
   ],
-  "version": "n3r7wqYN"
+  "version": "wf5\/UDZ4"
 };

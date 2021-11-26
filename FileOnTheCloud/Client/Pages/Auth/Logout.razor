@@ -1,0 +1,12 @@
+﻿@page "/auth/logout"
+
+<h5>Çıkış  yapılıyor...</h5>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.Logout();
+        navigation.NavigateTo("/auth/login");
+    }
+}

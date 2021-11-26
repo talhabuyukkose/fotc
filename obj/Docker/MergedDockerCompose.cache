@@ -5,7 +5,7 @@ services:
       dockerfile: FileOnTheCloud/Server/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:5001;http://+:5000
+      ASPNETCORE_URLS: http://+:5000
     image: fileonthecloudserver
     networks:
       default: null
@@ -14,23 +14,6 @@ services:
       target: 5000
       published: 80
       protocol: tcp
-    - mode: ingress
-      target: 5001
-      published: 443
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: C:\Users\talha\AppData\Roaming/Microsoft/UserSecrets
-      target: /root/.microsoft/usersecrets
-      read_only: true
-      bind:
-        create_host_path: true
-    - type: bind
-      source: C:\Users\talha\AppData\Roaming/ASP.NET/Https
-      target: /root/.aspnet/https
-      read_only: true
-      bind:
-        create_host_path: true
 networks:
   default:
     name: dockercompose8126484570225489631_default

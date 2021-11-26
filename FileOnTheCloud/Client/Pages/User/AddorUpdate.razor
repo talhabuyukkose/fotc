@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Authorization
+
+@page "/user/adduser"
+@page "/user/edituser/{userid:int}"
+
+@attribute [Authorize(Roles = "admin")]
+
+<div class="newUser">
+    <div class="newUserTitle">
+        @pagetitle
+    </div>
+    <EditForm Model="_usermodel" OnValidSubmit="AddorUpdateUser" action="" method="post" class="col-12">
+        <DataAnnotationsValidator />
+        <input type="text" placeholder="İsim" class="col-4" @bind-value="@_usermodel.name">
+        <ValidationMessage For="@(()=> _usermodel.name)" />
+
+        <input type="text" placeholder="Soyisim" class="col-4" @bind-value="@_usermodel.surname">
+        <ValidationMessage For="@(()=> _usermodel.surname)" />
+
+        <input type="email" placeholder="E-Posta" class="col-4" @bind-value="@_usermodel.emailaddress">
+        <ValidationMessage For="@(()=> _usermodel.emailaddress)" />
+
+        <input type="password" name="password" placeholder="Şifre" class="col-4" @bind-value="@_usermodel.password">
+        <ValidationMessage For="@(()=> _usermodel.password)" />
+
+        <input type="text" placeholder="Bölüm" class="col-4" @bind-value="@_usermodel.department" />
+        <ValidationMessage For="@(()=> _usermodel.department)" />
+
+        <input type="text" placeholder="Ünvan" class="col-4" @bind-value="@_usermodel.title">
+        <ValidationMessage For="@(()=> _usermodel.title)" />
+        @if (userid != 0)
+        {
+            <button type="reset" @onclick="GotoUserPage">Vazgeç</button>
+        }
+
+        <button type="submit">Oluştur</button>
+    </EditForm>
+
+</div>

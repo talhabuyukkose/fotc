@@ -1,22 +1,22 @@
-﻿<div class="wrapper">
+﻿
+<div class="wrapper">
     <div class="container">
         <div class="row aln-center">
-            <section class="col-6 col-12-narrower loginPanel">
+            <section class="col-6 col-12-mobile loginPanel">
                 <div class="col-12 loginTitle">DOSYA YÜKLEYİCİ <b>YETKİLİ</b> GİRİŞ SİSTEMİ</div>
-                <form action="" method="post" class="col-12">
-                    <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin">
-                        <DataAnnotationsValidator />
-                        <input type="text" placeholder="Kullanıcı Adı" @bind-value="loginmodel.username">
-                        <ValidationMessage For="@(()=> loginmodel.username)" />
-                        <input type="password" name="password" placeholder="Şifreniz" @bind-value="loginmodel.password">
-                        <ValidationMessage For="@(()=> loginmodel.password)" />
-                        <button type="submit" value="GİRİŞ"/>
-                    </EditForm>
-                </form>
+                <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin" action="" method="post" class="col-12">
+                    <DataAnnotationsValidator />
+                    <input type="text" placeholder="Kullanıcı Adı" @bind-value="loginmodel.username">
+                    <ValidationMessage For="@(()=> loginmodel.username)" />
+                    <input type="password" name="password" placeholder="Şifreniz" @bind-value="loginmodel.password">
+                    <ValidationMessage For="@(()=> loginmodel.password)" />
+                    <button type="submit">GİRİŞ</button>
+                </EditForm>
             </section>
         </div>
     </div>
 </div>
+
 
 @*<form class="card card-body">
     <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin">

@@ -23,34 +23,11 @@ namespace FileOnTheCloud.Client.Pages.User
         {
             token = await _sessionStorage.GetItemAsync<string>("authToken");
 
-            _httpclient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-            HttpResponseMessage httpResponse = await _httpclient.GetAsync($"api/user/get");
-
-            var httpcontent = await httpResponse.Content.ReadAsStreamAsync();
-
-            Console.WriteLine(httpcontent);
-
-            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-            {
-                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
-
-                modal.Show<FileOnTheCloud.Client.CustomComponents.LoginComponent.Login>("Giriş");
-
-            }
-            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
-            {
-                await modalManager.ShowMessageAsync("Bilgi", $"Kullanıcılar listelenemedi !{Environment.NewLine}{httpResponse.ReasonPhrase}");
-            }
-            else
-            {
-                userlist = await httpResponse.Content.ReadFromJsonAsync<List<FileOnTheCloud.Shared.DbModel.User>>();
-            }
-
+            userlist = await GetUserListAsync();
         }
 
 
-        protected void goUpdateUserPage(int id)
+        protected void GotoEditUser(int id)
         {
             navigation.NavigateTo($"/user/edituser/{id}");
         }
@@ -60,6 +37,31 @@ namespace FileOnTheCloud.Client.Pages.User
             navigation.NavigateTo($"/user/adduser");
         }
 
+        async Task<List<FileOnTheCloud.Shared.DbModel.User>> GetUserListAsync()
+        {
+
+            HttpResponseMessage httpResponse = await _httpclient.GetAsync($"api/user/get");
+
+            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
+
+                navigation.NavigateTo("/auth/login");
+
+            }
+            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Kullanıcılar listelenemedi !{Environment.NewLine}{httpResponse.ReasonPhrase}");
+            }
+            else
+            {
+                return await httpResponse.Content.ReadFromJsonAsync<List<FileOnTheCloud.Shared.DbModel.User>>();
+            }
+
+            return new List<FileOnTheCloud.Shared.DbModel.User>();
+        }
+
+
         protected async Task DeleteUser(int Id)
         {
             bool confirmed = await modalManager.ConfirmationAsync("Onay bekleniyor", "Kullanıcı silinecek. Onaylıyor musunuz ?");
@@ -68,7 +70,7 @@ namespace FileOnTheCloud.Client.Pages.User
 
             try
             {
-                HttpResponseMessage httpResponse = await _httpclient.GetAsync($"User/Delete/{token}/{Id}");
+                HttpResponseMessage httpResponse = await _httpclient.DeleteAsync($"api/user/delete/{Id}");
 
                 if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
                 {

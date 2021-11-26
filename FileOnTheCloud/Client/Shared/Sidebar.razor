@@ -1,13 +1,38 @@
-﻿    <!-- Sidebar -->
-    <section id="adminPanel">
-        <div class="adminTitle">
-            KONTROL PANELİ
-        </div>
-        <div class="adminName">
-            Sn. Doç Dr. Tacim Hoylu
-        </div>
-        <div class="adminButtons">
-            <a href="" class="button">Not Ekle</a>
-            <button id="messageSend" class="button">Yönetici ile İletişime Geç</button>
-        </div>
-    </section>
+﻿@*@attribute [Authorize(Roles = "Yetkili,Muhasebe")]*@
+
+<AuthorizeView Roles="admin">
+    <Authorized>
+        <section id="adminPanel">
+            <div class="adminTitle">
+                KONTROL PANELİ <i>admin</i>
+            </div>
+            <div class="adminName">
+                @user.name @user.surname
+            </div>
+            <div class="adminButtons" id="nav">
+                <a href="/note/notes" class="button">NOTLAR</a>
+                <a href="/user/users" class="button">KULLANICILAR <i>(ekle / düzenle)</i></a>
+                <a href="/note/addnote" class="button new">YENİ NOT EKLE</a>
+                <a href="" class="button">KATEGORİLER <i>(ekle / düzenle)</i></a>
+                <a href="/auth/logout" class="button">Çıkış</a>
+            </div>
+        </section>
+    </Authorized>
+</AuthorizeView>
+<AuthorizeView Roles="kullanıcı">
+    <Authorized>
+        <section id="adminPanel">
+            <div class="adminTitle">
+                KONTROL PANELİ
+            </div>
+            <div class="adminName">
+                Sn. @user.title @user.name @user.surname
+            </div>
+            <div class="adminButtons">
+                <a href="/note/addnote" class="button">Not Ekle</a>
+                <button id="messageSend" class="button" style="margin-bottom: 20px;font-size:16px;" @onclick="SendMail">Yönetici ile İletişime Geç</button>
+                <a href="/auth/logout" class="button">Çıkış</a>
+            </div>
+        </section>
+    </Authorized>
+</AuthorizeView>

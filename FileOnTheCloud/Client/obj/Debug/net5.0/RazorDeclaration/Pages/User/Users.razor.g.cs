@@ -154,7 +154,7 @@ using Microsoft.AspNetCore.Authorization;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Pages\User\Users.razor"
-           [Authorize(Roles = "Admin")]
+           [Authorize(Roles = "admin")]
 
 #line default
 #line hidden

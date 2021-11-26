@@ -161,7 +161,6 @@ using MudBlazor;
     [Parameter]
     public String Color { get; set; }
 
-
     [Parameter]
     public String Icon { get; set; }
 

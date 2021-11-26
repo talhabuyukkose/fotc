@@ -153,7 +153,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Shared\MainLayout.razor"
+#line 38 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Shared\MainLayout.razor"
                 [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; }
 

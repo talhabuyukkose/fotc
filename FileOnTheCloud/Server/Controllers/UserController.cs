@@ -39,9 +39,31 @@ namespace FileOnTheCloud.Server.Controllers
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>("select * from public.user");
+                var output = await connection.QueryAsync<Shared.DbModel.User>("select * from public.user where isdelete=false");
 
                 return Ok(output);
+            }
+        }
+
+        [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<Shared.DbModel.User>> GetById(int id)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and id={id}");
+
+                return Ok(output.First());
+            }
+        }
+
+        [HttpGet("GetByEmail/{email}")]
+        public async Task<ActionResult<Shared.DbModel.User>> GetByEmail(string email)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and emailaddress='{email}'");
+
+                return Ok(output.First());
             }
         }
 
@@ -50,31 +72,38 @@ namespace FileOnTheCloud.Server.Controllers
         {
             _user.password = Helper.Helper.Createhmacsha256(_user.password);
 
-            string sql = "INSERT INTO public.user(name, surname, title, password, department, emailaddress, role) VALUES (@name,@surname, @title, @password, @department,@emailaddress,@role);";
+            string procedure = string.Empty;
+
+            if (_user.id == 0)
+            {
+                procedure = $"call adduser(@name,@surname,@title, @password, @department,@emailaddress);";
+            }
+            else
+            {
+                procedure = "UPDATE public.user SET name=@name, surname=@surname, title=@title, password=@password, department=@department, emailaddress=@emailaddress, role=@role WHERE id=@id;";
+            }
+            //string procedure = $"call adduser('{_user.name}','{_user.surname}', '{_user.title}', '{_user.password}', '{_user.department}','{_user.emailaddress}');";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>(sql,_user);
+                var output = await connection.ExecuteAsync(procedure, _user);
 
                 return Ok(true);
             }
         }
 
-        [HttpPost("Set/id")]
-        public async Task<ActionResult> Set(int id,[FromBody] Shared.DbModel.User _user)
+        
+        [HttpDelete("Delete/{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            _user.password = Helper.Helper.Createhmacsha256(_user.password);
-
-            string sql = "UPDATE public.user SET name=@name, surname=@surname, title=@title, password=@password, department=@department, emailaddress=@emailaddress, role=@role WHERE id=@id;";
+            string sql = $"UPDATE public.user SET isdelete=true WHERE id={id};";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>(sql, _user);
+                var output = await connection.QueryAsync(sql);
 
                 return Ok(true);
             }
         }
-
-
     }
 }

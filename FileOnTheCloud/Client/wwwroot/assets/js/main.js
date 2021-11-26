@@ -27,8 +27,8 @@
 
 
 	// Nav.
-
-		// Buton.
+		if($('#nav').length){
+			// Buton.
 			$(
 				'<div id="navButton">' +
 					'<a href="#navPanel" class="toggle"></a>' +
@@ -40,7 +40,6 @@
 			$(
 				'<div id="navPanel">' +
 					'<nav>' +
-						'<a href="index.html" class="link depth-0">Home</a>' +
 						$('#nav').navList() +
 					'</nav>' +
 				'</div>'
@@ -55,5 +54,5 @@
 					target: $body,
 					visibleClass: 'navPanel-visible'
 				});
-
+		}
 })(jQuery);

@@ -61,15 +61,23 @@ namespace FileOnTheCloud.Server.Controllers
             }
         }
 
-        [HttpPost("Send")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Send([FromBody] Shared.Model.MailRequest mail)
+        [HttpPost("SendToAdmin")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> SendToAdmin([FromBody] Shared.Model.MailRequest mail)
         {
             try
             {
+                IEnumerable<Shared.DbModel.User> users;
+
+                using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+                {
+                    users = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and role='admin' ");
+                }
+
+                mail.ToEmail = string.Join(";", users.Select(s => s.emailaddress));
 
                 await _mailService.SendEmailAsync(mail);
 
-                string procedure = $"call AddNotification('{mail.FromEmail}','{mail.ToEmail}','{mail.Body}')";
+                string procedure = $"call addnotification('{mail.FromEmail}','{mail.ToEmail}','{mail.Body}')";
 
                 using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
                 {
