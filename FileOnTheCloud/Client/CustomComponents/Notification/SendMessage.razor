@@ -1,7 +1,7 @@
 ﻿
 
 
-<textarea type="text" name="name" id="name" placeholder="Mesajınızı giriniz..." class="text ui-widget-content ui-corner-all" style="width: 25rem;height: 10rem;padding: 1rem;" @bind="@Request.Body"></textarea>
+<textarea type="text" name="name" id="name" placeholder="Mesajınızı giriniz..." class="text ui-widget-content ui-corner-all" style="width: 25rem;height: 10rem;padding: 1rem;" @bind="@mail.Body"></textarea>
 <br/>
 <br/>
 <button id="messageSend" class="button" @onclick="SendMail">Gönder</button>

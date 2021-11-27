@@ -29,6 +29,8 @@ namespace FileOnTheCloud.Client
 
             builder.Services.AddScoped<IModalManager, ModalManager>();
 
+            builder.Services.AddScoped<IHelper, Helper>();
+
             builder.Services.AddBlazoredSessionStorage();
 
             builder.Services.AddAuthorizationCore();

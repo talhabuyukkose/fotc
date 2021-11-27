@@ -1,0 +1,31 @@
+﻿@page "/notifications"
+
+
+<MudTable Items="@notifications" Dense="false" Hover="true" Bordered="false" Striped="false" Filter="new Func<FileOnTheCloud.Shared.Model.GetNotification_WithEmail,bool>(FilterFuncNotication)" @bind-SelectedItem="selectedItemNotification">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Bildirimler</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchStringNotification" Placeholder="Ara" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>#</MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<FileOnTheCloud.Shared.Model.GetNotification_WithEmail, object>(x=>notifications.IndexOf(x))">Sıra</MudTableSortLabel></MudTh>
+        <MudTh>Kimden</MudTh>
+        <MudTh>Mesaj</MudTh>
+        <MudTh>Tarih</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="#">
+            @*<CustomEditButton ToolTipStr="Düzenle" IsSmall="true" Caption="" IsOutline="true" OnClick="@(()=>Seen(context))" />*@
+            <button class="userlistbutton" @onclick="()=>Seen(context)">GÖRÜLDÜ</button>
+            <button class="userlistbutton" @onclick="()=>SendReply(context)">YANITLA</button>
+        </MudTd>
+        <MudTd DataLabel="Sıra">@Convert.ToInt32(notifications.IndexOf(context) + 1)</MudTd>
+        <MudTd DataLabel="Kimden">@context.frommail</MudTd>
+        <MudTd DataLabel="Mesaj">@context.message</MudTd>
+        <MudTd DataLabel="Tarih">@context.createdate</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager RowsPerPageString="Gösterilen Kayıt" />
+    </PagerContent>
+</MudTable>

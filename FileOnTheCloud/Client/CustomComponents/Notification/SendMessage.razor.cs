@@ -15,21 +15,35 @@ namespace FileOnTheCloud.Client.CustomComponents.Notification
         [CascadingParameter]
         BlazoredModalInstance BlazoredModal { get; set; }
 
-        FileOnTheCloud.Shared.Model.MailRequest Request = new FileOnTheCloud.Shared.Model.MailRequest();
+        [Parameter]
+        public string fromemail { get; set; }
+
+        [Parameter]
+        public string toemail { get; set; }
+
+        [Parameter]
+        public int replyid { get; set; }
+
+        FileOnTheCloud.Shared.Model.MailRequest mail = new FileOnTheCloud.Shared.Model.MailRequest();
+
+        public async override Task SetParametersAsync(ParameterView parameters)
+        {
+            toemail = parameters.GetValueOrDefault<string>("toemail") ?? "";
+            fromemail = parameters.GetValueOrDefault<string>("fromemail") ?? "";
+            fromemail = parameters.GetValueOrDefault<string>("fromemail") ?? "";
+            replyid = parameters.GetValueOrDefault<int>("replyid");
+
+            await base.SetParametersAsync(parameters);
+        }
         private async Task SendMail()
         {
-            JwtSecurityToken securityToken = new();
 
-            var token = await _sessionStorage.GetItemAsync<string>("authToken");
+            mail.ToEmail = toemail;
+            mail.FromEmail = fromemail;
+            mail.Subject = "Gönderen :" + fromemail;
+            mail.replyid = replyid;
 
-            securityToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
-
-            var email = securityToken.Claims.Where(w => w.Type == "email").FirstOrDefault().Value;
-
-            Request.FromEmail = email;
-            Request.Subject = "Gönderen :" + email;
-
-            var httpResponse = await _httpclient.PostAsJsonAsync("api/notification/sendtoadmin", Request);
+            var httpResponse = await _httpclient.PostAsJsonAsync("api/notification/send", mail);
 
             if (httpResponse.IsSuccessStatusCode == false)
             {

@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Components.Authorization;
 using Blazored.Modal;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace FileOnTheCloud.Client.Shared
 {
@@ -62,8 +63,14 @@ namespace FileOnTheCloud.Client.Shared
         }
 
         protected async Task SendMail()
-        {
-            var response = modal.Show<FileOnTheCloud.Client.CustomComponents.Notification.SendMessage>("Bildirim Gönderimi");
+        {     
+            ModalParameters modalParameters = new ModalParameters();
+
+            //modalParameters.Add("toemail", "talha.buyukkose@hotmail.com");
+            modalParameters.Add("fromemail", email);
+            modalParameters.Add("replyid", 0);
+
+            var response = modal.Show<FileOnTheCloud.Client.CustomComponents.Notification.SendMessage>("Bildirim Gönderimi", modalParameters);
 
             var result = await response.Result;
 

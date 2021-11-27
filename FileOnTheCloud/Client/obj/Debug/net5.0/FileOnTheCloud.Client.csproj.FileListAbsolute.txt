@@ -1411,7 +1411,9 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\servicewo
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\service-worker-assets.js
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\CustomComponents\Notification\SendMessage.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\CustomComponents\Notification\SendMessage.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\EzMuyAmT.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\mM2efPfH.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Auth\Logout.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Auth\Logout.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Notification\Notifications.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Notification\Notifications.razor.g.cs
+C:\Users\talha\source\repos\FTC\fileonthecloud\Client\obj\Debug\net5.0\build-gz\2D1BIQLS.gz
+C:\Users\talha\source\repos\FTC\fileonthecloud\Client\obj\Debug\net5.0\build-gz\H2gdK5nE.gz

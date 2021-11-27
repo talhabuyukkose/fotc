@@ -35,21 +35,21 @@ namespace FileOnTheCloud.Server.Controllers
 
         }
 
-        [HttpPost("Get")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Get([FromBody] string email)
+        [HttpGet("GetByEmail/{email}")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> GetByEmail(string email)
         {
-            string sql = $"select * from public.mailnotification where isitseen={false} and touserid = (select id from public.user where emailaddress='{email}')";
+            string sql = $"select * from public.GetNotification_WithEmail where isitseen = {false} and tomail = '{email}'";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.Notification>(sql);
+                var output = await connection.QueryAsync<Shared.Model.GetNotification_WithEmail>(sql);
 
                 return Ok(output);
             }
         }
 
         [HttpPost("Seen")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Seen([FromBody] Shared.DbModel.Notification notification)
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Seen([FromBody] Shared.Model.GetNotification_WithEmail notification)
         {
             string sql = $"UPDATE public.mailnotification SET isitseen=true	WHERE id={notification.id};";
 
@@ -61,23 +61,26 @@ namespace FileOnTheCloud.Server.Controllers
             }
         }
 
-        [HttpPost("SendToAdmin")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> SendToAdmin([FromBody] Shared.Model.MailRequest mail)
+        [HttpPost("Send")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Send([FromBody] Shared.Model.MailRequest mail)
         {
             try
             {
-                IEnumerable<Shared.DbModel.User> users;
-
-                using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+                if (string.IsNullOrEmpty(mail.ToEmail))
                 {
-                    users = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and role='admin' ");
-                }
+                    IEnumerable<Shared.DbModel.User> users;
 
-                mail.ToEmail = string.Join(";", users.Select(s => s.emailaddress));
+                    using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+                    {
+                        users = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and role='admin' ");
+                    }
+
+                    mail.ToEmail = string.Join(";", users.Select(s => s.emailaddress));
+                }
 
                 await _mailService.SendEmailAsync(mail);
 
-                string procedure = $"call addnotification('{mail.FromEmail}','{mail.ToEmail}','{mail.Body}')";
+                string procedure = $"call addnotification('{mail.FromEmail}','{mail.ToEmail}','{mail.Body}',{mail.replyid})";
 
                 using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
                 {

@@ -13,5 +13,6 @@ namespace FileOnTheCloud.Shared.Model
         public string ToEmail { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
+        public int replyid { get; set; }
     }
 }

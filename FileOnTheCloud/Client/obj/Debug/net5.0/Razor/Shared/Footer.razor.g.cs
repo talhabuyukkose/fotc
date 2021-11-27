@@ -150,6 +150,7 @@ using MudBlazor;
             __builder.AddMarkupContent(0, "<footer id=\"footer-wrapper\"><div id=\"copyright\" class=\"container\"><ul class=\"menu\"><li>&copy; 2021 AKARE COPY AND DESIGN CENTER NOT YÜKLEME SİSTEMİ</li>\r\n            <li>TÜM HAKLARI SAKLIDIR</li></ul></div></footer>");
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHelper helper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IModalManager modalManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISessionStorageService _sessionStorage { get; set; }

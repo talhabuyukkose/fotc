@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9Ho3xK0ZfywCnt2mxiNPNA/pCtjNby/P+rOAaDqcSGfndBgvIzWhugZEHOnMMTL06FK9nAW8PUYVXpVTgaSASA==",
+  "dgSpecHash": "7zNik9ASm7BHvyl3F4wV+RMLjg94PNaPoxWl5rPQYQzQAGPLVL/11FH3KS8YUI49uxN4M3pHHHzBCLdEinffwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Server\\FileOnTheCloud.Server.csproj",
+  "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\server\\FileOnTheCloud.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talha\\.nuget\\packages\\blazored.modal\\6.0.1\\blazored.modal.6.0.1.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\blazored.sessionstorage\\2.2.0\\blazored.sessionstorage.2.2.0.nupkg.sha512",

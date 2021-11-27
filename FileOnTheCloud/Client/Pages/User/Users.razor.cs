@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Net.Http.Json;
 
+
 namespace FileOnTheCloud.Client.Pages.User
 {
     public partial class Users
@@ -15,17 +16,17 @@ namespace FileOnTheCloud.Client.Pages.User
         [CascadingParameter]
         IModalService modal { get; set; }
 
+
         List<FileOnTheCloud.Shared.DbModel.User> userlist = new List<FileOnTheCloud.Shared.DbModel.User>();
 
-        private string token;
+        //private string token;
 
         protected override async Task OnInitializedAsync()
         {
-            token = await _sessionStorage.GetItemAsync<string>("authToken");
+            //token = await _sessionStorage.GetItemAsync<string>("authToken");
 
-            userlist = await GetUserListAsync();
+            userlist = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.User>("api/user/get");
         }
-
 
         protected void GotoEditUser(int id)
         {
@@ -37,54 +38,14 @@ namespace FileOnTheCloud.Client.Pages.User
             navigation.NavigateTo($"/user/adduser");
         }
 
-        async Task<List<FileOnTheCloud.Shared.DbModel.User>> GetUserListAsync()
-        {
-
-            HttpResponseMessage httpResponse = await _httpclient.GetAsync($"api/user/get");
-
-            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-            {
-                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
-
-                navigation.NavigateTo("/auth/login");
-
-            }
-            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
-            {
-                await modalManager.ShowMessageAsync("Bilgi", $"Kullanıcılar listelenemedi !{Environment.NewLine}{httpResponse.ReasonPhrase}");
-            }
-            else
-            {
-                return await httpResponse.Content.ReadFromJsonAsync<List<FileOnTheCloud.Shared.DbModel.User>>();
-            }
-
-            return new List<FileOnTheCloud.Shared.DbModel.User>();
-        }
-
-
         protected async Task DeleteUser(int Id)
         {
-            bool confirmed = await modalManager.ConfirmationAsync("Onay bekleniyor", "Kullanıcı silinecek. Onaylıyor musunuz ?");
+            var deleteresponse = await helper.DeleteTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/delete/{Id}");
 
-            if (!confirmed) return;
-
-            try
+            if (deleteresponse == System.Net.HttpStatusCode.OK)
             {
-                HttpResponseMessage httpResponse = await _httpclient.DeleteAsync($"api/user/delete/{Id}");
-
-                if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    await modalManager.ShowMessageAsync("Silme", "Kullanıcı silindi ");
-
-                    await OnInitializedAsync();
-                }
-
+                await OnInitializedAsync();
             }
-            catch (HttpRequestException ex)
-            {
-                await modalManager.ShowMessageAsync("Silme", ex.Message);
-            }
-
         }
     }
 }
