@@ -1,5 +1,10 @@
 ﻿@page "/notifications"
 
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
 
 <MudTable Items="@notifications" Dense="false" Hover="true" Bordered="false" Striped="false" Filter="new Func<FileOnTheCloud.Shared.Model.GetNotification_WithEmail,bool>(FilterFuncNotication)" @bind-SelectedItem="selectedItemNotification">
     <ToolBarContent>

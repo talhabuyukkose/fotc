@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj": {}
+    "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj": {
+    "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj",
         "projectName": "FileOnTheCloud.Shared",
-        "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj",
+        "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj",
         "packagesPath": "C:\\Users\\talha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

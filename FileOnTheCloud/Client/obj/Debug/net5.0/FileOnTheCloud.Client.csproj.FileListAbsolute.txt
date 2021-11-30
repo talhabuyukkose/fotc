@@ -718,7 +718,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Modal.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.SessionStorage.dll.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Toast.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
@@ -924,7 +923,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\FileOnTheCloud.Shared.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Modal.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.SessionStorage.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Toast.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
@@ -1197,7 +1195,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Sha
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\rAPArF2B.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\+crAdDam.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\WuFTUAeq.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\Bsm+GWC1.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\4s+zx+2w.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\qTUEDsPA.gz
@@ -1415,5 +1412,5 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDecl
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Auth\Logout.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Notification\Notifications.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Notification\Notifications.razor.g.cs
-C:\Users\talha\source\repos\FTC\fileonthecloud\Client\obj\Debug\net5.0\build-gz\2D1BIQLS.gz
-C:\Users\talha\source\repos\FTC\fileonthecloud\Client\obj\Debug\net5.0\build-gz\H2gdK5nE.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\EzMuyAmT.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\mM2efPfH.gz

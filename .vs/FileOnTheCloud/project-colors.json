@@ -15,7 +15,22 @@
       "ProjectGuid": "53289daa-83c8-426c-b5dc-b45bff9accb4",
       "DisplayName": "FileOnTheCloud.Shared",
       "ColorIndex": 2
+    },
+    "33a747d9-ed15-4185-8fa7-c24bd8501b7e": {
+      "ProjectGuid": "33a747d9-ed15-4185-8fa7-c24bd8501b7e",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "919fd655-f067-4ba2-b932-d926e85dd6b4": {
+      "ProjectGuid": "919fd655-f067-4ba2-b932-d926e85dd6b4",
+      "DisplayName": "Script Documents",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

@@ -1,6 +1,7 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -32,6 +33,7 @@ namespace FileOnTheCloud.Client.Pages.Notification
             email = securityToken.Claims.Where(w => w.Type == "email").FirstOrDefault().Value;
 
             notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
+
 
         }
 

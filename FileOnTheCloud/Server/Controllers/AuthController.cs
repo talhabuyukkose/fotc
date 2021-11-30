@@ -53,14 +53,14 @@ namespace FileOnTheCloud.Server.Controllers
 
         private void userLog(string email, string token)
         {
-            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyLocalDb"]))
+            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyDb"]))
             {
                 var output = connection.Execute($"INSERT INTO public.user_log(createdate, token, description) VALUES ( timezone('turkey', now()),'{token}','');");
             }
         }
         private Shared.DbModel.User AuthenticateUser(Login login)
         {
-            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyLocalDb"]))
+            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyDb"]))
             {
                 var output = connection.Query<Shared.DbModel.User>("select * from public.user where emailaddress=@username and password=@password", login).ToList();
 

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FileOnTheCloud.Server.Controllers
 {
-    //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class NotificationController : ControllerBase
@@ -31,7 +31,7 @@ namespace FileOnTheCloud.Server.Controllers
 
             this._config = config;
 
-            connectionstring = _config["ConnectionStrings:MyLocalDb"];
+            connectionstring = _config["ConnectionStrings:MyDb"];
 
         }
 

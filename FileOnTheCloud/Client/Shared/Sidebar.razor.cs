@@ -10,6 +10,7 @@ using System.Net.Http.Json;
 using Microsoft.AspNetCore.Components.Authorization;
 using Blazored.Modal;
 using System.IdentityModel.Tokens.Jwt;
+using FileOnTheCloud.Shared.Model;
 
 namespace FileOnTheCloud.Client.Shared
 {
@@ -27,7 +28,7 @@ namespace FileOnTheCloud.Client.Shared
 
         FileOnTheCloud.Shared.DbModel.User user = new();
 
-        private string token;
+        List<FileOnTheCloud.Shared.Model.GetNotification_WithEmail> notifications = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -37,33 +38,17 @@ namespace FileOnTheCloud.Client.Shared
             {
                 email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
 
-                token = await _sessionStorage.GetItemAsync<string>("authToken");
+                user = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyemail/{email}");
 
-                _httpclient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
 
-                HttpResponseMessage httpResponse = await _httpclient.GetAsync($"api/user/getbyemail/{email}");
-
-                if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                {
-                    await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
-
-                    modal.Show<FileOnTheCloud.Client.CustomComponents.LoginComponent.Login>("Giriş");
-
-                }
-                else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
-                {
-                    await modalManager.ShowMessageAsync("Bilgi", $"Kullanıcılar listelenemedi !{Environment.NewLine}{httpResponse.ReasonPhrase}");
-                }
-                else
-                {
-                    user = await httpResponse.Content.ReadFromJsonAsync<FileOnTheCloud.Shared.DbModel.User>();
-                }
+                
             }
 
         }
 
         protected async Task SendMail()
-        {     
+        {
             ModalParameters modalParameters = new ModalParameters();
 
             //modalParameters.Add("toemail", "talha.buyukkose@hotmail.com");

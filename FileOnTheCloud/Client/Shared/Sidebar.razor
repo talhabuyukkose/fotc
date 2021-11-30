@@ -14,7 +14,9 @@
                 <a href="/user/users" class="button">KULLANICILAR <i>(ekle / düzenle)</i></a>
                 <a href="/note/addnote" class="button">YENİ NOT EKLE</a>
                 <a href="" class="button">KATEGORİLER <i>(ekle / düzenle)</i></a>
-                <a href="/notifications" class="button">BİLDİRİMLER</a>
+                 <MudBadge Content="@notifications.Count" Color="Color.Secondary" Overlap="true">
+                    <a href="/notifications" class="button">BİLDİRİMLER</a>
+                </MudBadge>
                 <a href="/auth/logout" class="button">ÇIKIŞ</a>
             </div>
         </section>
@@ -32,7 +34,9 @@
             <div class="adminButtons">
                 <a href="/note/addnote" class="button">Not Ekle</a>
                 <button id="messageSend" class="button" style="margin-bottom: 20px;font-size:16px;" @onclick="SendMail">Yönetici ile İletişime Geç</button>
-                <a href="/notifications" class="button">BİLDİRİMLER</a>
+                <MudBadge Content="@notifications.Count" Color="Color.Secondary" Overlap="true">
+                    <a href="/notifications" class="button">BİLDİRİMLER</a>
+                </MudBadge>
                 <a href="/auth/logout" class="button">ÇIKIŞ</a>
             </div>
         </section>

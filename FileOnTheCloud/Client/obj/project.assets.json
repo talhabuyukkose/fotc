@@ -35,26 +35,6 @@
           "lib/net5.0/Blazored.SessionStorage.dll": {}
         }
       },
-      "Blazored.Toast/3.2.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Components": "3.1.6",
-          "Microsoft.AspNetCore.Components.Web": "3.1.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6"
-        },
-        "compile": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {}
-        },
-        "build": {
-          "buildTransitive/Blazored.Toast.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Blazored.Toast.props": {}
-        }
-      },
       "Microsoft.AspNetCore.Authorization/5.0.11": {
         "type": "package",
         "dependencies": {
@@ -146,12 +126,6 @@
         },
         "build": {
           "build/net5.0/Microsoft.AspNetCore.Components.WebAssembly.props": {}
-        }
-      },
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/5.0.11": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
       "Microsoft.AspNetCore.Http.Features/5.0.12": {
@@ -524,26 +498,6 @@
           "lib/net5.0/Blazored.SessionStorage.dll": {}
         }
       },
-      "Blazored.Toast/3.2.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Components": "3.1.6",
-          "Microsoft.AspNetCore.Components.Web": "3.1.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6"
-        },
-        "compile": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {}
-        },
-        "build": {
-          "buildTransitive/Blazored.Toast.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Blazored.Toast.props": {}
-        }
-      },
       "Microsoft.AspNetCore.Authorization/5.0.11": {
         "type": "package",
         "dependencies": {
@@ -635,12 +589,6 @@
         },
         "build": {
           "build/net5.0/Microsoft.AspNetCore.Components.WebAssembly.props": {}
-        }
-      },
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/5.0.11": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
       "Microsoft.AspNetCore.Http.Features/5.0.12": {
@@ -1008,25 +956,6 @@
         "lib/netstandard2.1/Blazored.SessionStorage.dll"
       ]
     },
-    "Blazored.Toast/3.2.2": {
-      "sha512": "6RiWHpgIgJJFWZHnmSZb/6IBP6LS6F5brLDGTBls/B4bTf0SzPsRoTUu2g6y7sY59/PFC1XeKbwXHys9PCe6lw==",
-      "type": "package",
-      "path": "blazored.toast/3.2.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "blazored.toast.3.2.2.nupkg.sha512",
-        "blazored.toast.nuspec",
-        "build/Blazored.Toast.props",
-        "build/Microsoft.AspNetCore.StaticWebAssets.props",
-        "buildMultiTargeting/Blazored.Toast.props",
-        "buildTransitive/Blazored.Toast.props",
-        "icon.png",
-        "lib/netstandard2.1/Blazored.Toast.dll",
-        "staticwebassets/blazored-toast.css",
-        "staticwebassets/blazored-toast.min.css"
-      ]
-    },
     "Microsoft.AspNetCore.Authorization/5.0.11": {
       "sha512": "LlxMpRykUVpM+KesasvJXKvB+6kYMW4QHldsIT1y8Diwaxf0U70aVvVp1crZbLIAdRF+4Che5iSh4Xrv2wTW5w==",
       "type": "package",
@@ -1137,41 +1066,6 @@
         "lib/net5.0/Microsoft.AspNetCore.Components.WebAssembly.xml",
         "microsoft.aspnetcore.components.webassembly.5.0.11.nupkg.sha512",
         "microsoft.aspnetcore.components.webassembly.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Components.WebAssembly.DevServer/5.0.11": {
-      "sha512": "N7IHx7WpKAGgcrkqjzpZbm0AwIGMAT1UlrE3Pqjzw2+4NFpKFUz+iLjFFxSNOmZeADfKcb2oXHNo6BpWgF7Zuw==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.components.webassembly.devserver/5.0.11",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets",
-        "microsoft.aspnetcore.components.webassembly.devserver.5.0.11.nupkg.sha512",
-        "microsoft.aspnetcore.components.webassembly.devserver.nuspec",
-        "tools/BlazorDebugProxy/BrowserDebugHost.dll",
-        "tools/BlazorDebugProxy/BrowserDebugHost.runtimeconfig.json",
-        "tools/BlazorDebugProxy/BrowserDebugProxy.dll",
-        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.dll",
-        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.dll",
-        "tools/BlazorDebugProxy/Mono.Cecil.Pdb.dll",
-        "tools/BlazorDebugProxy/Mono.Cecil.Rocks.dll",
-        "tools/BlazorDebugProxy/Mono.Cecil.dll",
-        "tools/BlazorDebugProxy/Newtonsoft.Json.dll",
-        "tools/Microsoft.AspNetCore.Components.WebAssembly.Server.dll",
-        "tools/Microsoft.AspNetCore.Components.WebAssembly.Server.xml",
-        "tools/Microsoft.Extensions.Primitives.dll",
-        "tools/System.IO.Pipelines.dll",
-        "tools/blazor-devserver.deps.json",
-        "tools/blazor-devserver.dll",
-        "tools/blazor-devserver.exe",
-        "tools/blazor-devserver.runtimeconfig.json",
-        "tools/blazor-devserver.xml",
-        "tools/x64/aspnetcorev2_inprocess.dll",
-        "tools/x86/aspnetcorev2_inprocess.dll"
       ]
     },
     "Microsoft.AspNetCore.Http.Features/5.0.12": {
@@ -1820,11 +1714,9 @@
     "net5.0": [
       "Blazored.Modal >= 6.0.1",
       "Blazored.SessionStorage >= 2.2.0",
-      "Blazored.Toast >= 3.2.2",
       "FileOnTheCloud.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 5.0.11",
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.11",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.11",
       "MudBlazor >= 5.2.0",
       "System.IdentityModel.Tokens.Jwt >= 6.14.0",
       "System.Net.Http.Json >= 5.0.0"
@@ -1837,11 +1729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Client\\FileOnTheCloud.Client.csproj",
+      "projectUniqueName": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\FileOnTheCloud.Client.csproj",
       "projectName": "FileOnTheCloud.Client",
-      "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Client\\FileOnTheCloud.Client.csproj",
+      "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\FileOnTheCloud.Client.csproj",
       "packagesPath": "C:\\Users\\talha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Client\\obj\\",
+      "outputPath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1862,8 +1754,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj": {
-              "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\fileonthecloud\\Shared\\FileOnTheCloud.Shared.csproj"
+            "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj": {
+              "projectPath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Shared\\FileOnTheCloud.Shared.csproj"
             }
           }
         }
@@ -1886,20 +1778,11 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
-          "Blazored.Toast": {
-            "target": "Package",
-            "version": "[3.2.2, )"
-          },
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
             "version": "[5.0.11, )"
           },
           "Microsoft.AspNetCore.Components.WebAssembly": {
-            "target": "Package",
-            "version": "[5.0.11, )"
-          },
-          "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.11, )"
           },

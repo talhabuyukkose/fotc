@@ -31,7 +31,7 @@ namespace FileOnTheCloud.Server.Controllers
         {
             this._config = config;
 
-            connectionstring = _config["ConnectionStrings:MyLocalDb"];
+            connectionstring = _config["ConnectionStrings:MyDb"];
         }
 
         [HttpGet("Get")]

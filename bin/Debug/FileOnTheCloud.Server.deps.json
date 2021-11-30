@@ -354,22 +354,6 @@
           "lib/net5.0/Blazored.SessionStorage.dll": {}
         }
       },
-      "Blazored.Toast/3.2.2": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Components": "5.0.11",
-          "Microsoft.AspNetCore.Components.Web": "5.0.11",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.1/Blazored.Toast.dll": {}
-        }
-      },
       "Dapper/2.0.90": {
         "runtime": {
           "lib/net5.0/Dapper.dll": {
@@ -835,7 +819,6 @@
         "dependencies": {
           "Blazored.Modal": "6.0.1",
           "Blazored.SessionStorage": "2.2.0",
-          "Blazored.Toast": "3.2.2",
           "FileOnTheCloud.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "5.0.11",
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.11",
@@ -2514,13 +2497,6 @@
       "sha512": "sha512-2iVrDbv30kuufV0CGjNkQgVReH/aSfDlyqnYTXyoFIFwtrSnMS+pqx5tLFAoigLXn/imSQHPZkVnOArLZYefXg==",
       "path": "blazored.sessionstorage/2.2.0",
       "hashPath": "blazored.sessionstorage.2.2.0.nupkg.sha512"
-    },
-    "Blazored.Toast/3.2.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6RiWHpgIgJJFWZHnmSZb/6IBP6LS6F5brLDGTBls/B4bTf0SzPsRoTUu2g6y7sY59/PFC1XeKbwXHys9PCe6lw==",
-      "path": "blazored.toast/3.2.2",
-      "hashPath": "blazored.toast.3.2.2.nupkg.sha512"
     },
     "Dapper/2.0.90": {
       "type": "package",

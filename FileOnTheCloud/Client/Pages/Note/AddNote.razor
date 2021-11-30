@@ -1,5 +1,66 @@
 ﻿@page "/note/addnote"
 
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
+
+<MudGrid>
+    <MudItem xs="12" sm="6" md="6">
+        <MudSelect AdornmentColor="Color.Secondary" T="string" Label="BÖLÜM" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
+            <MudSelectItem Value="@("Cappuccino")" />
+            <MudSelectItem Value="@("Cafe Latte")" />
+            <MudSelectItem Value="@("Espresso")" />
+            <MudSelectItem Value="@("Irish Coffee")" />
+        </MudSelect>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="6">
+        <MudSelect AdornmentColor="Color.Secondary" T="string" Label="SINIF" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
+            <MudSelectItem Value="@("Cappuccino")" />
+            <MudSelectItem Value="@("Cafe Latte")" />
+            <MudSelectItem Value="@("Espresso")" />
+            <MudSelectItem Value="@("Irish Coffee")" />
+        </MudSelect>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="6">
+        <MudSelect AdornmentColor="Color.Secondary" T="string" Label="YARIYIL" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
+            <MudSelectItem Value="@("Apple Pie")" />
+            <MudSelectItem Value="@("Blackberry Pie")" />
+            <MudSelectItem Value="@("Rhubarb Pie")" />
+            <MudSelectItem Value="@("Lemon Pie")" />
+        </MudSelect>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="6">
+        <MudSelect AdornmentColor="Color.Secondary" T="string" Label="DÖNEM" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
+            <MudSelectItem Value="@("Apple Pie")" />
+            <MudSelectItem Value="@("Blackberry Pie")" />
+            <MudSelectItem Value="@("Rhubarb Pie")" />
+            <MudSelectItem Value="@("Lemon Pie")" />
+        </MudSelect>
+    </MudItem>
+</MudGrid>
+
+
+
+<MudTabs Outlined="true" Position="Position.Left" Rounded="true" Border="true" ApplyEffectsToContainer="true" Class="mt-8" PanelClass="pa-6">
+    <MudTabPanel Text="Item One">
+        <MudText>Content Two</MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Item Two">
+        <MudText>Content Two</MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Item Three">
+        <MudText>Content Three</MudText>
+    </MudTabPanel>
+</MudTabs>
+
+
+
+
+
+
+
 <div class="uploadWrapper">
     <div class="row aln-middle">
         <div class="uploads col-12">
