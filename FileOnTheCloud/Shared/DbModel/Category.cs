@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FileOnTheCloud.Shared.DbModel
 {
+
+    [DisplayName("Kategori")]
     public class Category
     {
         public int id { get; set; }
@@ -16,6 +19,8 @@ namespace FileOnTheCloud.Shared.DbModel
         public DateTime createdate { get; set; }
         public DateTime deletedate { get; set; }
         public string categorypath { get; set; }
+        public bool isdelete { get; set; }
         public string categoryparentpath { get; set; }
+        public int parentlevel { get; set; }
     }
 }

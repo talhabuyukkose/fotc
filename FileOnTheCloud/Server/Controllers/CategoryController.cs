@@ -1,8 +1,10 @@
 ﻿using Dapper;
+using FileOnTheCloud.Shared.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,49 +16,56 @@ namespace FileOnTheCloud.Server.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        private IConfiguration _config;
-
-        private string connectionstring;
+        private readonly string connectionstring;
 
         private Helper.FileTp tp;
 
-        public CategoryController(IConfiguration config)
+        public CategoryController(IOptions<ConnectionSetting> connectiongsetting, IOptions<FtpSetting> ftpsetting)
         {
-            this._config = config;
+            connectionstring = connectiongsetting.Value.MyDb;
 
-            connectionstring = _config["ConnectionStrings:MyDb"];
-
-            tp = new Helper.FileTp(config);
+            tp = new Helper.FileTp(ftpsetting);
         }
 
         [HttpGet("Get")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.SavedFile>>> Get()
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> Get()
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>("select * from public.category where isdelete=false order by createdate desc");
+                var output = await connection.QueryAsync<Shared.DbModel.Category>("select * from public.category where isdelete=false order by categoryname asc");
 
                 return Ok(output);
             }
         }
 
-        [HttpGet("GetById/{id}")]
-        public async Task<ActionResult<Shared.DbModel.SavedFile>> GetById(int id)
+        [HttpGet("GetByLevel/{level}")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByLevel(int level)
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.category where isdelete=false and id={id}");
+                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentlevel={level} order by categoryname asc");
+
+                return Ok(output);
+            }
+        }
+
+       [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<Shared.DbModel.Category>> GetById(int id)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and id={id}");
 
                 return Ok(output.First());
             }
         }
 
         [HttpGet("GetByDirName/{categoryname}")]
-        public async Task<ActionResult<Shared.DbModel.SavedFile>> GetByEmail(string categoryname)
+        public async Task<ActionResult<Shared.DbModel.Category>> GetByEmail(string categoryname)
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.category where isdelete=false and categoryname='{categoryname}'");
+                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and categoryname='{categoryname}'");
 
                 return Ok(output.First());
             }

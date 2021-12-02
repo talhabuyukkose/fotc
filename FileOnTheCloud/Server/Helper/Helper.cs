@@ -8,11 +8,6 @@ namespace FileOnTheCloud.Server.Helper
 {
     public class Helper
     {
-        public static string GetConnectionString()
-        {
-            return @"Host=localhost;Port=5432;Database=akarecenter;User Id=postgres;Password=t825420;";
-        }
-
         public static string Createhmacsha256(string message)
         {
             string secret = "honeysoft";

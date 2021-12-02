@@ -1,8 +1,10 @@
 ﻿using Dapper;
+using FileOnTheCloud.Shared.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,19 +16,15 @@ namespace FileOnTheCloud.Server.Controllers
     [Route("api/[controller]")]
     public class SavedFileController : ControllerBase
     {
-        private IConfiguration _config;
-
-        private string connectionstring;
+        private readonly string connectionstring;
 
         private Helper.FileTp tp;
 
-        public SavedFileController(IConfiguration config)
+        public SavedFileController(IOptions<ConnectionSetting> connectiongsetting, IOptions<FtpSetting> ftpsetting)
         {
-            this._config = config;
+            connectionstring = connectiongsetting.Value.MyDb;
 
-            connectionstring = _config["ConnectionStrings:MyDb"];
-
-            tp = new Helper.FileTp(config);
+            tp = new Helper.FileTp(ftpsetting);
         }
 
         [HttpGet("Get")]
@@ -34,7 +32,7 @@ namespace FileOnTheCloud.Server.Controllers
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>("select * from public.savedfile where isdelete=false order by createdate desc");
+                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>("select * from public.savedfile where isdelete=false order by createdate desc");
 
                 return Ok(output);
             }
@@ -45,9 +43,20 @@ namespace FileOnTheCloud.Server.Controllers
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.savedfile where isdelete=false and id={id}");
+                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.savedfile where isdelete=false and id={id}");
 
                 return Ok(output.First());
+            }
+        }
+
+        [HttpGet("GetByUser/{email}")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.SavedFile>>> GetByUser(string email)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.GetFileForEmail where emailaddress='{email}'");
+
+                return Ok(output);
             }
         }
 
@@ -56,7 +65,7 @@ namespace FileOnTheCloud.Server.Controllers
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var output = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.savedfile where isdelete=false and filename='{filename}'");
+                var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.savedfile where isdelete=false and filename='{filename}'");
 
                 return Ok(output.First());
             }

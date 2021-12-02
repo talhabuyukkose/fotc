@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using Microsoft.Extensions.Options;
+using FileOnTheCloud.Shared.Model;
 
 namespace FileOnTheCloud.Server.Controllers
 {
@@ -22,11 +24,18 @@ namespace FileOnTheCloud.Server.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private IConfiguration _config;
+        //private IConfiguration _config;
 
-        public AuthController(IConfiguration config)
+        private readonly string connectionstring;
+
+        private readonly JwtSetting jwtSetting;
+        public AuthController(/*IConfiguration config*/IOptions<JwtSetting> jwtsetting,IOptions<ConnectionSetting> connectionsetting)
         {
-            _config = config;
+            //_config = config;
+
+            connectionstring = connectionsetting.Value.MyDb;
+
+            jwtSetting = jwtsetting.Value;
         }
 
         [AllowAnonymous]
@@ -53,14 +62,14 @@ namespace FileOnTheCloud.Server.Controllers
 
         private void userLog(string email, string token)
         {
-            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyDb"]))
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = connection.Execute($"INSERT INTO public.user_log(createdate, token, description) VALUES ( timezone('turkey', now()),'{token}','');");
             }
         }
         private Shared.DbModel.User AuthenticateUser(Login login)
         {
-            using (var connection = new Npgsql.NpgsqlConnection(_config["ConnectionStrings:MyDb"]))
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = connection.Query<Shared.DbModel.User>("select * from public.user where emailaddress=@username and password=@password", login).ToList();
 
@@ -73,7 +82,7 @@ namespace FileOnTheCloud.Server.Controllers
 
         private string GenerateJSONWebToken(Shared.DbModel.User userInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSetting.Key));
 
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -85,7 +94,7 @@ namespace FileOnTheCloud.Server.Controllers
                     new Claim("email",userInfo.emailaddress),
                     new Claim("role",userInfo.role)
                 },
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_config["Jwt:expires"])),
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(jwtSetting.expires)),
                 signingCredentials: credentials);
 
 

@@ -5,17 +5,19 @@ using FluentFTP;
 using System;
 using System.Text;
 using System.Threading;
+using Microsoft.Extensions.Options;
+using FileOnTheCloud.Shared.Model;
 
 namespace FileOnTheCloud.Server.Helper
 {
     public class FileTp
     {
-        private IConfiguration _config;
+        private readonly FtpSetting ftpSetting;
 
         private CancellationToken token;
-        public FileTp(IConfiguration config)
+        public FileTp(IOptions<FtpSetting> _ftpSetting)
         {
-            _config = config;
+            ftpSetting = _ftpSetting.Value;
 
             token = new CancellationToken();
         }
@@ -29,7 +31,7 @@ namespace FileOnTheCloud.Server.Helper
 
             localpath = localpath + "\\" + fileName;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -58,7 +60,7 @@ namespace FileOnTheCloud.Server.Helper
 
             localpath = localpath + "\\" + fileName;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -82,7 +84,7 @@ namespace FileOnTheCloud.Server.Helper
 
             dirname = dirname.StartsWith("/") ? dirname : "/" + dirname;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -108,7 +110,7 @@ namespace FileOnTheCloud.Server.Helper
 
             path = path.StartsWith("/") ? path : "/" + path;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -130,7 +132,7 @@ namespace FileOnTheCloud.Server.Helper
 
             filename = filename.StartsWith("/") ? filename : "/" + filename;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -155,7 +157,7 @@ namespace FileOnTheCloud.Server.Helper
 
             path = path.StartsWith("/") ? path : "/" + path;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -185,7 +187,7 @@ namespace FileOnTheCloud.Server.Helper
 
             path = path.StartsWith("/") ? path : "/" + path;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 
@@ -215,7 +217,7 @@ namespace FileOnTheCloud.Server.Helper
 
             filename = filename.StartsWith("/") ? filename : "/" + filename;
 
-            using (var con = new FtpClient(_config["FTP:Host"], Convert.ToInt32(_config["FTP:Port"]), _config["FTP:User"], _config["FTP:Pass"]))
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
             {
                 await con.ConnectAsync(token);
 

@@ -14,6 +14,7 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Cryptography;
+using Microsoft.Extensions.Options;
 
 namespace FileOnTheCloud.Server.Controllers
 {
@@ -23,15 +24,11 @@ namespace FileOnTheCloud.Server.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private IConfiguration _config;
-
         private string connectionstring;
 
-        public UserController(IConfiguration config)
+        public UserController(IOptions<ConnectionSetting> connectionsetting)
         {
-            this._config = config;
-
-            connectionstring = _config["ConnectionStrings:MyDb"];
+            connectionstring = connectionsetting.Value.MyDb;
         }
 
         [HttpGet("Get")]

@@ -1,9 +1,11 @@
 ﻿using Dapper;
 using FileOnTheCloud.Server.Services;
+using FileOnTheCloud.Shared.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,20 +21,15 @@ namespace FileOnTheCloud.Server.Controllers
     public class NotificationController : ControllerBase
     {
 
-        private IConfiguration _config;
-
         private readonly IMailService _mailService;
 
         private string connectionstring;
 
-        public NotificationController(IConfiguration config, IMailService mailService)
+        public NotificationController(IOptions<ConnectionSetting> connectionsetting, IMailService mailService)
         {
             _mailService = mailService;
 
-            this._config = config;
-
-            connectionstring = _config["ConnectionStrings:MyDb"];
-
+            connectionstring = connectionsetting.Value.MyDb;
         }
 
         [HttpGet("GetByEmail/{email}")]

@@ -1,92 +1,79 @@
 ﻿@page "/note/notes"
 
-<div class="categoryWrapper">
-    <div class="categoryTitle">
-        BÖLÜMLER
-    </div>
-    <div class="row aln-middle">
-        <div class="categories col-8 col-12-mobile">
-            <a href="" class="button col-3 col-6-mobile">ARKEOLOJİ</a>
-            <a href="" class="button col-3 col-6-mobile">ARKEOLOJİ</a>
-            <a href="" class="button col-3 col-6-mobile">ARKEOLOJİ</a>
-            <a href="" class="button col-3 col-6-mobile">ARKEOLOJİ</a>
-            <a href="" class="button col-3 col-6-mobile">TARİH</a>
-            <a href="" class="button col-3 col-6-mobile">TARİH</a>
-            <a href="" class="button col-3 col-6-mobile">TARİH</a>
-            <a href="" class="button col-3 col-6-mobile">TARİH</a>
-            <a href="" class="button col-3 col-6-mobile">TIP</a>
-            <a href="" class="button col-3 col-6-mobile">TIP</a>
-            <a href="" class="button col-3 col-6-mobile">TIP</a>
-            <a href="" class="button col-3 col-6-mobile">TIP</a>
-        </div>
-        <div class="col-4 newCategory col-12-mobile">
-            <a href="" class="button new">BÖLÜM EKLE</a>
-        </div>
-    </div>
-</div>
-<!-- DataTable 1 -->
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
+
+
+<MudTable Class="dataTableWrapper" LoadingProgressColor="Color.Secondary" Items="@savedFiles" Dense="false" Hover="true" Bordered="false" Striped="false" Filter="new Func<FileOnTheCloud.Shared.DbModel.SavedFile,bool>(FilterFuncSavedFile)" @bind-SelectedItem="selectedItemSavedFile">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">DOSYA YÜKLEME GEÇMİŞİ</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchStringSavedFile" Placeholder="Ara" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh><MudTableSortLabel SortBy="new Func<FileOnTheCloud.Shared.DbModel.SavedFile, object>(x=>savedFiles.IndexOf(x))">SIRA</MudTableSortLabel></MudTh>
+        <MudTh>BÖLÜM</MudTh>
+        <MudTh>SINIF</MudTh>
+        <MudTh>DÖNEM</MudTh>
+        <MudTh>KATEGORİ</MudTh>
+        <MudTh>DOSYA İSMİ</MudTh>
+        <MudTh>BOYUT</MudTh>
+        <MudTh>YÜKLENME TARİHİ</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+       @* <MudTd DataLabel="#">
+            <button class="userlistbutton" @onclick="()=>Seen(context)">GÖRÜLDÜ</button>
+            <button class="userlistbutton" @onclick="()=>SendReply(context)">YANITLA</button>
+        </MudTd>*@
+        <MudTd DataLabel="SIRA">@Convert.ToInt32(savedFiles.IndexOf(context) + 1)</MudTd>
+        <MudTd DataLabel="BÖLÜM">@context.department</MudTd>
+        <MudTd DataLabel="SINIF">@context.grade</MudTd>
+        <MudTd DataLabel="DÖNEM">@context.semester</MudTd>
+        <MudTd DataLabel="KATEGORİ">@context.midtermandfinal</MudTd>
+        <MudTd DataLabel="DOSYA İSMİ">@string.Concat(context.filename+"."+context.fileextension)</MudTd>
+        <MudTd DataLabel="BOYUT">@context.filesize</MudTd>
+        <MudTd DataLabel="YÜKLENME TARİHİ">@context.createdate</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager RowsPerPageString="Gösterilen Kayıt" />
+    </PagerContent>
+</MudTable>
+
+
+@*
 <a style="padding-right: 20%;border-bottom: 1px solid #650f52;margin: 12px;">DOSYA YÜKLEME GEÇMİŞİ</a>
 <div class="dataTableWrapper">
     <table id="examplee" class="display default second-data-table" style="width:100%">
         <thead>
             <tr>
-                <th>DOSYA İSMİ</th>
-                <th>BOYUT</th>
+                <th>SIRA</th>
+                <th>BÖLÜM</th>
                 <th>SINIF</th>
                 <th>DÖNEM</th>
                 <th>KATEGORİ</th>
+                <th>DOSYA İSMİ</th>
+                <th>BOYUT</th>
                 <th>YÜKLENME TARİHİ</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-            <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-            </tr>
-            <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-            </tr>
-            <tr>
-                <td>Airi Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>33</td>
-                <td>2008/11/28</td>
-                <td>$162,700</td>
-            </tr>
-            <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                <td>$372,000</td>
-            </tr>
+            @foreach(var item in savedFiles)
+            {
+                 <tr>
+                    <th scope="row">@(savedFiles.IndexOf(item)+1)</th>
+                    <td>@item.department</td>
+                    <td>@item.grade</td>
+                    <td>@item.semester</td>
+                    <td>@item.midtermandfinal</td>
+                    <td>@string.Concat(item.filename+"."+item.fileextension)</td>
+                    <td>@item.filesize</td>
+                    <td>@item.createdate</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
+*@

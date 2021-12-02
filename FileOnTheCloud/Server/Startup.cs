@@ -87,6 +87,13 @@ namespace FileOnTheCloud.Server
             services.AddBlazoredModal();
 
             services.Configure<MailSetting>(Configuration.GetSection("MailSetting"));
+
+            services.Configure<FtpSetting>(Configuration.GetSection("Ftp"));
+
+            services.Configure<ConnectionSetting>(Configuration.GetSection("ConnectionStrings"));
+
+            services.Configure<JwtSetting>(Configuration.GetSection("Jwt"));
+
             services.AddTransient<IMailService, Services.MailService>();
 
 

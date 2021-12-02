@@ -204,15 +204,15 @@
       "mscorlib.dll": "sha256-+dB3Q0YubUPF1oZDMVZn6ZCiRkzRomtLoq51T5FocJk=",
       "netstandard.dll": "sha256-dOHF0zANIyA4WS496iWrAkTuEFWSWrXJjZj2pQQHrMA=",
       "System.Private.CoreLib.dll": "sha256-C96+zv+mWW0XzMG520oRgAG1lHVY8xzWGc6oc6rFjws=",
-      "FileOnTheCloud.Shared.dll": "sha256-BfnBosUuul6eeOiS2pg7KO5TkZ7YG2DZOhYfj67f25I=",
-      "FileOnTheCloud.Client.dll": "sha256-TmXJBmW4B9jWoD6IOaBV95Pvu\/6V\/rRkLKsgJ1abxzE="
+      "FileOnTheCloud.Shared.dll": "sha256-0fp5IeTXSjriRf8\/\/WYm7mKPlOwyCfJ8aYbN3BlwgIQ=",
+      "FileOnTheCloud.Client.dll": "sha256-vVLlwunsUcBfTdmyIwofqczfPOT7edmfBcrO3g71rGo="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FileOnTheCloud.Shared.pdb": "sha256-Pru8oBT+MGN7uhTf7od+IDpemW7XUc66cPKw22Qjh9c=",
-      "FileOnTheCloud.Client.pdb": "sha256-HI7yuZcYhfeREFVh0p44ZFT2yVxztYkzB7t7TFh\/ESI="
+      "FileOnTheCloud.Shared.pdb": "sha256-RHgzYJF4F6TXNsnjaTwqT3U\/hQ\/kNte+f8QMwMDLbUk=",
+      "FileOnTheCloud.Client.pdb": "sha256-s4oJpUkvr2abpLOWDO1TM6crPMy1Flgjh98auhUGOIw="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ir9YCVnnk7popgsYUkvitfGA4WpkP1ydPh\/ENHnxGys=",
