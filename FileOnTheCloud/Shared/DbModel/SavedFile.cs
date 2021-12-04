@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ namespace FileOnTheCloud.Shared.DbModel
     {
         public int id { get; set; }
         public int userid { get; set; }
+        public string useremail { get; set; }
         public string filename { get; set; }
         public string filesize { get; set; }
         public bool isdelete { get; set; }
@@ -25,5 +28,8 @@ namespace FileOnTheCloud.Shared.DbModel
         public DateTime createdate { get; set; }
         public DateTime deletedate { get; set; }
         public string localpath { get; set; }
+        public byte[] filedata { get; set; }
+
+        public IFormFile formFile { get; set; }
     }
 }

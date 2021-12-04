@@ -39,7 +39,7 @@ namespace FileOnTheCloud.Client.Pages.Notification
 
         async Task Seen(FileOnTheCloud.Shared.Model.GetNotification_WithEmail getNotification)
         {
-            var response = await helper.PostTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>(getNotification, "api/notification/seen", "Bildirim görüldü işaretlenemedi", "İşlem Tamamlandı");
+            var response = await helper.PostTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>("api/notification/seen", getNotification, "Bildirim görüldü işaretlenemedi", "İşlem Tamamlandı");
 
             await OnInitializedAsync();
         }

@@ -34,12 +34,12 @@ namespace FileOnTheCloud.Client.Pages.User
             _usermodel.role = "kullanıcı";
 
             var response = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.User>(
-                _usermodel, $"api/user/set"
+                 $"api/user/set", _usermodel
                 , $"{_usermodel.name} {_usermodel.surname} isimli kullanıcı " + (userid == 0 ? "eklenemedi" : "güncellenemedi")
                 , $"{_usermodel.name} {_usermodel.surname} isimli kullanıcı " + (userid == 0 ? "eklendi" : "güncellendi")
                 );
 
-            if(response==System.Net.HttpStatusCode.OK)
+            if (response == System.Net.HttpStatusCode.OK)
             {
                 GotoUserPage();
             }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SSTeoYhLrbx5/8kG0YKs6NCs5NqifhxCNWaGKWugBIJucWcJ2OfZqZH5Arse1wcUK5N0Pjloq2nL1aI5Lmbueg==",
+  "dgSpecHash": "FXSvxfsW56RqhOSy83lf1a8m2kfmSs2hP40oC1g3X6st/nZzy813KmeYZV9MApO6NGerbtLDTPf15gKwniEFvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\FileOnTheCloud.Client.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,11 @@
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\5.0.11\\microsoft.aspnetcore.components.forms.5.0.11.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.11\\microsoft.aspnetcore.components.web.5.0.11.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.11\\microsoft.aspnetcore.components.webassembly.5.0.11.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.12\\microsoft.aspnetcore.http.features.5.0.12.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.11\\microsoft.aspnetcore.metadata.5.0.11.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
@@ -28,6 +31,7 @@
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.14.0\\microsoft.identitymodel.jsonwebtokens.6.14.0.nupkg.sha512",
@@ -35,11 +39,14 @@
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.14.0\\microsoft.identitymodel.tokens.6.14.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.jsinterop\\5.0.11\\microsoft.jsinterop.5.0.11.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.11\\microsoft.jsinterop.webassembly.5.0.11.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\mudblazor\\5.2.0\\mudblazor.5.2.0.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.14.0\\system.identitymodel.tokens.jwt.6.14.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.12\\microsoft.netcore.app.runtime.browser-wasm.5.0.12.nupkg.sha512"
   ],
   "logs": []

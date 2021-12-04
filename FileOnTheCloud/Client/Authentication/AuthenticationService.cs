@@ -32,14 +32,13 @@ namespace FileOnTheCloud.Client.Authentication
 
             HttpResponseMessage httpResponse = await this.client.PostAsJsonAsync("api/Auth/login", loginmodel);
 
-            var httpContent = await httpResponse.Content.ReadAsStringAsync();
-
             if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 return httpResponse;
             }
 
-            var token = System.Text.Json.JsonSerializer.Deserialize<FileOnTheCloud.Shared.Model.Authenticated>(httpContent).token;
+            var authenticated = await httpResponse.Content.ReadFromJsonAsync<FileOnTheCloud.Shared.Model.Authenticated>();
+            var token = authenticated.token;
 
             await this.sessionStorage.SetItemAsync("authToken", token);
 

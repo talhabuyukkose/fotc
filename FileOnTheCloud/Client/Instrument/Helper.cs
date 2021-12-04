@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,7 +102,7 @@ namespace FileOnTheCloud.Client.Instrument
             return System.Net.HttpStatusCode.BadGateway;
         }
 
-        public async Task<System.Net.HttpStatusCode> PostTsAsync<T>(T body, string path,string errormessage,string successmessage)
+        public async Task<System.Net.HttpStatusCode> PostTsAsync<T>(string path, T body, string errormessage, string successmessage)
         {
 
             HttpResponseMessage httpResponse = await _httpclient.PostAsJsonAsync(path, body);
@@ -114,12 +115,32 @@ namespace FileOnTheCloud.Client.Instrument
             }
             else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
             {
-                await modalManager.ShowMessageAsync("Bilgi", errormessage);
+                await modalManager.ShowMessageAsync("Bilgi", errormessage + "   " + httpResponse.Content + "         " + httpResponse.ReasonPhrase);
             }
             else if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 await modalManager.ShowMessageAsync("Bilgi", successmessage);
 
+            }
+
+            return httpResponse.StatusCode;
+
+        }
+
+        public async Task<System.Net.HttpStatusCode> PostFileTsAsync(string path, HttpContent content, string errormessage, string successmessage)
+        {
+
+            HttpResponseMessage httpResponse = await _httpclient.PostAsync(path, content);
+
+            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
+
+                navigation.NavigateTo("/auth/login");
+            }
+            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", errormessage);
             }
 
             return httpResponse.StatusCode;

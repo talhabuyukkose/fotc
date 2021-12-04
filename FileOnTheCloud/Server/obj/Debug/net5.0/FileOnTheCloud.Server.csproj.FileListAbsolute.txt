@@ -160,3 +160,5 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\ref\FileO
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.genruntimeconfig.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FluentFTP.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.xml
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.xml

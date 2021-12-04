@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[5.0.11, )"
             },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[5.2.0, )"

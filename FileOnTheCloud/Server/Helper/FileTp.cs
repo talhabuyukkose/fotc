@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using Microsoft.Extensions.Options;
 using FileOnTheCloud.Shared.Model;
+using System.IO;
 
 namespace FileOnTheCloud.Server.Helper
 {
@@ -49,9 +50,9 @@ namespace FileOnTheCloud.Server.Helper
 
         #endregion
 
-        #region UPLOAD FILE
+        #region UPLOAD FILE,STREAM/BYTE
 
-        public async Task<bool> UploadFile(string localpath, string remotepath, string fileName)
+        public async Task<bool> UploadFilePath(string localpath, string remotepath, string fileName)
         {
 
             remotepath = remotepath.StartsWith("/") ? remotepath : "/" + remotepath;
@@ -69,6 +70,26 @@ namespace FileOnTheCloud.Server.Helper
                 con.Encoding = System.Text.Encoding.GetEncoding(1254);
 
                 FtpStatus ftpStatus = await con.UploadFileAsync(localpath, remotepath, FtpRemoteExists.Overwrite, true, FtpVerify.Retry);
+
+                return ftpStatus == FtpStatus.Success;
+            }
+        }
+        public async Task<bool> UploadFileData(byte[] filedata, string remotepath, string fileName)
+        {
+
+            remotepath = remotepath.StartsWith("/") ? remotepath : "/" + remotepath;
+
+            remotepath = remotepath + "/" + fileName;
+
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
+            {
+                await con.ConnectAsync(token);
+
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+                con.Encoding = System.Text.Encoding.GetEncoding(1254);
+
+                FtpStatus ftpStatus = await con.UploadAsync(filedata, remotepath, FtpRemoteExists.Overwrite, true, null, token);
 
                 return ftpStatus == FtpStatus.Success;
             }
