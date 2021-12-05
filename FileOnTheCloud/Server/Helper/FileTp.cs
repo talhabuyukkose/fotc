@@ -167,7 +167,7 @@ namespace FileOnTheCloud.Server.Helper
                 {
                     await con.DeleteFileAsync(path + filename, token);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -260,6 +260,34 @@ namespace FileOnTheCloud.Server.Helper
                 var Size_MB = Math.Round(fileSize / (double)1048576, 3, MidpointRounding.AwayFromZero); // MB biriminde gösterim için hesaplanır
 
                 return Size_MB;
+            }
+        }
+
+        public async Task<string> GetFile(string path, string filename)
+        {
+            path = path.StartsWith("/") ? path : "/" + path;
+
+            filename = filename.StartsWith("/") ? filename : "/" + filename;
+
+            using (var con = new FtpClient(ftpSetting.Host, ftpSetting.Port, ftpSetting.User, ftpSetting.Pass))
+            {
+                await con.ConnectAsync(token);
+
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+                con.Encoding = System.Text.Encoding.GetEncoding(1254);
+
+                await con.SetWorkingDirectoryAsync(path);
+
+                var filestream = await con.OpenReadAsync(path + filename, token);
+
+                var memorystream = new MemoryStream();
+
+                await filestream.CopyToAsync(memorystream);
+                
+                var buffer = memorystream.GetBuffer();
+
+                return Convert.ToBase64String(buffer);
             }
         }
 

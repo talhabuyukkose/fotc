@@ -34,7 +34,8 @@
                 <MudTd DataLabel="#">
                     <button class="userlistbutton" @onclick="()=>DeleteNote(note)">SİL</button>
 
-                    @*<button class="userlistbutton" @onclick="()=>DownloadNote(note.id)">İNDİR</button>*@
+                    <button class="userlistbutton" @onclick="()=>DownloadNote(note)">İNDİR</button>
+                    <a download=""></a>
                 </MudTd>
             </Authorized>
         </AuthorizeView>

@@ -96,12 +96,9 @@ namespace FileOnTheCloud.Server.Controllers
 
             await savefile.formFile.OpenReadStream().CopyToAsync(ms);
 
-            savefile.filedata = ms.ToArray();
-
-
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                var response = await tp.UploadFileData(savefile.filedata, savefile.filepath, savefile.filename);
+                var response = await tp.UploadFileData(ms.ToArray(), savefile.filepath, savefile.filename);
 
                 if (response)
                 {
@@ -153,6 +150,19 @@ namespace FileOnTheCloud.Server.Controllers
 
                 return Ok(true);
             }
+        }
+
+        [HttpPost("GetFile")]
+        public async Task<ActionResult> GetFile([FromBody] Shared.DbModel.SavedFile savefile)
+        {
+            var response = await tp.GetFile(savefile.filepath, savefile.filename);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
         }
     }
 }

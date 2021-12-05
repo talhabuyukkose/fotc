@@ -52,7 +52,7 @@ namespace FileOnTheCloud.Client.Instrument
             return new List<T>();
         }
 
-        public async Task<T> GetTsAsync<T>(string path)
+        public async Task<T> GetTsAsync<T>(string path )
         {
             var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
@@ -126,7 +126,30 @@ namespace FileOnTheCloud.Client.Instrument
             return httpResponse.StatusCode;
 
         }
+        public async Task<string> PostReturnValueTsAsync<T>(string path, T body, string errormessage, string successmessage)
+        {
 
+            HttpResponseMessage httpResponse = await _httpclient.PostAsJsonAsync(path, body);
+
+            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
+
+                navigation.NavigateTo("/auth/login");
+            }
+            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", errormessage + "   " + httpResponse.Content + "         " + httpResponse.ReasonPhrase);
+            }
+            else if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", successmessage);
+
+            }
+
+            return await httpResponse.Content.ReadAsStringAsync();
+
+        }
         public async Task<System.Net.HttpStatusCode> PostFileTsAsync(string path, HttpContent content, string errormessage, string successmessage)
         {
 

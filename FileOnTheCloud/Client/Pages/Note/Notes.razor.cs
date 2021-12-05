@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace FileOnTheCloud.Client.Pages.Note
 {
@@ -68,7 +69,11 @@ namespace FileOnTheCloud.Client.Pages.Note
 
             if (confirmed)
             {
-                var deleteresponse = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>($"api/savedfile/delete", file, "Silme başarısız. Tekrar deneyiniz !", $"{file.filename} silindi");
+                string errormesage = "Silme başarısız. Tekrar deneyiniz !";
+
+                string succesmessage = $"{file.filename} silindi";
+
+                var deleteresponse = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>($"api/savedfile/delete", file, errormesage, succesmessage);
 
                 if (deleteresponse == System.Net.HttpStatusCode.OK)
                 {
@@ -76,5 +81,19 @@ namespace FileOnTheCloud.Client.Pages.Note
                 }
             }
         }
+
+        protected async Task DownloadNote(FileOnTheCloud.Shared.DbModel.SavedFile file)
+        {
+            string errormesage = "Dosya sunucudan getirilemedi. Lütfen tekrar deneyiniz veya yönetici ile iletişime geçiniz.";
+
+            string succesmessage = "Dosya getirildi";
+
+            var response = await helper.PostReturnValueTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>("api/savedfile/getfile", file, errormesage, succesmessage);
+
+            //await modalManager.ShowMessageAsync("İndir", $"{path}");
+
+        }
+       
     }
 }
+

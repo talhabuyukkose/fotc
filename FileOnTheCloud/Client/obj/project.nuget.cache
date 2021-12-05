@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FXSvxfsW56RqhOSy83lf1a8m2kfmSs2hP40oC1g3X6st/nZzy813KmeYZV9MApO6NGerbtLDTPf15gKwniEFvQ==",
+  "dgSpecHash": "fVHDzQg93v/7hQ4SI1WvkRDRct3CHi1jc/avDuM61V2Y8YRS1eza1MUQvZQOXtQRY+8BI1SycXdpgXc7axJp1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\FileOnTheCloud.Client.csproj",
   "expectedPackageFiles": [
@@ -41,11 +41,13 @@
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.11\\microsoft.jsinterop.webassembly.5.0.11.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\mudblazor\\5.2.0\\mudblazor.5.2.0.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\syroot.windows.io.knownfolders\\1.2.3\\syroot.windows.io.knownfolders.1.2.3.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.14.0\\system.identitymodel.tokens.jwt.6.14.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\talha\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.12\\microsoft.netcore.app.runtime.browser-wasm.5.0.12.nupkg.sha512"
   ],

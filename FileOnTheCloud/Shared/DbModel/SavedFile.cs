@@ -28,8 +28,6 @@ namespace FileOnTheCloud.Shared.DbModel
         public DateTime createdate { get; set; }
         public DateTime deletedate { get; set; }
         public string localpath { get; set; }
-        public byte[] filedata { get; set; }
-
         public IFormFile formFile { get; set; }
     }
 }

@@ -1431,3 +1431,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\mM2efPfH.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Category\Categories.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Category\Categories.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\qyL3mOjg.gz
