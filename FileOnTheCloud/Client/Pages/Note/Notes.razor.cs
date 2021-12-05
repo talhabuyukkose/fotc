@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
+using System.ComponentModel;
 
 namespace FileOnTheCloud.Client.Pages.Note
 {
@@ -12,7 +13,7 @@ namespace FileOnTheCloud.Client.Pages.Note
 
         [CascadingParameter]
         public Task<AuthenticationState> AuthState { get; set; }
-      
+
         private string email;
 
 
@@ -32,6 +33,10 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
 
+                foreach (var item in savedFiles)
+                {
+                    item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 4, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
+                }
             }
         }
 
@@ -47,7 +52,7 @@ namespace FileOnTheCloud.Client.Pages.Note
             if (element.filename.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
                 return true;
             if (element.department.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true; 
+                return true;
             if (element.grade.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
                 return true;
             if (element.semester.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
@@ -55,6 +60,21 @@ namespace FileOnTheCloud.Client.Pages.Note
             if (element.midtermandfinal.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
                 return true;
             return false;
+        }
+
+        protected async Task DeleteNote(FileOnTheCloud.Shared.DbModel.SavedFile file)
+        {
+            bool confirmed = await modalManager.ConfirmationAsync("Onay bekleniyor", $"{file.filename} silinecek. Onaylıyor musunuz ?");
+
+            if (confirmed)
+            {
+                var deleteresponse = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>($"api/savedfile/delete", file, "Silme başarısız. Tekrar deneyiniz !", $"{file.filename} silindi");
+
+                if (deleteresponse == System.Net.HttpStatusCode.OK)
+                {
+                    await OnInitializedAsync();
+                }
+            }
         }
     }
 }

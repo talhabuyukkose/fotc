@@ -1412,8 +1412,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDecl
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Auth\Logout.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Notification\Notifications.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Notification\Notifications.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\EzMuyAmT.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\mM2efPfH.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.Abstractions.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll.gz
@@ -1429,3 +1427,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\LTjqzi4W.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\+JO+UpZ6.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\BLDFD4Gh.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\EzMuyAmT.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\build-gz\mM2efPfH.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Category\Categories.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Debug\net5.0\Razor\Pages\Category\Categories.razor.g.cs

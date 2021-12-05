@@ -51,7 +51,10 @@ namespace FileOnTheCloud.Server.Controllers
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.savedfile where isdelete=false and id={id}");
-
+                foreach (var item in output)
+                {
+                    item.createdate = item.createdate.ToUniversalTime();
+                }
                 return Ok(output.First());
             }
         }
@@ -62,7 +65,10 @@ namespace FileOnTheCloud.Server.Controllers
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.GetFileForEmail where emailaddress='{email}'");
-
+                foreach (var item in output)
+                {
+                    item.createdate = item.createdate.ToUniversalTime();
+                }
                 return Ok(output);
             }
         }
@@ -73,7 +79,10 @@ namespace FileOnTheCloud.Server.Controllers
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = await connection.QueryAsync<Shared.DbModel.SavedFile>($"select * from public.savedfile where isdelete=false and filename='{filename}'");
-
+                foreach (var item in output)
+                {
+                    item.createdate = item.createdate.ToUniversalTime();
+                }
                 return Ok(output.First());
             }
         }
@@ -134,7 +143,7 @@ namespace FileOnTheCloud.Server.Controllers
         [HttpPost("Delete")]
         public async Task<ActionResult> Delete([FromBody] Shared.DbModel.SavedFile savefile)
         {
-            string procedure = $"call deletefile({savefile.id});";
+            string procedure = $"UPDATE public.savedfile SET isdelete=true, deletedate=timezone('turkey',now()) WHERE public.savedfile.id={ savefile.id};";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {

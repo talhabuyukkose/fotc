@@ -1,22 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using FileOnTheCloud.Shared.Model;
-using FileOnTheCloud.Shared.DbModel;
 using Dapper;
 using Npgsql;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
-using FileOnTheCloud.Shared.Model;
 
 namespace FileOnTheCloud.Server.Controllers
 {
@@ -29,7 +22,12 @@ namespace FileOnTheCloud.Server.Controllers
         private readonly string connectionstring;
 
         private readonly JwtSetting jwtSetting;
-        public AuthController(/*IConfiguration config*/IOptions<JwtSetting> jwtsetting,IOptions<ConnectionSetting> connectionsetting)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jwtsetting"></param>
+        /// <param name="connectionsetting"></param>
+        public AuthController(/*IConfiguration config*/IOptions<JwtSetting> jwtsetting, IOptions<ConnectionSetting> connectionsetting)
         {
             //_config = config;
 
@@ -38,6 +36,11 @@ namespace FileOnTheCloud.Server.Controllers
             jwtSetting = jwtsetting.Value;
         }
 
+        /// <summary>
+        /// Login olmak için username ve password verileri girilmelidir.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpPost("Login")]
         public IActionResult Login([FromBody] Login data)

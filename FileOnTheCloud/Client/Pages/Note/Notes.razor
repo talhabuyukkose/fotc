@@ -14,6 +14,11 @@
         <MudTextField @bind-Value="searchStringSavedFile" Placeholder="Ara" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
+        <AuthorizeView Roles="admin">
+            <Authorized>
+                <MudTh>#</MudTh>
+            </Authorized>
+        </AuthorizeView>
         <MudTh><MudTableSortLabel SortBy="new Func<FileOnTheCloud.Shared.DbModel.SavedFile, object>(x=>savedFiles.IndexOf(x))">SIRA</MudTableSortLabel></MudTh>
         <MudTh>BÖLÜM</MudTh>
         <MudTh>SINIF</MudTh>
@@ -23,57 +28,26 @@
         <MudTh>BOYUT</MudTh>
         <MudTh>YÜKLENME TARİHİ</MudTh>
     </HeaderContent>
-    <RowTemplate>
-       @* <MudTd DataLabel="#">
-            <button class="userlistbutton" @onclick="()=>Seen(context)">GÖRÜLDÜ</button>
-            <button class="userlistbutton" @onclick="()=>SendReply(context)">YANITLA</button>
-        </MudTd>*@
-        <MudTd DataLabel="SIRA">@Convert.ToInt32(savedFiles.IndexOf(context) + 1)</MudTd>
-        <MudTd DataLabel="BÖLÜM">@context.department</MudTd>
-        <MudTd DataLabel="SINIF">@context.grade</MudTd>
-        <MudTd DataLabel="DÖNEM">@context.semester</MudTd>
-        <MudTd DataLabel="KATEGORİ">@context.midtermandfinal</MudTd>
-        <MudTd DataLabel="DOSYA İSMİ">@string.Concat(context.filename+"."+context.fileextension)</MudTd>
-        <MudTd DataLabel="BOYUT">@context.filesize</MudTd>
-        <MudTd DataLabel="YÜKLENME TARİHİ">@context.createdate</MudTd>
+    <RowTemplate Context="note">
+        <AuthorizeView Roles="admin">
+            <Authorized>
+                <MudTd DataLabel="#">
+                    <button class="userlistbutton" @onclick="()=>DeleteNote(note)">SİL</button>
+
+                    @*<button class="userlistbutton" @onclick="()=>DownloadNote(note.id)">İNDİR</button>*@
+                </MudTd>
+            </Authorized>
+        </AuthorizeView>
+        <MudTd DataLabel="SIRA">@Convert.ToInt32(savedFiles.IndexOf(note) + 1)</MudTd>
+        <MudTd DataLabel="BÖLÜM">@note.department</MudTd>
+        <MudTd DataLabel="SINIF">@note.grade</MudTd>
+        <MudTd DataLabel="DÖNEM">@note.semester</MudTd>
+        <MudTd DataLabel="KATEGORİ">@note.midtermandfinal</MudTd>
+        <MudTd DataLabel="DOSYA İSMİ">@note.filename</MudTd>
+        <MudTd DataLabel="BOYUT">@note.filesize MB</MudTd>
+        <MudTd DataLabel="YÜKLENME TARİHİ">@note.createdate</MudTd>
     </RowTemplate>
     <PagerContent>
         <MudTablePager RowsPerPageString="Gösterilen Kayıt" />
     </PagerContent>
 </MudTable>
-
-
-@*
-<a style="padding-right: 20%;border-bottom: 1px solid #650f52;margin: 12px;">DOSYA YÜKLEME GEÇMİŞİ</a>
-<div class="dataTableWrapper">
-    <table id="examplee" class="display default second-data-table" style="width:100%">
-        <thead>
-            <tr>
-                <th>SIRA</th>
-                <th>BÖLÜM</th>
-                <th>SINIF</th>
-                <th>DÖNEM</th>
-                <th>KATEGORİ</th>
-                <th>DOSYA İSMİ</th>
-                <th>BOYUT</th>
-                <th>YÜKLENME TARİHİ</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach(var item in savedFiles)
-            {
-                 <tr>
-                    <th scope="row">@(savedFiles.IndexOf(item)+1)</th>
-                    <td>@item.department</td>
-                    <td>@item.grade</td>
-                    <td>@item.semester</td>
-                    <td>@item.midtermandfinal</td>
-                    <td>@string.Concat(item.filename+"."+item.fileextension)</td>
-                    <td>@item.filesize</td>
-                    <td>@item.createdate</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-*@

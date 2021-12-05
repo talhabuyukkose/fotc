@@ -39,7 +39,7 @@ namespace FileOnTheCloud.Server.Controllers
         }
 
         [HttpGet("GetByLevel/{level}")]
-        public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByLevel(int level)
+        internal async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByLevel(int level)
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
@@ -74,7 +74,7 @@ namespace FileOnTheCloud.Server.Controllers
         [HttpPost("Set")]
         public async Task<ActionResult> Set([FromBody] Shared.DbModel.Category category)
         {
-            string procedure = $"call addcategory(@userid,@parentid,@categoryname, @categoryparentname, @categorypath,@categoryparentpath);";
+            string procedure = $"call addcategory(@useremail,@parentid,@categoryname, @categoryparentname, @categorypath,@categoryparentpath);";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {

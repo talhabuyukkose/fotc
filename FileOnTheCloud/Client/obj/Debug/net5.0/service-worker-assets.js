@@ -17,7 +17,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-KzUo10H0VAmhAm\/pt7M+\/y1TGziahIaKT9Djp5TvXzg=",
+      "hash": "sha256-DplNUpsyEJVFPQaBjOggsnmPoh7\/rxUHWFZNYD8kRaY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -857,19 +857,19 @@
       "url": "_framework\/dotnet.5.0.12.js"
     },
     {
-      "hash": "sha256-KxvRjLPYjVKiGpj55poeZ3b9ZdH8z5r8r8x6ajBIuM8=",
+      "hash": "sha256-peJ4oxuwP8Bsf2rXWqpKUfVtjeJs1sn7qA5p339eUug=",
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-ID0lR7d17ghBmpnZshZ0YdVlFaEmhEf0lINY\/G76te8=",
+      "hash": "sha256-NvLpusWuOJPBONzJv1lULlHPKZat94DCJqk70GRbdyk=",
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-osQxiQECKV02fcwrBnDHrgnMbmQsm2pQ2ExNyEnLxIk=",
+      "hash": "sha256-UVQzGsVh8yogWmgtfvybU4AF3SLGephr3G7z6GlLcTY=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-Q2uZT3Eo+T4eYBEKi0l1fDDkAsefrtrzLPu5QLNMGi8=",
+      "hash": "sha256-FySGAMB\/EOlaLMl1GNIeXEwEwjOUSpTk4eSWO44m1Uk=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -1713,7 +1713,7 @@
       "url": "_framework\/dotnet.5.0.12.js.gz"
     },
     {
-      "hash": "sha256-ZDWTxdrLuH0uOQNOk6nEjnkmqDyiP7K\/Ric2z53eU6s=",
+      "hash": "sha256-7R2N88K2zKX1ejABtywldtyUD3wra3xQ9U7dfA4N0LM=",
       "url": "_framework\/FileOnTheCloud.Shared.dll.gz"
     },
     {
@@ -1889,5 +1889,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "0hfMC\/Nl"
+  "version": "Yc6uf7zh"
 };

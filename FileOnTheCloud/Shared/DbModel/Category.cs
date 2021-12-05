@@ -13,6 +13,7 @@ namespace FileOnTheCloud.Shared.DbModel
     {
         public int id { get; set; }
         public int userid { get; set; }
+        public string useremail { get; set; }
         public int parentid { get; set; }
         public string categoryname { get; set; }
         public string categoryparentname { get; set; }

@@ -18,13 +18,19 @@ namespace FileOnTheCloud.Server.Controllers
     [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
+   
+    
     public class NotificationController : ControllerBase
     {
 
         private readonly IMailService _mailService;
 
         private string connectionstring;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connectionsetting"></param>
+        /// <param name="mailService"></param>
         public NotificationController(IOptions<ConnectionSetting> connectionsetting, IMailService mailService)
         {
             _mailService = mailService;
@@ -32,6 +38,11 @@ namespace FileOnTheCloud.Server.Controllers
             connectionstring = connectionsetting.Value.MyDb;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         [HttpGet("GetByEmail/{email}")]
         public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> GetByEmail(string email)
         {
@@ -44,7 +55,11 @@ namespace FileOnTheCloud.Server.Controllers
                 return Ok(output);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="notification"></param>
+        /// <returns></returns>
         [HttpPost("Seen")]
         public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Seen([FromBody] Shared.Model.GetNotification_WithEmail notification)
         {
@@ -57,7 +72,11 @@ namespace FileOnTheCloud.Server.Controllers
                 return Ok(output);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <returns></returns>
         [HttpPost("Send")]
         public async Task<ActionResult<IEnumerable<Shared.DbModel.Notification>>> Send([FromBody] Shared.Model.MailRequest mail)
         {

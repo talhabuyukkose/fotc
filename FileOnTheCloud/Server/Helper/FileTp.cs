@@ -163,7 +163,14 @@ namespace FileOnTheCloud.Server.Helper
 
                 await con.SetWorkingDirectoryAsync(path, token);
 
-                await con.DeleteFileAsync(path + filename, token);
+                try
+                {
+                    await con.DeleteFileAsync(path + filename, token);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
 
         }

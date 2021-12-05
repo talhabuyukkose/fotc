@@ -17,10 +17,19 @@
   <assembly fullname="Microsoft.AspNetCore.Components">
     <type fullname="*" required="false" preserve="all" />
   </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
   <assembly fullname="Microsoft.AspNetCore.Http.Features">
     <type fullname="*" required="false" preserve="all" />
   </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
   <assembly fullname="Microsoft.AspNetCore.Metadata">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.WebUtilities">
     <type fullname="*" required="false" preserve="all" />
   </assembly>
 </linker>
