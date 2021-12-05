@@ -103,7 +103,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\FileOnT
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\FileOnTheCloud.Server.Views.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Blazored.Modal.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Blazored.SessionStorage.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Blazored.Toast.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Dapper.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Microsoft.AspNetCore.Authorization.dll
@@ -160,3 +159,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\FileOnT
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\ref\FileOnTheCloud.Server.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\FileOnTheCloud.Server.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\FileOnTheCloud.Server.genruntimeconfig.cache
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\FileOnTheCloud.Server.xml
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\FluentFTP.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Release\net5.0\Syroot.KnownFolders.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\FileOnTheCloud.Server.xml

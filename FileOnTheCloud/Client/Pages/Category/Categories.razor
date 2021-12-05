@@ -1,20 +1,25 @@
 ﻿@page "/category/categories"
 
-<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
-    <MudTabPanel Text="BÖLÜMLER">
-       <FileOnTheCloud.Client.Pages.Note.Notes></FileOnTheCloud.Client.Pages.Note.Notes>
-    </MudTabPanel>
-    <MudTabPanel Text="SINIF">
-        <MudText>Content Two</MudText>
-    </MudTabPanel>
-    <MudTabPanel Text="YARIYIL">
-       <FileOnTheCloud.Client.Pages.Note.Notes></FileOnTheCloud.Client.Pages.Note.Notes>
-    </MudTabPanel>
-    <MudTabPanel Text="DÖNEM">
-        <MudText>Content Disabled</MudText>
-    </MudTabPanel>
-</MudTabs>
 
-@code {
-
-}
+<MudItem xs="12" md="3">
+    <MudText Typo="Typo.h6" GutterBottom="true">BÖLÜMLER</MudText>
+    <MudPaper Width="100%">
+        <MudList  SelectedItemChanged="Change1" Clickable="true">
+            @foreach (var item in category1)
+            {
+                <MudListItem Text="@item.categoryname" />
+            }
+        </MudList>
+    </MudPaper>
+</MudItem>
+<MudItem xs="12" md="3">
+    <MudText Typo="Typo.h6" GutterBottom="true">SINIF</MudText>
+    <MudPaper Width="100%">
+        <MudList Clickable="true">
+            @foreach (var item in category1)
+            {
+                <MudListItem Text="@item.categoryname" />
+            }
+        </MudList>
+    </MudPaper>
+</MudItem>

@@ -9,15 +9,17 @@
     "assembly": {
       "Blazored.Modal.dll": "sha256-yoXX75RsqCVb+q2v0ZS7Hd6lW+OeSPHHPyJBk\/AyYMg=",
       "Blazored.SessionStorage.dll": "sha256-XkZNIC6OGMeHZDbBGnhfc9yXdLIvGa8LlKDd4ZPWkS8=",
-      "Blazored.Toast.dll": "sha256-6cGnZ9WDP6hzM+ZRdvG+94hYjOke+bTjbJ5Xyawsp0M=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-ktaWu1p6pD2yy7T\/20KVYU7oihmpYm3jrPw4QHb7J+k=",
       "Microsoft.AspNetCore.Components.dll": "sha256-alrtyx++CQU1VO\/6akeZFBPsYgrGGm+Z5ax9\/kaPM3k=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-hSnqbPyjGte1HezAKhUEQ7nToMTfVzY1MwL7WlthxwA=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-tr1KtXqIVmQYhG+jn6wsF6Jx7IlPblELW1fqJ5EY2XM=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-ep2UIBFG2zNXHGp7GY9eWSZYOfsff\/RghOOq4kbyK1k=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-xpgWBaazyklL3eELo190s8Jv3JT19PW9aM\/99xTYv\/0=",
+      "Microsoft.AspNetCore.Http.dll": "sha256-hPQqZqNv4jJZKyK0Vt7HQPiQDvx33+rmWfKIvJO18\/I=",
+      "Microsoft.AspNetCore.Http.Abstractions.dll": "sha256-qFKmKNr9iAZiZxOVvLJBfMhkKfDy1GvY81fHh1hiphU=",
       "Microsoft.AspNetCore.Http.Features.dll": "sha256-sjt8mDhNEZvh7YQCe2CNSQkvI3olE5bjpaoCN\/nZGGQ=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-dz1QY4sEbXr3Ei0PsRO3VB4ZTBTRL6t3xgcgXuKFhFo=",
+      "Microsoft.AspNetCore.WebUtilities.dll": "sha256-D5akJeBd7NNITuzAXxlX7zl2jfsc4uTKyeEKwwNhqoo=",
       "Microsoft.Extensions.Configuration.dll": "sha256-x9zYR1t1is\/fStNpBiQnXyPdMpLLcQcra3w4RXGSg4o=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-NYecKM0ZpUvzj4spvgi6xUu80rkx8PX7fiRok\/BNaHw=",
       "Microsoft.Extensions.Configuration.Binder.dll": "sha256-JFLIykah3r5WjvztBuVIaMM9wfVswDM+On6k\/QVgeeg=",
@@ -30,6 +32,7 @@
       "Microsoft.Extensions.FileSystemGlobbing.dll": "sha256-xrpMDo35bgwz\/m\/kwUvL9SAOxyEgSSwO57RiuhILHgI=",
       "Microsoft.Extensions.Logging.dll": "sha256-VlsKv5zXgdK0MrYHXr9XlUCXwuwNI7AUI\/C1PEFXcz4=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-9UNtwDMFW86VtnTtJFk9xcc1hCnXFGXccFv3SkbgYy0=",
+      "Microsoft.Extensions.ObjectPool.dll": "sha256-UCVqOmu+z9\/M5Wahsgr7zKRWdGQWNvXGWLlEa1gkFuw=",
       "Microsoft.Extensions.Options.dll": "sha256-YfK6Zl0RmlJUqBJD7Khy7u4HEW2DRne0VSiqA6Yqs0U=",
       "Microsoft.Extensions.Primitives.dll": "sha256-XNHVw5siarTMMQ009PdQgD7MrQ0iqnJ92cJOWSSE1vs=",
       "Microsoft.IdentityModel.JsonWebTokens.dll": "sha256-\/x0VAe7VdVnCHSnbhNygMvHLv\/g8uaYNmVJCCKZEzdY=",
@@ -37,7 +40,9 @@
       "Microsoft.IdentityModel.Tokens.dll": "sha256-pod7fvK6cVCGeQuN2sKCsPwBgHj9OCBRg6\/FhAOzb8Q=",
       "Microsoft.JSInterop.dll": "sha256-2U21ELz08tKryAM9mMlyuFaZZyvZAS03M1ZyL\/T\/YyA=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-yqSzPJFI4ilEEeghuXNKtT9syg7UPckEK7mF53UyxM4=",
+      "Microsoft.Net.Http.Headers.dll": "sha256-P66ftDrXwc6ayND8uYzIk0CPQy1GjNZAPHx9RMhi3V4=",
       "MudBlazor.dll": "sha256-x9BmKPbuHDJmwWsSIgWLryYOZWQQI8ccdr7xyg85JFI=",
+      "Syroot.KnownFolders.dll": "sha256-+5IEoi7CVdpx5UL5+G27W6s4puguSQSpRwNJeQSAeFE=",
       "System.IdentityModel.Tokens.Jwt.dll": "sha256-uAEqth8VyArQ0Sr\/xfbRTeHe1FPOw\/GRj1fiEjck+oI=",
       "System.IO.Pipelines.dll": "sha256-3ET+mpR7F058YRj9YaLHOVXBqOW6iUxtIpeiKPYw4PA=",
       "Microsoft.CSharp.dll": "sha256-7lPdvYmKNuvJJ5P\/jsxQikc2dmeGUVI9WaasePSuNFQ=",
@@ -205,15 +210,15 @@
       "mscorlib.dll": "sha256-+dB3Q0YubUPF1oZDMVZn6ZCiRkzRomtLoq51T5FocJk=",
       "netstandard.dll": "sha256-dOHF0zANIyA4WS496iWrAkTuEFWSWrXJjZj2pQQHrMA=",
       "System.Private.CoreLib.dll": "sha256-C96+zv+mWW0XzMG520oRgAG1lHVY8xzWGc6oc6rFjws=",
-      "FileOnTheCloud.Shared.dll": "sha256-8\/pxSgvaaIwgnGKlULvPL6OhMfHLb\/ub06PgnhQFaCA=",
-      "FileOnTheCloud.Client.dll": "sha256-V6kGHg0XcU56mbMhsgIwKhadFM2QrM+8tHmsywFakiA="
+      "FileOnTheCloud.Shared.dll": "sha256-STOjTkygLPKlpeI0Hhp7Bc2+iXLG1CzhxJ7a6vWFY8c=",
+      "FileOnTheCloud.Client.dll": "sha256-C907hUuljpBssc30AzzFt\/pgL4KljSK751wthka21Do="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FileOnTheCloud.Shared.pdb": "sha256-oxnbRTuXBVKEPmkmuhpjdlVQPiXfY5YB7peUVU9AwhA=",
-      "FileOnTheCloud.Client.pdb": "sha256-fTev3Lou7i5LJ31qHWT7Zhhpl61Ze7w3r40EJsrCddY="
+      "FileOnTheCloud.Shared.pdb": "sha256-3L1Q1RpmBd7kwb9w5R+Zde1SD0cR2fsRItWKc01DjjM=",
+      "FileOnTheCloud.Client.pdb": "sha256-a97g5M5WL7DBSjwOBajr6Zf\/e1E1kpGMIJchM2l0FAU="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ir9YCVnnk7popgsYUkvitfGA4WpkP1ydPh\/ENHnxGys=",

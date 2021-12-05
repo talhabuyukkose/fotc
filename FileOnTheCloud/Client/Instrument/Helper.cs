@@ -143,7 +143,7 @@ namespace FileOnTheCloud.Client.Instrument
             }
             else if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                await modalManager.ShowMessageAsync("Bilgi", successmessage);
+                //await modalManager.ShowMessageAsync("Bilgi", successmessage);
 
             }
 

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileOnTheCloud.Server</name>
+    </assembly>
+    <members>
+        <member name="M:FileOnTheCloud.Server.Controllers.AuthController.#ctor(Microsoft.Extensions.Options.IOptions{FileOnTheCloud.Shared.Model.JwtSetting},Microsoft.Extensions.Options.IOptions{FileOnTheCloud.Shared.Model.ConnectionSetting})">
+            <summary>
+            
+            </summary>
+            <param name="jwtsetting"></param>
+            <param name="connectionsetting"></param>
+        </member>
+        <member name="M:FileOnTheCloud.Server.Controllers.AuthController.Login(FileOnTheCloud.Shared.Model.Login)">
+            <summary>
+            Login olmak için username ve password verileri girilmelidir.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileOnTheCloud.Server.Controllers.NotificationController.#ctor(Microsoft.Extensions.Options.IOptions{FileOnTheCloud.Shared.Model.ConnectionSetting},FileOnTheCloud.Server.Services.IMailService)">
+            <summary>
+            
+            </summary>
+            <param name="connectionsetting"></param>
+            <param name="mailService"></param>
+        </member>
+        <member name="M:FileOnTheCloud.Server.Controllers.NotificationController.GetByEmail(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileOnTheCloud.Server.Controllers.NotificationController.Seen(FileOnTheCloud.Shared.Model.GetNotification_WithEmail)">
+            <summary>
+            
+            </summary>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileOnTheCloud.Server.Controllers.NotificationController.Send(FileOnTheCloud.Shared.Model.MailRequest)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

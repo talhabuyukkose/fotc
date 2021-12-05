@@ -1,5 +1,8 @@
 ﻿@page "/note/notes"
 
+
+@inject ISnackbar Snackbar
+
 <AuthorizeView>
     <NotAuthorized>
         <LoginRouting />
@@ -9,7 +12,7 @@
 
 <MudTable Class="dataTableWrapper" LoadingProgressColor="Color.Secondary" Items="@savedFiles" Dense="false" Hover="true" Bordered="false" Striped="false" Filter="new Func<FileOnTheCloud.Shared.DbModel.SavedFile,bool>(FilterFuncSavedFile)" @bind-SelectedItem="selectedItemSavedFile">
     <ToolBarContent>
-        <MudText Typo="Typo.h6">DOSYA YÜKLEME GEÇMİŞİ</MudText>
+        <MudText Typo="Typo.body1">DOSYA YÜKLEME GEÇMİŞİ</MudText>
         <MudSpacer />
         <MudTextField @bind-Value="searchStringSavedFile" Placeholder="Ara" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
@@ -35,7 +38,6 @@
                     <button class="userlistbutton" @onclick="()=>DeleteNote(note)">SİL</button>
 
                     <button class="userlistbutton" @onclick="()=>DownloadNote(note)">İNDİR</button>
-                    <a download=""></a>
                 </MudTd>
             </Authorized>
         </AuthorizeView>

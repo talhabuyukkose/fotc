@@ -102,7 +102,7 @@ namespace FileOnTheCloud.Server.Controllers
 
                 if (response)
                 {
-                    string procedure = $"call addfile(@useremail,@filename,@filesize, @filepath, @fileextension,@department,@grade,@semester,@midtermandfinal);";
+                    string procedure = $"call addfile(@useremail,@filename,@filesize, @filepath, @fileextension,@department,@grade,@semester,@midtermandfinal,@contenttype);";
 
                     var output = await connection.ExecuteAsync(procedure, savefile);
 
@@ -119,7 +119,7 @@ namespace FileOnTheCloud.Server.Controllers
         public async Task<ActionResult> SetFilePath([FromBody] Shared.DbModel.SavedFile savefile)
         {
 
-            string procedure = $"call addfile(@useremail,@filename,@filesize, @filepath, @fileextension,@department,@grade,@semester,@midtermandfinal);";
+            string procedure = $"call addfile(@useremail,@filename,@filesize, @filepath, @fileextension,@department,@grade,@semester,@midtermandfinal,@contenttype);";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {

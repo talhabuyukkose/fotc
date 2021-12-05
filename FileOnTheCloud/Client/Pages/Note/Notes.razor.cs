@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components.Authorization;
 using System;
-using System.ComponentModel;
-using System.Runtime.InteropServices;
+using Microsoft.JSInterop;
+using MudBlazor;
 
 namespace FileOnTheCloud.Client.Pages.Note
 {
@@ -84,13 +84,20 @@ namespace FileOnTheCloud.Client.Pages.Note
 
         protected async Task DownloadNote(FileOnTheCloud.Shared.DbModel.SavedFile file)
         {
+            Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
+
+            Snackbar.Add($"{file.filename} indiriliyor...", Severity.Info);
+
             string errormesage = "Dosya sunucudan getirilemedi. Lütfen tekrar deneyiniz veya yönetici ile iletişime geçiniz.";
 
             string succesmessage = "Dosya getirildi";
 
             var response = await helper.PostReturnValueTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>("api/savedfile/getfile", file, errormesage, succesmessage);
 
-            //await modalManager.ShowMessageAsync("İndir", $"{path}");
+
+            await JsRuntime.InvokeVoidAsync("downloadFile", file.contenttype, response, file.filename);
+
+            Snackbar.Add($"{file.filename} indirildi !", Severity.Success);
 
         }
        

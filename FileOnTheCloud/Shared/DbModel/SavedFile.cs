@@ -29,5 +29,6 @@ namespace FileOnTheCloud.Shared.DbModel
         public DateTime deletedate { get; set; }
         public string localpath { get; set; }
         public IFormFile formFile { get; set; }
+        public string contenttype { get; set; }
     }
 }

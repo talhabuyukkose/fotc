@@ -17,7 +17,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-G33AnpK037hkElu8fqm1NaR\/ueg0OylXJ77hCcfH\/tk=",
+      "hash": "sha256-ol8HFieZCZoZRvIChbMYY9s5UPUT+sXUiKoMM2ykZY8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -861,19 +861,19 @@
       "url": "_framework\/dotnet.5.0.12.js"
     },
     {
-      "hash": "sha256-th35lmK5C7Y50lFgn5sL\/50lTYome\/f+1\/FRIuNmM9I=",
+      "hash": "sha256-27LdMRqrF3U0VSlVQfqJhR\/BMTEYnz7K\/Y6jyfn3+Fw=",
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-gH9PV2fy\/1kk77YrY7NC3RrzTg6oN98Ij0DEWLOgF8c=",
+      "hash": "sha256-ofYKDbsy1hN3yx0vs4ejs1zMJmYTa6hqHzhZhPshMqk=",
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-wZPE7jBnBHGcOjDxr7up5PCZOguw68LPDhV6cMFuzso=",
+      "hash": "sha256-V10CCrhxlnCMYhRasNHEA6S\/6QM8uGqq1UasV8\/qC\/I=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-MrT4QT97jS17zNpydsdZhEgaS17WwTI+wgSwz8tuOQc=",
+      "hash": "sha256-E0SK\/caP5uajJE31B8\/Yuga6uxnjbIhvQCh2jIWge24=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -1721,7 +1721,7 @@
       "url": "_framework\/dotnet.5.0.12.js.gz"
     },
     {
-      "hash": "sha256-Kadan6brRvtOsCacx1Hxtx6S7jGEqavG6UCQhiIzXjs=",
+      "hash": "sha256-EakgHrD8nTp+gTZATeNOT3wYi0edh\/jtlI3Z5RqVLRc=",
       "url": "_framework\/FileOnTheCloud.Shared.dll.gz"
     },
     {
@@ -1805,7 +1805,7 @@
       "url": "assets\/js\/dataTables.editor.min.js"
     },
     {
-      "hash": "sha256-qTqXWcBRGX5Rpc2+spjGl4JwZIYCrK4OUJI13HG\/MvI=",
+      "hash": "sha256-IuBMKX2HEjCocWtiAkXXb+x5gG3Gof1RwuF8TUK0izo=",
       "url": "assets\/js\/download.js"
     },
     {
@@ -1893,7 +1893,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-siXFd3oKXqrTEVRqey8jHuLv+vauwFuYy9cSKSEVxho=",
+      "hash": "sha256-eSQ\/19oyA25fa+j6FSKOFATEZD0RN7\/4iuzEVlv5JAU=",
       "url": "index.html"
     },
     {
@@ -1901,5 +1901,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "wbNT2t9H"
+  "version": "Tm42FBzT"
 };

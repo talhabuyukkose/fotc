@@ -70,11 +70,28 @@ namespace FileOnTheCloud.Client.Pages.Note
             files = e.GetMultipleFiles();
             fileNames = files.Select(f => f.Name).ToList();
         }
-        async void Upload()
+
+        private bool _processing = false;
+
+        async Task Upload()
+        {
+            _processing = true;
+
+            await UploadFiles();
+
+            _processing = false;
+        }
+
+        async Task UploadFiles()
         {
 
             foreach (var item in files)
             {
+
+                Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
+
+                Snackbar.Add($"{item.Name} yükleniyor...", Severity.Info);
+
                 FileOnTheCloud.Shared.DbModel.SavedFile savingfile = new();
 
                 savingfile.filename = item.Name;
@@ -86,6 +103,7 @@ namespace FileOnTheCloud.Client.Pages.Note
                 savingfile.midtermandfinal = selectedcategory.categoryname;
                 savingfile.filepath = selectedcategory.categorypath + "/" + selectedcategory.categoryname;
                 savingfile.fileextension = item.Name.Split('.').Last();
+                savingfile.contenttype = item.ContentType;
 
 
                 var formUrlEncodedContent = new[]
@@ -98,7 +116,8 @@ namespace FileOnTheCloud.Client.Pages.Note
                     new KeyValuePair<string,string>("semester",savingfile.semester),
                     new KeyValuePair<string,string>("midtermandfinal",savingfile.midtermandfinal),
                     new KeyValuePair<string,string>("filepath",savingfile.filepath),
-                    new KeyValuePair<string,string>("fileextension",savingfile.fileextension)
+                    new KeyValuePair<string,string>("fileextension",savingfile.fileextension),
+                    new KeyValuePair<string,string>("contenttype",savingfile.contenttype)
                 };
 
 
@@ -122,9 +141,7 @@ namespace FileOnTheCloud.Client.Pages.Note
                 {
                     fileNames.Remove(savingfile.filename);
 
-                    Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
-
-                    Snackbar.Add($"{savingfile.filename} Yüklendi", Severity.Normal);
+                    Snackbar.Add($"{savingfile.filename} Yüklendi !", Severity.Success);
 
 
                 }

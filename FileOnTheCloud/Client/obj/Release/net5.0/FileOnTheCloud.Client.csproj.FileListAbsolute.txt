@@ -712,7 +712,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.Modal.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.SessionStorage.dll.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.Toast.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
@@ -918,7 +917,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\FileOnTheCloud.Shared.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.Modal.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.SessionStorage.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Blazored.Toast.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
@@ -1197,7 +1195,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\S
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\rAPArF2B.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\+crAdDam.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\WuFTUAeq.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\Bsm+GWC1.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\4s+zx+2w.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\qTUEDsPA.gz
@@ -1411,3 +1408,23 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\ref\Fil
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\serviceworkers\wwwroot\service-worker.js
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\service-worker-assets.js
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.Abstractions.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Extensions.ObjectPool.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Extensions.ObjectPool.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Category\Categories.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Category\Categories.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\+IiPo+EO.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\DAPihbcD.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\LTjqzi4W.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\+JO+UpZ6.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\BLDFD4Gh.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\qyL3mOjg.gz

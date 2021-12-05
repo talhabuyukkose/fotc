@@ -99,11 +99,13 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnThe
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\ref\FileOnTheCloud.Server.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.pdb
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.Views.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.Views.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Blazored.Modal.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Blazored.SessionStorage.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Dapper.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FluentFTP.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Components.dll
@@ -129,6 +131,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Npgsql.dl
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Syroot.KnownFolders.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Client.dll
@@ -157,9 +160,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnThe
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.csproj.CopyComplete
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\ref\FileOnTheCloud.Server.dll
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.genruntimeconfig.cache
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FluentFTP.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\FileOnTheCloud.Server.xml
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.xml
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\Syroot.KnownFolders.dll
