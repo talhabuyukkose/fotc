@@ -10,7 +10,7 @@
 </AuthorizeView>
 
 
-<MudTable Class="dataTableWrapper" LoadingProgressColor="Color.Secondary" Items="@savedFiles" Dense="false" Hover="true" Bordered="false" Striped="false" Filter="new Func<FileOnTheCloud.Shared.DbModel.SavedFile,bool>(FilterFuncSavedFile)" @bind-SelectedItem="selectedItemSavedFile">
+<MudTable cli Class="dataTableWrapper" LoadingProgressColor="Color.Secondary" Items="@savedFiles"  Hover="true" Filter="new Func<FileOnTheCloud.Shared.DbModel.SavedFile,bool>(FilterFuncSavedFile)" @bind-SelectedItem="selectedItemSavedFile">
     <ToolBarContent>
         <MudText Typo="Typo.body1">DOSYA YÜKLEME GEÇMİŞİ</MudText>
         <MudSpacer />

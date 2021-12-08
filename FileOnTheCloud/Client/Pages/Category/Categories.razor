@@ -1,25 +1,109 @@
-﻿@page "/category/categories"
+﻿@using Microsoft.AspNetCore.Authorization
 
 
-<MudItem xs="12" md="3">
+@page "/category/categories"
+@page "/category/categories/{parentid:int}"
+
+
+@inject ISnackbar Snackbar
+
+
+@attribute [Authorize(Roles = "admin")]
+
+
+<MudTable Items="@category" T="FileOnTheCloud.Shared.DbModel.Category" Hover="true" Dense="true" ReadOnly="!editOn" CanCancelEdit="true"
+          CommitEditTooltip="Kaydet" CancelEditTooltip="İptal" OnCommitEditClick="@(() => Snackbar.Add("Düzenlendi !"))" RowEditCommit="rowEditCommit">
+
+    <ToolBarContent>
+        <MudIconButton Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory(title)" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
+        <MudText Typo="Typo.body1">@title</MudText>
+    </ToolBarContent>
+
+    <HeaderContent>
+        <MudTh></MudTh>
+        <MudTh>Sıra</MudTh>
+        <MudTh>Kategori Adı</MudTh>
+        <MudTh>Yüklenme Tarihi</MudTh>
+    </HeaderContent>
+
+    <RowTemplate>
+        <MudTd DataLabel="#">
+            @if (context.parentlevel < 4)
+            {
+                <MudIconButton Title="Alt kategorileri getirmek için tıklayınız..." OnClick="()=>GetSubCategory(context)" Icon="@Icons.Filled.DriveFileMoveOutline" Color="Color.Secondary" Size="Size.Small" />
+                <MudIconButton Title="Alt kategori eklemek için tıklayınız..." OnClick="()=>AddSubCategory(context)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Small" />
+            }
+        </MudTd>
+        <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
+        <MudTd DataLabel="Kategori Adı">@context.categoryname</MudTd>
+        <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
+    </RowTemplate>
+
+    <RowEditingTemplate>
+        <MudTd DataLabel="#"></MudTd>
+        <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
+        <MudTd DataLabel="Kategori Adı">
+            <MudTextField @bind-Value="@context.categoryname" Required />
+        </MudTd>
+        <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
+    </RowEditingTemplate>
+
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+<MudSwitch @bind-Checked="@editOn" Color="Color.Primary">Düzenle</MudSwitch>
+ <MudIconButton Title="Bölüm eklemek için tıklayınız..." OnClick="()=>AddCategory(title)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Medium" />
+<br />
+<br />
+
+@if (addSubCategoryOn)
+{
+
+    <MudGrid>
+        <MudItem xs="12" sm="8" md="8">
+            <MudTextField @bind-Value="_addcategoryname" Label="Alt kategori" Variant="Variant.Text"></MudTextField>
+        </MudItem>
+        <MudItem xs="12" sm="4" md="4">
+            <MudButton OnClick="()=>_AddSubCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>
+        </MudItem>
+    </MudGrid>
+
+}
+@if (addCategoryOn)
+{
+     <MudGrid>
+        <MudItem xs="12" sm="8" md="8">
+            <MudTextField @bind-Value="_addcategoryname" Label="Bölüm" Variant="Variant.Text"></MudTextField>
+        </MudItem>
+        <MudItem xs="12" sm="4" md="4">
+            <MudButton OnClick="()=>_AddCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>
+        </MudItem>
+    </MudGrid>
+
+}
+
+@*
+    <MudItem xs="12" md="3">
     <MudText Typo="Typo.h6" GutterBottom="true">BÖLÜMLER</MudText>
     <MudPaper Width="100%">
-        <MudList  SelectedItemChanged="Change1" Clickable="true">
-            @foreach (var item in category1)
-            {
-                <MudListItem Text="@item.categoryname" />
-            }
-        </MudList>
+    <MudList  SelectedItemChanged="Change1" Clickable="true">
+    @foreach (var item in category1)
+    {
+    <MudListItem Text="@item.categoryname" />
+    }
+    </MudList>
     </MudPaper>
-</MudItem>
-<MudItem xs="12" md="3">
+    </MudItem>
+    <MudItem xs="12" md="3">
     <MudText Typo="Typo.h6" GutterBottom="true">SINIF</MudText>
     <MudPaper Width="100%">
-        <MudList Clickable="true">
-            @foreach (var item in category1)
-            {
-                <MudListItem Text="@item.categoryname" />
-            }
-        </MudList>
+    <MudList Clickable="true">
+    @foreach (var item in category1)
+    {
+    <MudListItem Text="@item.categoryname" />
+    }
+    </MudList>
     </MudPaper>
-</MudItem>
+    </MudItem>
+*@

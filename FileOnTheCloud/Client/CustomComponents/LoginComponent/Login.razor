@@ -1,17 +1,26 @@
 ﻿
+
+
 <div class="wrapper">
     <div class="container">
         <div class="row aln-center">
             <section class="col-6 col-12-mobile loginPanel">
                 <div class="col-12 loginTitle">DOSYA YÜKLEYİCİ <b>YETKİLİ</b> GİRİŞ SİSTEMİ</div>
-                <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin" action="" method="post" class="col-12">
-                    <DataAnnotationsValidator />
-                    <input type="text" placeholder="Kullanıcı Adı" @bind-value="loginmodel.username">
-                    <ValidationMessage For="@(()=> loginmodel.username)" />
-                    <input type="password" name="password" placeholder="Şifreniz" @bind-value="loginmodel.password">
-                    <ValidationMessage For="@(()=> loginmodel.password)" />
-                    <button type="submit">GİRİŞ</button>
-                </EditForm>
+                @if (_processing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                }
+                else
+                {
+                    <EditForm Model="loginmodel" OnValidSubmit="ExecuteLogin" action="" method="post" class="col-12">
+                        <DataAnnotationsValidator />
+                        <input type="text" placeholder="Kullanıcı Adı" @bind-value="loginmodel.username">
+                        <ValidationMessage For="@(()=> loginmodel.username)" />
+                        <input type="password" name="password" placeholder="Şifreniz" @bind-value="loginmodel.password">
+                        <ValidationMessage For="@(()=> loginmodel.password)" />
+                        <button type="submit">GİRİŞ</button>
+                    </EditForm>
+                }
             </section>
         </div>
     </div>

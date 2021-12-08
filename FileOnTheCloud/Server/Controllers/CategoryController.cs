@@ -27,6 +27,8 @@ namespace FileOnTheCloud.Server.Controllers
             tp = new Helper.FileTp(ftpsetting);
         }
 
+
+
         [HttpGet("Get")]
         public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> Get()
         {
@@ -38,16 +40,7 @@ namespace FileOnTheCloud.Server.Controllers
             }
         }
 
-        [HttpGet("GetByLevel/{level}")]
-        internal async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByLevel(int level)
-        {
-            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
-            {
-                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentlevel={level} order by categoryname asc");
-
-                return Ok(output);
-            }
-        }
+        
 
        [HttpGet("GetById/{id}")]
         public async Task<ActionResult<Shared.DbModel.Category>> GetById(int id)
@@ -61,7 +54,7 @@ namespace FileOnTheCloud.Server.Controllers
         }
 
         [HttpGet("GetByDirName/{categoryname}")]
-        public async Task<ActionResult<Shared.DbModel.Category>> GetByEmail(string categoryname)
+        public async Task<ActionResult<Shared.DbModel.Category>> GetByDirName(string categoryname)
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
@@ -71,10 +64,32 @@ namespace FileOnTheCloud.Server.Controllers
             }
         }
 
+        [HttpGet("GetByLevel/{level}")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByLevel(int level)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentlevel={level} order by categoryname asc");
+
+                return Ok(output);
+            }
+        }
+
+        [HttpGet("GetByParentId/{id}")]
+        public async Task<ActionResult<IEnumerable<Shared.DbModel.Category>>> GetByParentId(int id)
+        {
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentid={id} order by categoryname asc");
+
+                return Ok(output);
+            }
+        }
+
         [HttpPost("Set")]
         public async Task<ActionResult> Set([FromBody] Shared.DbModel.Category category)
         {
-            string procedure = $"call addcategory(@useremail,@parentid,@categoryname, @categoryparentname, @categorypath,@categoryparentpath);";
+            string procedure = $"call addcategory(@useremail,@parentid,@categoryname, @categoryparentname, @categorypath,@categoryparentpath,@parentlevel);";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {

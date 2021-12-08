@@ -10,8 +10,11 @@ namespace FileOnTheCloud.Client.CustomComponents.LoginComponent
     {
         private FileOnTheCloud.Shared.Model.Login loginmodel = new();
 
+        private bool _processing = false;
+
         private async Task ExecuteLogin()
         {
+            _processing = true;
             try
             {
                 HttpResponseMessage httpResponse = await AuthService.Login(loginmodel);
@@ -20,7 +23,7 @@ namespace FileOnTheCloud.Client.CustomComponents.LoginComponent
 
                 if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    await modalManager.ShowMessageAsync("", "Kullanıcı bilgilerini kontrol edip yeniden deneyiniz !");
+                    await modalManager.ShowMessageAsync("Bilgi", "Kullanıcı bilgilerini kontrol edip yeniden deneyiniz !");
                 }
                 else if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -33,10 +36,11 @@ namespace FileOnTheCloud.Client.CustomComponents.LoginComponent
             }
             catch (Exception ex)
             {
-                await modalManager.ShowMessageAsync("", "Kullanıcı bilgilerini kontrol edip yeniden deneyiniz !");
+                await modalManager.ShowMessageAsync("Bilgi", "Kullanıcı bilgilerini kontrol edip yeniden deneyiniz !");
 
                 Console.WriteLine(ex.Message);
             }
+            _processing = false;
         }
     }
 }

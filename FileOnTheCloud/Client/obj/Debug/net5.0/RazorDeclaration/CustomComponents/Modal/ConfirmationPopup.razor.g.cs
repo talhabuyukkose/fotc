@@ -153,15 +153,15 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\CustomComponents\Modal\ConfirmationPopup.razor"
-       public override async Task SetParametersAsync(ParameterView parameters)
-            {
-                Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
-                YesText = parameters.GetValueOrDefault<string>("YesText") ?? "Evet";
-                CancelText = parameters.GetValueOrDefault<string>("CancelText") ?? "Hayır"; ;
+#line 10 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\CustomComponents\Modal\ConfirmationPopup.razor"
+        public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
+        YesText = parameters.GetValueOrDefault<string>("YesText") ?? "Evet";
+        CancelText = parameters.GetValueOrDefault<string>("CancelText") ?? "Hayır"; ;
 
-                await base.SetParametersAsync(parameters);
-            } 
+        await base.SetParametersAsync(parameters);
+    } 
 
 #line default
 #line hidden

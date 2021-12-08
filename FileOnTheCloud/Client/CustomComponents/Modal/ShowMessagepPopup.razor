@@ -1,26 +1,19 @@
 ﻿@inherits BaseModal
 
+<MudText Typo="Typo.body1">@Message</MudText>
 
-<div class="card-body">
-    <a>@Message</a>
+<div style="text-align: center;padding-top: 5%;">
+    <button class="btn btn-outline-info" @onclick="@ConfirmClicked">@OkText</button>
 </div>
 
-<div class="row justify-content-center">
-    <div class="d-flex">
-        <div class="ml-auto p-2">
-            <button class="btn btn-outline-info" @onclick="@ConfirmClicked">@OkText</button>
-        </div>
-    </div>
-</div>
+@code {
 
-@code{ 
-    
     public async override Task SetParametersAsync(ParameterView parameters)
-            {
-                Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
-                OkText = parameters.GetValueOrDefault<String>("OkText", "OK");
+    {
+        Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
+        OkText = parameters.GetValueOrDefault<String>("OkText", "Tamam");
 
-                await base.SetParametersAsync(parameters);
-            } 
-    
+        await base.SetParametersAsync(parameters);
+    }
+
     }

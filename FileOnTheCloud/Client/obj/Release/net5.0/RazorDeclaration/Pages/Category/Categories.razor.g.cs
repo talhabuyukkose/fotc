@@ -145,7 +145,22 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Pages\Category\Categories.razor"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Pages\Category\Categories.razor"
+           [Authorize(Roles = "admin")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/category/categories")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/category/categories/{parentid:int}")]
     public partial class Categories : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -153,6 +168,7 @@ using MudBlazor;
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHelper helper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IModalManager modalManager { get; set; }

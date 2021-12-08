@@ -1,24 +1,17 @@
 ﻿@inherits BaseModal
 
+<MudText Typo="Typo.body1">@Message</MudText>
 
-<div class="card-body">
-    <a>@Message</a>
+<div style="text-align: center;padding-top: 5%;">
+    <button class="btn btn-outline-secondary" @onclick="@ConfirmClicked">@YesText</button>
+    <button class="btn btn-outline-secondary " @onclick="@CancelClicked">@CancelText</button>
 </div>
 
-<div class="row justify-content-center">
-    <div class="d-flex">
-        <div class="ml-auto p-2">
-            <button class="btn btn-outline-secondary" @onclick="@ConfirmClicked">@YesText</button>
-            <button class="btn btn-outline-secondary " @onclick="@CancelClicked">@CancelText</button>
-        </div>
-    </div>
-</div>
+@code { public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
+        YesText = parameters.GetValueOrDefault<string>("YesText") ?? "Evet";
+        CancelText = parameters.GetValueOrDefault<string>("CancelText") ?? "Hayır"; ;
 
-@code{ public override async Task SetParametersAsync(ParameterView parameters)
-            {
-                Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
-                YesText = parameters.GetValueOrDefault<string>("YesText") ?? "Evet";
-                CancelText = parameters.GetValueOrDefault<string>("CancelText") ?? "Hayır"; ;
-
-                await base.SetParametersAsync(parameters);
-            } }
+        await base.SetParametersAsync(parameters);
+    } }

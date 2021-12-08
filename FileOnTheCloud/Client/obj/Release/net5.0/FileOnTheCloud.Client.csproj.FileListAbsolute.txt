@@ -1144,7 +1144,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDe
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Notification\SendMessage.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Auth\Login.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Auth\Logout.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Note\AddNote.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\Pages\Note\Notes.razor.g.cs
@@ -1179,7 +1178,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\C
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Notification\SendMessage.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Auth\Login.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Auth\Logout.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Counter.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Note\AddNote.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\Pages\Note\Notes.razor.g.cs

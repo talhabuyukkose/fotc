@@ -153,17 +153,17 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\CustomComponents\Modal\ShowMessagepPopup.razor"
+#line 9 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\CustomComponents\Modal\ShowMessagepPopup.razor"
        
-    
-    public async override Task SetParametersAsync(ParameterView parameters)
-            {
-                Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
-                OkText = parameters.GetValueOrDefault<String>("OkText", "OK");
 
-                await base.SetParametersAsync(parameters);
-            } 
-    
+    public async override Task SetParametersAsync(ParameterView parameters)
+    {
+        Message = parameters.GetValueOrDefault<string>("Message") ?? "Mesaj Yok";
+        OkText = parameters.GetValueOrDefault<String>("OkText", "Tamam");
+
+        await base.SetParametersAsync(parameters);
+    }
+
     
 
 #line default
