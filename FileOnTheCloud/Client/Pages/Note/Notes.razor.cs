@@ -17,6 +17,10 @@ namespace FileOnTheCloud.Client.Pages.Note
 
         private string email;
 
+        private string role;
+
+        private string geturl;
+
 
         FileOnTheCloud.Shared.DbModel.User user = new();
 
@@ -28,40 +32,32 @@ namespace FileOnTheCloud.Client.Pages.Note
             {
                 email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
 
-                string role = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
+                role = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
 
-                string geturl = role == "admin" ? "api/savedfile/get" : $"api/savedfile/getbyuser/{email}";
+                geturl = role == "admin" ? "api/savedfile/get" : $"api/savedfile/getbyuser/{email}";
 
-                savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
 
-                foreach (var item in savedFiles)
-                {
-                    item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 4, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
-                }
+                await GetSavedFile(geturl);
+                
             }
         }
+
+        async Task GetSavedFile(string geturl)
+        {
+            savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
+
+            foreach (var item in savedFiles)
+            {
+                item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 3, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
+            }
+        }
+
 
         private FileOnTheCloud.Shared.DbModel.SavedFile selectedItemSavedFile = null;
 
         private string searchStringSavedFile = string.Empty;
         private bool FilterFuncSavedFile(FileOnTheCloud.Shared.DbModel.SavedFile element) => FilterFuncSavedFile(element, searchStringSavedFile);
 
-        private bool FilterFuncSavedFile(FileOnTheCloud.Shared.DbModel.SavedFile element, string searchStringsavedFile)
-        {
-            if (string.IsNullOrWhiteSpace(searchStringsavedFile))
-                return true;
-            if (element.filename.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true;
-            if (element.department.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true;
-            if (element.grade.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true;
-            if (element.semester.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true;
-            if (element.midtermandfinal.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
-                return true;
-            return false;
-        }
 
         protected async Task DeleteNote(FileOnTheCloud.Shared.DbModel.SavedFile file)
         {
@@ -77,7 +73,7 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 if (deleteresponse == System.Net.HttpStatusCode.OK)
                 {
-                    await OnInitializedAsync();
+                    await GetSavedFile(geturl);
                 }
             }
         }
@@ -101,6 +97,22 @@ namespace FileOnTheCloud.Client.Pages.Note
 
         }
        
+        private bool FilterFuncSavedFile(FileOnTheCloud.Shared.DbModel.SavedFile element, string searchStringsavedFile)
+        {
+            if (string.IsNullOrWhiteSpace(searchStringsavedFile))
+                return true;
+            if (element.filename.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.department.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.grade.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.semester.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.midtermandfinal.Contains(searchStringsavedFile, StringComparison.OrdinalIgnoreCase))
+                return true;
+            return false;
+        }
     }
 }
 

@@ -32,16 +32,25 @@ namespace FileOnTheCloud.Client.Pages.Notification
 
             email = securityToken.Claims.Where(w => w.Type == "email").FirstOrDefault().Value;
 
-            notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
+            await GetNotifications();
 
 
         }
 
+        async Task GetNotifications()
+        {
+            notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
+        }
+
         async Task Seen(FileOnTheCloud.Shared.Model.GetNotification_WithEmail getNotification)
         {
-            var response = await helper.PostTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>("api/notification/seen", getNotification, "Bildirim görüldü işaretlenemedi", "İşlem Tamamlandı");
+            string errormessage = "Bildirim görüldü işaretlenemedi";
 
-            await OnInitializedAsync();
+            string successmessage = "İşlem Tamamlandı";
+
+            var response = await helper.PostTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>("api/notification/seen", getNotification, errormessage, successmessage);
+
+            await GetNotifications();
         }
 
         async Task SendReply(FileOnTheCloud.Shared.Model.GetNotification_WithEmail getNotification)
