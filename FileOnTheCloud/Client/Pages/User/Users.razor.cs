@@ -7,12 +7,18 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Net.Http.Json;
-
+using Blazored.Modal;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace FileOnTheCloud.Client.Pages.User
 {
     public partial class Users
     {
+        [CascadingParameter]
+        public Task<AuthenticationState> AuthState { get; set; }
+
+        private string email;
+
         [CascadingParameter]
         IModalService modal { get; set; }
 
@@ -24,8 +30,14 @@ namespace FileOnTheCloud.Client.Pages.User
         protected override async Task OnInitializedAsync()
         {
             //token = await _sessionStorage.GetItemAsync<string>("authToken");
+            var authstate = await AuthState;
 
-            userlist = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.User>("api/user/get");
+            if (authstate.User.Identity.IsAuthenticated)
+            {
+                email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
+
+                userlist = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.User>("api/user/get");
+            }
         }
 
         protected void GotoEditUser(int id)
@@ -46,6 +58,36 @@ namespace FileOnTheCloud.Client.Pages.User
             {
                 await OnInitializedAsync();
             }
+        }
+
+        async Task SendNotification(string toemail)
+        {
+
+            ModalParameters modalParameters = new ModalParameters();
+
+            modalParameters.Add("toemail", toemail);
+            modalParameters.Add("fromemail", email);
+            modalParameters.Add("replyid", 0);
+
+            var response = modal.Show<FileOnTheCloud.Client.CustomComponents.Notification.SendMessage>("Bildirim Gönderimi", modalParameters);
+
+            var result = await response.Result;
+
+            if (!result.Cancelled)
+            {
+                string temp = result.Data?.ToString() ?? string.Empty;
+
+                if (Convert.ToBoolean(temp))
+                {
+                    await modalManager.ShowMessageAsync("Bilgi", $"Mesajınız iletildi.");
+                }
+                else
+                {
+                    await modalManager.ShowMessageAsync("Bilgi", $"Mesajınız iletilirken bir hata oluştu.");
+
+                }
+            }
+
         }
     }
 }

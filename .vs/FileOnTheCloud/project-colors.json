@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c110e965-ed7e-49c3-9c68-5322c91c9c64": {
+      "ProjectGuid": "c110e965-ed7e-49c3-9c68-5322c91c9c64",
+      "DisplayName": "FileOnTheCloud.Server",
+      "ColorIndex": 0
+    },
+    "5b1ac82f-3ef4-4d81-b7ee-354aabb6d1a3": {
+      "ProjectGuid": "5b1ac82f-3ef4-4d81-b7ee-354aabb6d1a3",
+      "DisplayName": "FileOnTheCloud.Client",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "53289daa-83c8-426c-b5dc-b45bff9accb4": {
+      "ProjectGuid": "53289daa-83c8-426c-b5dc-b45bff9accb4",
+      "DisplayName": "FileOnTheCloud.Shared",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

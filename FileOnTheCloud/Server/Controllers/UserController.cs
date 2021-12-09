@@ -49,6 +49,8 @@ namespace FileOnTheCloud.Server.Controllers
             {
                 var output = await connection.QueryAsync<Shared.DbModel.User>($"select * from public.user where isdelete=false and id={id}");
 
+                output.First().password = "";
+
                 return Ok(output.First());
             }
         }
@@ -74,6 +76,10 @@ namespace FileOnTheCloud.Server.Controllers
             if (_user.id == 0)
             {
                 procedure = $"call adduser(@name,@surname,@title, @password, @department,@emailaddress);";
+            }
+            else if (string.IsNullOrEmpty(_user.password))
+            {
+                procedure = "UPDATE public.user SET name=@name, surname=@surname, title=@title, department=@department, emailaddress=@emailaddress, role=@role WHERE id=@id;";
             }
             else
             {

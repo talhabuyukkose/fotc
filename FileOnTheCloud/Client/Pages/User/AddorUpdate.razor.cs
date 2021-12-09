@@ -4,14 +4,26 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Blazored.Modal;
 using Blazored.Modal.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 
 namespace FileOnTheCloud.Client.Pages.User
 {
     public partial class AddorUpdate
     {
+        [CascadingParameter]
+        public Task<AuthenticationState> AuthState { get; set; }
+
+        [CascadingParameter]
+        IModalService modal { get; set; }
+
+        private string email;
+
+        FileOnTheCloud.Shared.Model.MailRequest mail = new FileOnTheCloud.Shared.Model.MailRequest();
+
         [Parameter]
         public int userid { get; set; }
 
@@ -21,11 +33,17 @@ namespace FileOnTheCloud.Client.Pages.User
 
         protected override async Task OnInitializedAsync()
         {
-            if (userid != 0)
-            {
-                pagetitle = "Kullanıcı Düzenle";
+            var authstate = await AuthState;
 
-                _usermodel = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyid/{userid}");
+            if (authstate.User.Identity.IsAuthenticated)
+            {
+                email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
+                if (userid != 0)
+                {
+                    pagetitle = "Kullanıcı Düzenle";
+
+                    _usermodel = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyid/{userid}");
+                }
             }
         }
 
@@ -41,7 +59,45 @@ namespace FileOnTheCloud.Client.Pages.User
 
             if (response == System.Net.HttpStatusCode.OK)
             {
+                if (_usermodel.id == 0)
+                {
+                    await SendNotification(email
+                        , _usermodel.emailaddress
+                        ,$"Merhaba  Sn. {_usermodel.title} {_usermodel.name} {_usermodel.surname}{Environment.NewLine}{Environment.NewLine} https://www.akarecopy.com sistemimizde kullanıcınız oluşturuldu." +
+                        $"{Environment.NewLine}\t Sistemimize hoşgeldiniz." +
+                        $"{Environment.NewLine} Kullanıcı adınız :\"{_usermodel.emailaddress}\"" +
+                        $"{Environment.NewLine} Şifre : {_usermodel.password}" +
+                        $"{Environment.NewLine}{Environment.NewLine} İyi günler diliyoruz.");
+                }
+
                 GotoUserPage();
+            }
+        }
+      
+        async Task SendNotification(string fromemail, string toemail, string body)
+        {
+
+            mail.ToEmail = toemail;
+            mail.FromEmail = fromemail;
+            mail.Subject = "Gönderen :" + fromemail;
+            mail.replyid = 0;
+            mail.Body = body;
+            var httpResponse = await _httpclient.PostAsJsonAsync("api/notification/send", mail);
+
+            if (httpResponse.IsSuccessStatusCode == false)
+            {
+                Console.WriteLine($"Status : {httpResponse.StatusCode} Message : {httpResponse.Content}");
+            }
+
+            var httpContent = await httpResponse.Content.ReadAsStringAsync();
+
+            if (httpResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Mesajınız iletildi.");
+            }
+            else
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Mesajınız iletilirken bir hata oluştu.");
             }
         }
 

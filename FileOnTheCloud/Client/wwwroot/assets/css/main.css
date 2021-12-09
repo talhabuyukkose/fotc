@@ -2125,8 +2125,8 @@ button,
 
 	#header-wrapper {
 		position: relative;
-		padding: 2em 0 3em 0;
-		margin-bottom: 15px;
+		/*padding: 2em 0 3em 0;*/
+		/*margin-bottom: 15px;*/
 	}
 
 	:not(.homepage) > #page-wrapper #header-wrapper {

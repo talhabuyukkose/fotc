@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using FluentFTP;
+using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FileOnTheCloud.Client.Instrument
@@ -18,11 +21,19 @@ namespace FileOnTheCloud.Client.Instrument
 
         private readonly NavigationManager navigation;
 
+        private readonly CancellationToken token;
+
+
+        public IProgress<FtpProgress> progress;
+
         public Helper(IModalManager _modalManager, HttpClient httpClient, NavigationManager navigationManager)
         {
             modalManager = _modalManager;
             _httpclient = httpClient;
             navigation = navigationManager;
+            token = new CancellationToken();
+
+            progress = new Progress<FtpProgress>();
         }
 
 
@@ -52,7 +63,7 @@ namespace FileOnTheCloud.Client.Instrument
             return new List<T>();
         }
 
-        public async Task<T> GetTsAsync<T>(string path )
+        public async Task<T> GetTsAsync<T>(string path)
         {
             var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
@@ -168,5 +179,6 @@ namespace FileOnTheCloud.Client.Instrument
 
             return httpResponse.StatusCode;
         }
+               
     }
 }

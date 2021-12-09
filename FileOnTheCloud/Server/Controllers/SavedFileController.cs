@@ -22,11 +22,15 @@ namespace FileOnTheCloud.Server.Controllers
 
         private Helper.FileTp tp;
 
+        FtpSetting ftpSetting;
+
         public SavedFileController(IOptions<ConnectionSetting> connectiongsetting, IOptions<FtpSetting> ftpsetting)
         {
             connectionstring = connectiongsetting.Value.MyDb;
 
             tp = new Helper.FileTp(ftpsetting);
+
+            ftpSetting = ftpsetting.Value;
         }
 
         [HttpGet("Get")]
@@ -87,10 +91,37 @@ namespace FileOnTheCloud.Server.Controllers
             }
         }
 
-        [RequestSizeLimit(104857600)]
-        [RequestFormLimits(BufferBody = true, MultipartBodyLengthLimit = 104857600)]
+        [RequestSizeLimit(10485760000)]
+        [RequestFormLimits(BufferBody = true, MultipartBodyLengthLimit = 10485760000)]
         [HttpPost("SetFile")]
         public async Task<ActionResult> SetFile([FromForm] Shared.DbModel.SavedFile savefile)
+        {
+            MemoryStream ms = new MemoryStream();
+
+            await savefile.formFile.OpenReadStream().CopyToAsync(ms);
+
+            using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
+            {
+                var response = await tp.UploadFileData(ms.ToArray(), savefile.filepath, savefile.filename);
+
+                if (response)
+                {
+                    string procedure = $"call addfile(@useremail,@filename,@filesize, @filepath, @fileextension,@department,@grade,@semester,@midtermandfinal,@contenttype);";
+
+                    var output = await connection.ExecuteAsync(procedure, savefile);
+
+                    return Ok(true);
+                }
+
+                return BadRequest(response);
+            }
+
+        }
+
+        [RequestSizeLimit(10485760000)]
+        [RequestFormLimits(BufferBody = true, MultipartBodyLengthLimit = 10485760000)]
+        [HttpPost("SetFile2")]
+        public async Task<ActionResult> SetFile2([FromBody] Shared.DbModel.SavedFile savefile)
         {
             MemoryStream ms = new MemoryStream();
 
@@ -164,6 +195,21 @@ namespace FileOnTheCloud.Server.Controllers
 
             return BadRequest(response);
         }
+
+
+        //[HttpPost("DownloadFile")]
+        //public async Task<ActionResult> DownloadFile([FromBody] Shared.DbModel.SavedFile savefile)
+        //{
+        //    var response = await tp.DownloadFile(savefile.localpath, savefile.filepath, savefile.filename);
+
+        //    if (response)
+        //    {
+        //        return Ok(response);
+        //    }
+
+        //    return BadRequest(response);
+        //}
+
     }
 }
 

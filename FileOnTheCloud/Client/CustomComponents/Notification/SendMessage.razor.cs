@@ -30,7 +30,6 @@ namespace FileOnTheCloud.Client.CustomComponents.Notification
         {
             toemail = parameters.GetValueOrDefault<string>("toemail") ?? "";
             fromemail = parameters.GetValueOrDefault<string>("fromemail") ?? "";
-            fromemail = parameters.GetValueOrDefault<string>("fromemail") ?? "";
             replyid = parameters.GetValueOrDefault<int>("replyid");
 
             await base.SetParametersAsync(parameters);

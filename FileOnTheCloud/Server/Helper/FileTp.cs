@@ -16,15 +16,20 @@ namespace FileOnTheCloud.Server.Helper
         private readonly FtpSetting ftpSetting;
 
         private CancellationToken token;
+
+        IProgress<FtpProgress> progress;
+
         public FileTp(IOptions<FtpSetting> _ftpSetting)
         {
             ftpSetting = _ftpSetting.Value;
 
             token = new CancellationToken();
+
+            progress = new Progress<FtpProgress>();
         }
         #region DOWNLOAD FILE
 
-        public async Task<bool> DownloadFile(string localpath, string remotepath, string fileName, string content)
+        public async Task<bool> DownloadFile(string localpath, string remotepath, string fileName)
         {
             remotepath = remotepath.StartsWith("/") ? remotepath : "/" + remotepath;
 
@@ -69,13 +74,14 @@ namespace FileOnTheCloud.Server.Helper
 
                 con.Encoding = System.Text.Encoding.GetEncoding(1254);
 
-                FtpStatus ftpStatus = await con.UploadFileAsync(localpath, remotepath, FtpRemoteExists.Overwrite, true, FtpVerify.Retry);
+                FtpStatus ftpStatus = await con.UploadFileAsync(localpath, remotepath, FtpRemoteExists.Skip, true, FtpVerify.Retry);
 
                 return ftpStatus == FtpStatus.Success;
             }
         }
         public async Task<bool> UploadFileData(byte[] filedata, string remotepath, string fileName)
         {
+            
 
             remotepath = remotepath.StartsWith("/") ? remotepath : "/" + remotepath;
 
@@ -89,7 +95,9 @@ namespace FileOnTheCloud.Server.Helper
 
                 con.Encoding = System.Text.Encoding.GetEncoding(1254);
 
-                FtpStatus ftpStatus = await con.UploadAsync(filedata, remotepath, FtpRemoteExists.Overwrite, true, null, token);
+                FtpStatus ftpStatus = await con.UploadAsync(filedata, remotepath, FtpRemoteExists.Skip, true, progress, token);
+
+                
 
                 return ftpStatus == FtpStatus.Success;
             }

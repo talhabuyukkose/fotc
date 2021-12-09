@@ -47,7 +47,7 @@ namespace FileOnTheCloud.Client.Shared
 
         }
 
-        protected async Task SendMail()
+        protected async Task SendNotification()
         {
             ModalParameters modalParameters = new ModalParameters();
 

@@ -17,7 +17,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-uRDXRfj+p0D1UicGe6cduItSs4ktF\/r77oHmK2UhLAg=",
+      "hash": "sha256-TI3ox82hF6mL7YyxCLezBeqzv8FynpSr4XeAUdiw7jI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -27,6 +27,10 @@
     {
       "hash": "sha256-XkZNIC6OGMeHZDbBGnhfc9yXdLIvGa8LlKDd4ZPWkS8=",
       "url": "_framework\/Blazored.SessionStorage.dll"
+    },
+    {
+      "hash": "sha256-GhCLFeTkvO6m4eM3HytK4wAEP1uzFL1QBtpewbE3NXU=",
+      "url": "_framework\/FluentFTP.dll"
     },
     {
       "hash": "sha256-ktaWu1p6pD2yy7T\/20KVYU7oihmpYm3jrPw4QHb7J+k=",
@@ -159,10 +163,6 @@
     {
       "hash": "sha256-x9BmKPbuHDJmwWsSIgWLryYOZWQQI8ccdr7xyg85JFI=",
       "url": "_framework\/MudBlazor.dll"
-    },
-    {
-      "hash": "sha256-+5IEoi7CVdpx5UL5+G27W6s4puguSQSpRwNJeQSAeFE=",
-      "url": "_framework\/Syroot.KnownFolders.dll"
     },
     {
       "hash": "sha256-uAEqth8VyArQ0Sr\/xfbRTeHe1FPOw\/GRj1fiEjck+oI=",
@@ -861,19 +861,19 @@
       "url": "_framework\/dotnet.5.0.12.js"
     },
     {
-      "hash": "sha256-27LdMRqrF3U0VSlVQfqJhR\/BMTEYnz7K\/Y6jyfn3+Fw=",
+      "hash": "sha256-u4iRZSTqQdUgDesI5uWkAeJyL1nIJR3AbRX9VMdmnpY=",
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-ofYKDbsy1hN3yx0vs4ejs1zMJmYTa6hqHzhZhPshMqk=",
+      "hash": "sha256-mUAqHmt\/uwQeDSYb4iMnQ\/HYRpZAuPzVw2nGx2ANLrk=",
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-u2hu8ejfwx7EcFe2gw5GjmbU+HWu+r1KylaeHr\/F98o=",
+      "hash": "sha256-gm8ORGX\/Abt271A5pUFngQWTYzjbIcfFFsqB8gqY3HI=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-0a9cC7GTlBsu3xfc2StzPlTWo3635M9wv11YGpo9IPM=",
+      "hash": "sha256-witecFfO9W2LWSj4ZlQ6LXClcdk0Dz5XVs9SHke\/wuM=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -887,6 +887,10 @@
     {
       "hash": "sha256-1odtRRSDlcG8aN5pWkP8hlG8mNvtPdfaNiGWfi9PmvA=",
       "url": "_framework\/Blazored.SessionStorage.dll.gz"
+    },
+    {
+      "hash": "sha256-Cbw8aKrtzFfAeY2hDbAR0PokIkBWEjk2hk0Axu+y2Ro=",
+      "url": "_framework\/FluentFTP.dll.gz"
     },
     {
       "hash": "sha256-fb1ni+zQTVhzMWysGRsrVcwdS92cyj7CKxXviWGM004=",
@@ -1019,10 +1023,6 @@
     {
       "hash": "sha256-MCeXSkIUKTrIU3BcMtZ2DuBc8bV4kBSXiwT7PZj0v+8=",
       "url": "_framework\/MudBlazor.dll.gz"
-    },
-    {
-      "hash": "sha256-8paNNi3+qS48iXQshHQm6WkfEpSZgTNm0qJMVLH3q0w=",
-      "url": "_framework\/Syroot.KnownFolders.dll.gz"
     },
     {
       "hash": "sha256-Qvp5n8TPIB\/QNcgDf1\/U3fXTKWCNeO6TP8L+UtLLbOE=",
@@ -1721,7 +1721,7 @@
       "url": "_framework\/dotnet.5.0.12.js.gz"
     },
     {
-      "hash": "sha256-EakgHrD8nTp+gTZATeNOT3wYi0edh\/jtlI3Z5RqVLRc=",
+      "hash": "sha256-g3xHT6h42N64\/4pW3UFiPt28MJVzeYWu3JDYpZTydgE=",
       "url": "_framework\/FileOnTheCloud.Shared.dll.gz"
     },
     {
@@ -1757,7 +1757,7 @@
       "url": "assets\/css\/images\/search.png"
     },
     {
-      "hash": "sha256-T9Fh4mt8slyU\/RVCEqLWqPPtdV4p8PULULOpxUhUTYo=",
+      "hash": "sha256-jhCYO8et0jvm1iYhOW1ENGue76AjUEVw6HNFT9LGHDs=",
       "url": "assets\/css\/main.css"
     },
     {
@@ -1901,5 +1901,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "EvizP\/Mj"
+  "version": "qQn0tIiB"
 };

@@ -71,6 +71,7 @@ namespace FileOnTheCloud.Client.Pages.Note
             fileNames = files.Select(f => f.Name).ToList();
         }
 
+
         private bool _processing = false;
 
         async Task Upload()
@@ -92,19 +93,19 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 Snackbar.Add($"{item.Name} yükleniyor...", Severity.Info);
 
-                FileOnTheCloud.Shared.DbModel.SavedFile savingfile = new();
-
-                savingfile.filename = item.Name;
-                savingfile.filesize = item.Size.ToString();
-                savingfile.useremail = email;
-                savingfile.department = category2.First().categoryparentname;
-                savingfile.grade = category3.First().categoryparentname;
-                savingfile.semester = selectedcategory.categoryparentname;
-                savingfile.midtermandfinal = selectedcategory.categoryname;
-                savingfile.filepath = selectedcategory.categorypath + "/" + selectedcategory.categoryname;
-                savingfile.fileextension = item.Name.Split('.').Last();
-                savingfile.contenttype = item.ContentType;
-
+                var savingfile = new FileOnTheCloud.Shared.DbModel.SavedFile()
+                {
+                    filename = item.Name,
+                    filesize = item.Size.ToString(),
+                    useremail = email,
+                    department = category2.First().categoryparentname,
+                    grade = category3.First().categoryparentname,
+                    semester = selectedcategory.categoryparentname,
+                    midtermandfinal = selectedcategory.categoryname,
+                    filepath = selectedcategory.categorypath + "/" + selectedcategory.categoryname,
+                    fileextension = item.Name.Split('.').Last(),
+                    contenttype = item.ContentType
+                };
 
                 var formUrlEncodedContent = new[]
                 {
@@ -122,7 +123,7 @@ namespace FileOnTheCloud.Client.Pages.Note
 
 
                 MemoryStream ms = new MemoryStream();
-                await item.OpenReadStream(104857600).CopyToAsync(ms);
+                await item.OpenReadStream(1048576000).CopyToAsync(ms);
 
                 var multipartContent = new MultipartFormDataContent();
 
@@ -135,20 +136,21 @@ namespace FileOnTheCloud.Client.Pages.Note
                     multipartContent.Add(new StringContent(pair.Value), $"\"{pair.Key}\"");
                 }
 
-                var response = await helper.PostFileTsAsync("api/savedfile/SetFile", multipartContent, "", "");
+                string errormessage = "Dosya yükleme esnasında bir hata oluştu ! Yönetici ile iletişime geçiniz !";
+                string successmessage = "Dosya yükleme başarılı !";
+
+                var response = await helper.PostFileTsAsync("api/savedfile/SetFile", multipartContent, errormessage, successmessage);
 
                 if (response == System.Net.HttpStatusCode.OK)
                 {
                     fileNames.Remove(savingfile.filename);
 
                     Snackbar.Add($"{savingfile.filename} Yüklendi !", Severity.Success);
-
-
                 }
-
             }
-
         }
+
+
         void Clear()
         {
             fileNames.Clear();

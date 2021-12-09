@@ -33,9 +33,11 @@
                     <td>@item.emailaddress</td>
                     <td>@item.role</td>
                     <td>
-                        <button class="userlistbutton" @onclick="()=>DeleteUser(item.id)">SİL</button>
+                        <button title="Kullanıcıyı silmek için tıklayınız..."class="userlistbutton" @onclick="()=>DeleteUser(item.id)">SİL</button>
 
-                        <button class="userlistbutton" @onclick="()=>GotoEditUser(item.id)">DÜZENLE</button>
+                        <button title="Kullanıcıyı düzenlemek için tıklayınız..." class="userlistbutton" @onclick="()=>GotoEditUser(item.id)">DÜZENLE</button>
+
+                        <button title="Kullanıcıya bildirim göndermek için tıklayınız..." class="userlistbutton" @onclick="()=>SendNotification(item.emailaddress)">GÖNDER</button>
                     </td>
                 </tr>
             }
