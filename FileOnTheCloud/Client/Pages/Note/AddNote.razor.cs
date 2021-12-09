@@ -18,16 +18,19 @@ namespace FileOnTheCloud.Client.Pages.Note
 {
     public partial class AddNote
     {
+        [Parameter]
+        public int parentid { get; set; }
+
         [CascadingParameter]
         public Task<AuthenticationState> AuthState { get; set; }
 
         private string email;
 
+        private string title = "Bölümler";
+
+        private bool showuploadpanelon = false;
+
         List<FileOnTheCloud.Shared.DbModel.Category> category = new();
-        List<FileOnTheCloud.Shared.DbModel.Category> category1 = new();
-        List<FileOnTheCloud.Shared.DbModel.Category> category2 = new();
-        List<FileOnTheCloud.Shared.DbModel.Category> category3 = new();
-        List<FileOnTheCloud.Shared.DbModel.Category> category4 = new();
         FileOnTheCloud.Shared.DbModel.Category selectedcategory = new();
 
 
@@ -38,27 +41,66 @@ namespace FileOnTheCloud.Client.Pages.Note
             if (authstate.User.Identity.IsAuthenticated)
             {
                 email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
-                category = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>("api/category/get");
+            }
 
-                category1 = category.Where(w => w.parentlevel == 1).ToList();
+            await GetList();
+        }
+
+        public async Task GetList()
+        {
+            var temp = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyparentid/{parentid}");
+
+            if (temp.Count == 0)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", "Lütfen alt kategori ekleyeniz !");
+            }
+            else
+            {
+                category = temp;
+            }
+
+            title = $"Bölümler {category.First().categorypath.Replace("/", " > ")} >";
+        }
+
+        async void GetSubCategory(FileOnTheCloud.Shared.DbModel.Category _category)
+        {
+            if (_category.parentlevel < 4)
+            {
+                parentid = _category.id;
+
+                await GetList();
+
+                navigation.NavigateTo($"/note/addnote/{_category.id}");
+            }
+            else if (_category.parentlevel == 4)
+            {
+                showuploadpanelon = true;
+
+                selectedcategory = _category;
             }
         }
-        void Change1(string response)
+
+        async void GetParentCategory()
         {
-            category2 = category.Where(w => w.parentid.ToString() == response).ToList();
+            if (category.First().parentid != 1)
+                showuploadpanelon = false;
+
+            if (category.First().parentlevel > 1)
+            {
+                var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}");
+
+                parentid = response.parentid;
+
+                await GetList();
+
+                navigation.NavigateTo($"/note/addnote/{response.parentid}");
+            }
+
         }
-        void Change2(string response)
-        {
-            category3 = category.Where(w => w.parentid.ToString() == response).ToList();
-        }
-        void Change3(string response)
-        {
-            category4 = category.Where(w => w.parentid.ToString() == response).ToList();
-        }
-        void Change4(string response)
-        {
-            selectedcategory = category.Where(w => w.id.ToString() == response).ToList().First();
-        }
+
+
+
+
 
 
         string _dragEnterStyle;
@@ -98,8 +140,8 @@ namespace FileOnTheCloud.Client.Pages.Note
                     filename = item.Name,
                     filesize = item.Size.ToString(),
                     useremail = email,
-                    department = category2.First().categoryparentname,
-                    grade = category3.First().categoryparentname,
+                    department = selectedcategory.categoryparentpath.Split('/')[1],
+                    grade = selectedcategory.categoryparentpath.Split('/')[2],
                     semester = selectedcategory.categoryparentname,
                     midtermandfinal = selectedcategory.categoryname,
                     filepath = selectedcategory.categorypath + "/" + selectedcategory.categoryname,

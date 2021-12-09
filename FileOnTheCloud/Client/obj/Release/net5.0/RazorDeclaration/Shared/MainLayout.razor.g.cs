@@ -118,28 +118,21 @@ using FileOnTheCloud.Client.CustomComponents.Modal;
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
-using FileOnTheCloud.Client.CustomComponents.Button;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 22 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 21 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using Blazored.Modal;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 22 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using Blazored.Modal.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 25 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 24 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
@@ -153,8 +146,11 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Shared\MainLayout.razor"
-                [CascadingParameter]
+#line 19 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Shared\MainLayout.razor"
+       
+
+
+    [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; }
 
     private string email;
@@ -172,7 +168,9 @@ using MudBlazor;
             roleName = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
         }
 
-    } 
+    }
+
+
 
 #line default
 #line hidden

@@ -43,7 +43,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\MudBlazor.dll.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\System.IO.Pipelines.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.CSharp.dll.gz
@@ -254,7 +253,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\MudBlazor.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Syroot.KnownFolders.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\System.IO.Pipelines.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\wwwroot\_framework\Microsoft.CSharp.dll
@@ -439,14 +437,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnT
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.RazorComponent.input.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\AddNewButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\BaseButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\Button.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\CancelButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\CustomEditButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\DeleteButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\RefreshButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Button\SaveButton.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\LoginComponent\Login.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Modal\BaseModal.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\RazorDeclaration\CustomComponents\Modal\ConfirmationPopup.razor.g.cs
@@ -474,14 +464,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnT
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.TagHelpers.output.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.RazorCoreGenerate.cache
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\App.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\AddNewButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\BaseButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\Button.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\CancelButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\CustomEditButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\DeleteButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\RefreshButton.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Button\SaveButton.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\LoginComponent\Login.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Modal\BaseModal.razor.g.cs
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\Razor\CustomComponents\Modal\ConfirmationPopup.razor.g.cs
@@ -538,7 +520,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-g
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\mOLWot2A.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\BLDFD4Gh.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\LV7S9Ncz.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\qyL3mOjg.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\bbYTx+0A.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\AqGJqxtb.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\build-gz\hG12WMiY.gz
@@ -724,3 +705,4 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\ref\Fil
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\FileOnTheCloud.Client.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\serviceworkers\wwwroot\service-worker.js
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\obj\Release\net5.0\service-worker-assets.js
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\bin\Release\net5.0\libman.json

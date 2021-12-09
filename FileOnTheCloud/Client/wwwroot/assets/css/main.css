@@ -297,6 +297,7 @@ input, select, textarea {
 
 		.row.aln-center {
 			justify-content: center;
+			padding: 3rem;
 		}
 
 		.row.aln-right {
@@ -2096,7 +2097,7 @@ button,
 	.wrapper {
 		position: relative;
 		overflow-x: hidden;
-		padding: 3em 0 6em 0;
+		padding: 0em 0 6em 0;
 	}
 		.wrapper.line-top{
 			border-top:3px solid #650f52;
@@ -2255,7 +2256,7 @@ button,
 /* Main */
 
 	#main {
-		padding-bottom: 4em;
+		padding-bottom: 0em;
 	}
 
 /* Sidebar */

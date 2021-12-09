@@ -22,6 +22,8 @@ namespace FileOnTheCloud.Client.Pages.Category
 
         private bool editOn = false;
 
+        private bool getparentbuttonOn = false;
+
         private bool addSubCategoryOn = false;
 
         private bool addCategoryOn = false;
@@ -78,8 +80,10 @@ namespace FileOnTheCloud.Client.Pages.Category
                 navigation.NavigateTo($"/category/categories/{_category.id}");
             }
         }
-        async void GetParentCategory(string _title)
+        async void GetParentCategory()
         {
+            getparentbuttonOn = true;
+
             if (category.First().parentlevel > 1)
             {
                 var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}");
@@ -88,9 +92,11 @@ namespace FileOnTheCloud.Client.Pages.Category
 
                 await GetList();
 
+                getparentbuttonOn = false;
                 navigation.NavigateTo($"/category/categories/{response.parentid}");
             }
 
+            getparentbuttonOn = false;
         }
 
         void AddSubCategory(FileOnTheCloud.Shared.DbModel.Category _category)
@@ -124,7 +130,7 @@ namespace FileOnTheCloud.Client.Pages.Category
 
             var response = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.Category>("api/category/set", _category, errormessage, successmessage);
 
-            _addcategoryname=String.Empty;
+            _addcategoryname = String.Empty;
 
             addSubCategoryOn = false;
         }

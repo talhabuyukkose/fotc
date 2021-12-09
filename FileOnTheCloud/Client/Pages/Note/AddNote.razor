@@ -1,97 +1,80 @@
-﻿@page "/note/addnote"
+﻿@using Microsoft.AspNetCore.Authorization
+
+@page "/note/addnote"
+@page "/note/addnote/{parentid:int}"
 
 @inject ISnackbar Snackbar
 
-<AuthorizeView>
-    <NotAuthorized>
-        <LoginRouting />
-    </NotAuthorized>
-</AuthorizeView>
 
+@attribute [Authorize(Roles = "admin,kullanıcı")]
+
+
+        <MudIconButton Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Medium" />
+    
+    <MudText Typo="Typo.body1">@title</MudText>
+
+<br />
+<br />
 <MudGrid>
-    <MudItem xs="12" sm="6" md="3">
-        <MudSelect ValueChanged="Change1" AdornmentColor="Color.Secondary" T="string" Label="BÖLÜM" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
-            @foreach (var item in category1)
-            {
-                <MudSelectItem Value="@(item.id.ToString())">@item.categoryname</MudSelectItem>
-            }
-        </MudSelect>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudSelect ValueChanged="Change2" AdornmentColor="Color.Secondary" T="string" Label="SINIF" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
-            @foreach (var item in category2)
-            {
-                <MudSelectItem Value="@(item.id.ToString())">@item.categoryname</MudSelectItem>
-            }
-        </MudSelect>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudSelect ValueChanged="Change3" AdornmentColor="Color.Secondary" T="string" Label="YARIYIL" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
-            @foreach (var item in category3)
-            {
-                <MudSelectItem Value="@(item.id.ToString())">@item.categoryname</MudSelectItem>
-            }
-        </MudSelect>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudSelect ValueChanged="Change4" AdornmentColor="Color.Secondary" T="string" Label="DÖNEM" Variant="Variant.Text" AnchorOrigin="Origin.BottomCenter">
-            @foreach (var item in category4)
-            {
-                <MudSelectItem Value="@(item.id.ToString())">@item.categoryname</MudSelectItem>
-            }
-        </MudSelect>
-    </MudItem>
+    @foreach (var item in category)
+    {
+        <button class="button col-3 col-6-mobile" @onclick="()=>GetSubCategory(item)">@item.categoryname</button>
+    }
 </MudGrid>
 <br />
 <br />
 
+@if (showuploadpanelon)
+{
 
-<MudPaper @ondragenter="@(()=>_dragEnterStyle="drag-enter")"
+
+    <MudPaper @ondragenter="@(()=>_dragEnterStyle="drag-enter")"
           @ondragleave="@(()=>_dragEnterStyle=null)"
           @ondragend="@(()=>_dragEnterStyle=null)"
           Class=@("drag-drop-zone "+ _dragEnterStyle)>
 
-    <InputFile OnChange="OnInputFileChanged" webkitRelativePath multiple class="drag-drop-input" />
+        <InputFile OnChange="OnInputFileChanged" webkitRelativePath multiple class="drag-drop-input" />
 
-    @if (fileNames.Count() == 0)
-    {
-        <MudText Typo="Typo.h4">Dosya Yükle / Sürükle Bırak</MudText>
-    }
-    else
-    {
-        <MudList Style="padding:2em;width:100%;" Dense="true">
-            @foreach (var file in fileNames)
-            {
-                <MudListItem @key="@file">
-                    <MudChip Color="Color.Dark"
-                     Style="width:60px; overflow:hidden;"
-                     Text="@(file.Split(".").Last())" />
-                    @file
-                </MudListItem>
-            }
-        </MudList>
-    }
-</MudPaper>
-<br />
-<br />
-<MudGrid Justify="Justify.Center" Spacing="4">
-    <MudItem>
-        <MudButton OnClick="Upload" Disabled="@(!(fileNames.Any() && selectedcategory.categoryname != null))" Color="Color.Primary" Variant="Variant.Filled">
-        @if (_processing)
+        @if (fileNames.Count() == 0)
         {
-            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
-            <MudText Class="ms-2">Yükleniyor</MudText>
+            <MudText Typo="Typo.h4">Dosya Yükle / Sürükle Bırak</MudText>
         }
         else
         {
-            <MudText>Yükle</MudText>
+            <MudList Style="padding:2em;width:100%;" Dense="true">
+                @foreach (var file in fileNames)
+                {
+                    <MudListItem @key="@file">
+                        <MudChip Color="Color.Dark"
+                     Style="width:60px; overflow:hidden;"
+                     Text="@(file.Split(".").Last())" />
+                        @file
+                    </MudListItem>
+                }
+            </MudList>
         }
-        </MudButton>
-    </MudItem>
-    <MudItem>
-        <MudButton OnClick="Clear" Disabled="@(!fileNames.Any())" Color="Color.Error" Variant="Variant.Filled">Temizle</MudButton>
-    </MudItem>
-</MudGrid>
+    </MudPaper>
+    <br />
+    <br />
+    <MudGrid Justify="Justify.Center" Spacing="4">
+        <MudItem>
+            <MudButton OnClick="Upload" Disabled="@(!(fileNames.Any()))" Color="Color.Primary" Variant="Variant.Filled">
+                @if (_processing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">Yükleniyor</MudText>
+                }
+                else
+                {
+                    <MudText>Yükle</MudText>
+                }
+            </MudButton>
+        </MudItem>
+        <MudItem>
+            <MudButton OnClick="Clear" Disabled="@(!fileNames.Any())" Color="Color.Error" Variant="Variant.Filled">Temizle</MudButton>
+        </MudItem>
+    </MudGrid>
+}
 
 <style>
     .drag-drop-zone {
@@ -123,39 +106,3 @@
         min-width: 100%;
     }
 </style>
-
-
-
-
-
-
-
-
-
-
-@*
-    <div class="uploadWrapper">
-    <div class="row aln-middle">
-    <div class="uploads col-12">
-    <div id="drag-and-drop-zone" class="dm-uploader">
-    <div class="btn btn-primary new button btn-block mb-5">
-    <span>Dosya Seç</span>
-    <input type="file" title='Dosya Seç' />
-    </div>
-    <h3 class="mb-5 mt-5 text-muted">Dosya Yükle / Sürükle Bırak</h3>
-    </div>
-    <div class="col-12">
-    <div class="card">
-    <div class="card-header">
-    Yükledikleriniz:
-    </div>
-
-    <ul class="list-unstyled" id="files">
-    <li class="text-muted text-center empty">Henü dosya eklemediniz.</li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-*@

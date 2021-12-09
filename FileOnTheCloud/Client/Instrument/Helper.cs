@@ -1,5 +1,4 @@
-﻿using FluentFTP;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using System;
 using System.Collections.Generic;
@@ -21,19 +20,11 @@ namespace FileOnTheCloud.Client.Instrument
 
         private readonly NavigationManager navigation;
 
-        private readonly CancellationToken token;
-
-
-        public IProgress<FtpProgress> progress;
-
         public Helper(IModalManager _modalManager, HttpClient httpClient, NavigationManager navigationManager)
         {
             modalManager = _modalManager;
             _httpclient = httpClient;
             navigation = navigationManager;
-            token = new CancellationToken();
-
-            progress = new Progress<FtpProgress>();
         }
 
 

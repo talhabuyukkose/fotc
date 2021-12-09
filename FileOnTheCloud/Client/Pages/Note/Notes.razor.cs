@@ -36,22 +36,15 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 geturl = role == "admin" ? "api/savedfile/get" : $"api/savedfile/getbyuser/{email}";
 
+                savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
 
-                await GetSavedFile(geturl);
-                
+                foreach (var item in savedFiles)
+                {
+                    item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 3, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
+                }
+
             }
         }
-
-        async Task GetSavedFile(string geturl)
-        {
-            savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
-
-            foreach (var item in savedFiles)
-            {
-                item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 3, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
-            }
-        }
-
 
         private FileOnTheCloud.Shared.DbModel.SavedFile selectedItemSavedFile = null;
 
@@ -73,7 +66,7 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 if (deleteresponse == System.Net.HttpStatusCode.OK)
                 {
-                    await GetSavedFile(geturl);
+                    savedFiles.Remove(file);
                 }
             }
         }
@@ -96,7 +89,7 @@ namespace FileOnTheCloud.Client.Pages.Note
             Snackbar.Add($"{file.filename} indirildi !", Severity.Success);
 
         }
-       
+
         private bool FilterFuncSavedFile(FileOnTheCloud.Shared.DbModel.SavedFile element, string searchStringsavedFile)
         {
             if (string.IsNullOrWhiteSpace(searchStringsavedFile))

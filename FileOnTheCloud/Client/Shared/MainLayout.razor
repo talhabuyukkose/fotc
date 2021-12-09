@@ -13,29 +13,13 @@
             </div>
         </div>
     </div>
-    <Footer/>
+    <Footer />
 </div>
-        @* <div class="sidebar" style="background-image: linear-gradient(180deg, rgb(24 75 154) 0%, #464242 70%) !important;z-index: 3;">
-    <NavMenu />
-    </div>
 
-    <div class="main">
-    <div class="top-row px-4">
-    <AuthorizeView>
-    <Authorized>
-    <a href="logout" class="ml-md-auto text-dark">@email / @roleName</a>
-    </Authorized>
-    </AuthorizeView>
-    </div>
-
-    <div class="content px-4">
-    @Body
-    </div>
-    </div>
-    </div>*@
+@code {
 
 
-        @code { [CascadingParameter]
+    [CascadingParameter]
     public Task<AuthenticationState> AuthState { get; set; }
 
     private string email;
@@ -53,4 +37,7 @@
             roleName = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
         }
 
-    } }
+    }
+
+
+}

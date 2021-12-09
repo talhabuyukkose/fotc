@@ -17,7 +17,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-3a5H1jQtfkSHoO7E27pRXT7MqO4lsLPNYvVlKdU6J88=",
+      "hash": "sha256-q3r9LA1\/6ryElWM7HNB6pn6YmaeIUHucrf1XISW92Hc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -159,10 +159,6 @@
     {
       "hash": "sha256-x9BmKPbuHDJmwWsSIgWLryYOZWQQI8ccdr7xyg85JFI=",
       "url": "_framework\/MudBlazor.dll"
-    },
-    {
-      "hash": "sha256-+5IEoi7CVdpx5UL5+G27W6s4puguSQSpRwNJeQSAeFE=",
-      "url": "_framework\/Syroot.KnownFolders.dll"
     },
     {
       "hash": "sha256-uAEqth8VyArQ0Sr\/xfbRTeHe1FPOw\/GRj1fiEjck+oI=",
@@ -861,19 +857,19 @@
       "url": "_framework\/dotnet.5.0.12.js"
     },
     {
-      "hash": "sha256-STOjTkygLPKlpeI0Hhp7Bc2+iXLG1CzhxJ7a6vWFY8c=",
+      "hash": "sha256-PFADIN1PQMea3xmvW4Fs7KxxX7HS\/\/QKIfB1EL0Kd5c=",
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-3L1Q1RpmBd7kwb9w5R+Zde1SD0cR2fsRItWKc01DjjM=",
+      "hash": "sha256-C3N5txpKji9hm0bTODHl1vv7gs9fro57Or1hi+JGXtU=",
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-Ui607t19tmoADKe0z9PCC97mYphDi3qvehTKNFtYfqo=",
+      "hash": "sha256-jRI1k\/LhZm+elXlDh5kB2ME0qcRxRIpyc20FjWpEtqE=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-RQcNzaAg\/fVy+U31RXVg7egxb4NFPrZB9dKSWPjS5W8=",
+      "hash": "sha256-sctvRHDy7RHez+lxehXe35b8CXuCMCVvqjfM0IePYzs=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -1019,10 +1015,6 @@
     {
       "hash": "sha256-MCeXSkIUKTrIU3BcMtZ2DuBc8bV4kBSXiwT7PZj0v+8=",
       "url": "_framework\/MudBlazor.dll.gz"
-    },
-    {
-      "hash": "sha256-8paNNi3+qS48iXQshHQm6WkfEpSZgTNm0qJMVLH3q0w=",
-      "url": "_framework\/Syroot.KnownFolders.dll.gz"
     },
     {
       "hash": "sha256-Qvp5n8TPIB\/QNcgDf1\/U3fXTKWCNeO6TP8L+UtLLbOE=",
@@ -1721,7 +1713,7 @@
       "url": "_framework\/dotnet.5.0.12.js.gz"
     },
     {
-      "hash": "sha256-1qevl5H8MSyB5nnv9\/fFoGvKCE9TRcN8Zh1TtBLYf1g=",
+      "hash": "sha256-su11NYxcwxFyXtX7CqyHndzGPs+9hM2H6FezUvZiCKQ=",
       "url": "_framework\/FileOnTheCloud.Shared.dll.gz"
     },
     {
@@ -1757,7 +1749,7 @@
       "url": "assets\/css\/images\/search.png"
     },
     {
-      "hash": "sha256-T9Fh4mt8slyU\/RVCEqLWqPPtdV4p8PULULOpxUhUTYo=",
+      "hash": "sha256-9KMZiGn8j8Y9sdzI3H6PO+geZkWOF611qe9OUUm+Noo=",
       "url": "assets\/css\/main.css"
     },
     {
@@ -1901,5 +1893,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "rCEXLOZj"
+  "version": "+Zk20l9R"
 };

@@ -1,4 +1,5 @@
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\FileOnTheCloud.Server.exe
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\libman.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.wasm
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\icudt.dat
@@ -32,7 +33,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\MudBlazor.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Syroot.KnownFolders.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IO.Pipelines.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\FileOnTheCloud.Shared.dll
@@ -83,7 +83,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Encoding.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Primitives.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Principal.Windows.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Encodings.Web.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Json.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.RegularExpressions.dll
@@ -142,6 +141,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\icon-512.png.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\index.html.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\manifest.json.br
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\libman.json.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.wasm.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\icudt.dat.br
@@ -179,7 +179,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\MudBlazor.dll.br
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Syroot.KnownFolders.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IO.Pipelines.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\FileOnTheCloud.Shared.dll.br
@@ -230,7 +229,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Encoding.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Primitives.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll.br
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Principal.Windows.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Encodings.Web.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Json.dll.br
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.RegularExpressions.dll.br
@@ -288,6 +286,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\icon-512.png.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\index.html.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\manifest.json.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\libman.json.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\dotnet.wasm.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\icudt.dat.gz
@@ -325,7 +324,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\MudBlazor.dll.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\Syroot.KnownFolders.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.IO.Pipelines.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\FileOnTheCloud.Shared.dll.gz
@@ -376,7 +374,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Encoding.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.Primitives.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll.gz
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Security.Principal.Windows.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Encodings.Web.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.Json.dll.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\System.Text.RegularExpressions.dll.gz
@@ -390,6 +387,7 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\service-worker.js.gz
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\wwwroot\service-worker-assets.js.gz
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\libman.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\appsettings.json
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\BlazorDebugProxy\BrowserDebugHost.dll
@@ -434,7 +432,6 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\Syroot.KnownFolders.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\System.IO.Pipelines.dll
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Release\net5.0\PubTmp\Out\FileOnTheCloud.Client.dll

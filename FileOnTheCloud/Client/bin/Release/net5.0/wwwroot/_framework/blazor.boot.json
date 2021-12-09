@@ -42,7 +42,6 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-yqSzPJFI4ilEEeghuXNKtT9syg7UPckEK7mF53UyxM4=",
       "Microsoft.Net.Http.Headers.dll": "sha256-P66ftDrXwc6ayND8uYzIk0CPQy1GjNZAPHx9RMhi3V4=",
       "MudBlazor.dll": "sha256-x9BmKPbuHDJmwWsSIgWLryYOZWQQI8ccdr7xyg85JFI=",
-      "Syroot.KnownFolders.dll": "sha256-+5IEoi7CVdpx5UL5+G27W6s4puguSQSpRwNJeQSAeFE=",
       "System.IdentityModel.Tokens.Jwt.dll": "sha256-uAEqth8VyArQ0Sr\/xfbRTeHe1FPOw\/GRj1fiEjck+oI=",
       "System.IO.Pipelines.dll": "sha256-3ET+mpR7F058YRj9YaLHOVXBqOW6iUxtIpeiKPYw4PA=",
       "Microsoft.CSharp.dll": "sha256-7lPdvYmKNuvJJ5P\/jsxQikc2dmeGUVI9WaasePSuNFQ=",
@@ -210,15 +209,15 @@
       "mscorlib.dll": "sha256-+dB3Q0YubUPF1oZDMVZn6ZCiRkzRomtLoq51T5FocJk=",
       "netstandard.dll": "sha256-dOHF0zANIyA4WS496iWrAkTuEFWSWrXJjZj2pQQHrMA=",
       "System.Private.CoreLib.dll": "sha256-C96+zv+mWW0XzMG520oRgAG1lHVY8xzWGc6oc6rFjws=",
-      "FileOnTheCloud.Shared.dll": "sha256-STOjTkygLPKlpeI0Hhp7Bc2+iXLG1CzhxJ7a6vWFY8c=",
-      "FileOnTheCloud.Client.dll": "sha256-Ui607t19tmoADKe0z9PCC97mYphDi3qvehTKNFtYfqo="
+      "FileOnTheCloud.Shared.dll": "sha256-PFADIN1PQMea3xmvW4Fs7KxxX7HS\/\/QKIfB1EL0Kd5c=",
+      "FileOnTheCloud.Client.dll": "sha256-jRI1k\/LhZm+elXlDh5kB2ME0qcRxRIpyc20FjWpEtqE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FileOnTheCloud.Shared.pdb": "sha256-3L1Q1RpmBd7kwb9w5R+Zde1SD0cR2fsRItWKc01DjjM=",
-      "FileOnTheCloud.Client.pdb": "sha256-RQcNzaAg\/fVy+U31RXVg7egxb4NFPrZB9dKSWPjS5W8="
+      "FileOnTheCloud.Shared.pdb": "sha256-C3N5txpKji9hm0bTODHl1vv7gs9fro57Or1hi+JGXtU=",
+      "FileOnTheCloud.Client.pdb": "sha256-sctvRHDy7RHez+lxehXe35b8CXuCMCVvqjfM0IePYzs="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ir9YCVnnk7popgsYUkvitfGA4WpkP1ydPh\/ENHnxGys=",

@@ -162,8 +162,4 @@ C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\ref\FileO
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.xml
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.pdb
 C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.genruntimeconfig.cache
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.RazorComponent.input.cache
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\RazorDeclaration\Pages\AddNote.razor.g.cs
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\FileOnTheCloud.Server.RazorComponent.output.cache
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\RazorDeclaration\FileOnTheCloud.Server.dll
-C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\obj\Debug\net5.0\Razor\Pages\AddNote.razor.g.cs
+C:\Users\talha\source\repos\FTC\FileOnTheCloud\Server\bin\Debug\net5.0\libman.json

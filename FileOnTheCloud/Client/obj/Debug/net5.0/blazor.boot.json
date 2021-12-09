@@ -9,7 +9,6 @@
     "assembly": {
       "Blazored.Modal.dll": "sha256-yoXX75RsqCVb+q2v0ZS7Hd6lW+OeSPHHPyJBk\/AyYMg=",
       "Blazored.SessionStorage.dll": "sha256-XkZNIC6OGMeHZDbBGnhfc9yXdLIvGa8LlKDd4ZPWkS8=",
-      "FluentFTP.dll": "sha256-GhCLFeTkvO6m4eM3HytK4wAEP1uzFL1QBtpewbE3NXU=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-ktaWu1p6pD2yy7T\/20KVYU7oihmpYm3jrPw4QHb7J+k=",
       "Microsoft.AspNetCore.Components.dll": "sha256-alrtyx++CQU1VO\/6akeZFBPsYgrGGm+Z5ax9\/kaPM3k=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-hSnqbPyjGte1HezAKhUEQ7nToMTfVzY1MwL7WlthxwA=",
@@ -211,13 +210,13 @@
       "netstandard.dll": "sha256-dOHF0zANIyA4WS496iWrAkTuEFWSWrXJjZj2pQQHrMA=",
       "System.Private.CoreLib.dll": "sha256-C96+zv+mWW0XzMG520oRgAG1lHVY8xzWGc6oc6rFjws=",
       "FileOnTheCloud.Shared.dll": "sha256-u4iRZSTqQdUgDesI5uWkAeJyL1nIJR3AbRX9VMdmnpY=",
-      "FileOnTheCloud.Client.dll": "sha256-5gkIfV711Mau3hOIODQMbiKT0IZxFmghpWdXMCsnTgw="
+      "FileOnTheCloud.Client.dll": "sha256-dUJuU33uR\/pVB3EoI8V4Ev0PT2kzzOjIxTJAQjRC3uE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FileOnTheCloud.Client.pdb": "sha256-kmMjG5m2q194H\/Zl1uWTVdfQgCdmVVMmr1ViESo95O4="
+      "FileOnTheCloud.Client.pdb": "sha256-S+el8DdExZEyPsl6wL0+ilbvpOknGfk3HThCcdf4Bnw="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ir9YCVnnk7popgsYUkvitfGA4WpkP1ydPh\/ENHnxGys=",

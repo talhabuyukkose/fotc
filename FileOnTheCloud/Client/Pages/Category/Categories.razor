@@ -15,7 +15,7 @@
           CommitEditTooltip="Kaydet" CancelEditTooltip="İptal" OnCommitEditClick="@(() => Snackbar.Add("Düzenlendi !"))" RowEditCommit="rowEditCommit">
 
     <ToolBarContent>
-        <MudIconButton Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory(title)" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
+        <MudIconButton Disabled="getparentbuttonOn" Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
         <MudText Typo="Typo.body1">@title</MudText>
     </ToolBarContent>
 
