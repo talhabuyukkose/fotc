@@ -10,52 +10,47 @@
 
 @attribute [Authorize(Roles = "admin")]
 
+<button class="button col-3 col-6-mobile" @onclick="()=>AddCategory(title)">BÖLÜM EKLE</button>
+<br />
 
-<MudTable Items="@category" T="FileOnTheCloud.Shared.DbModel.Category" Hover="true" Dense="true" ReadOnly="!editOn" CanCancelEdit="true"
-          CommitEditTooltip="Kaydet" CancelEditTooltip="İptal" OnCommitEditClick="@(() => Snackbar.Add("Düzenlendi !"))" RowEditCommit="rowEditCommit">
-
-    <ToolBarContent>
-        <MudIconButton Disabled="getparentbuttonOn" Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
-        <MudText Typo="Typo.body1">@title</MudText>
-    </ToolBarContent>
-
-    <HeaderContent>
-        <MudTh></MudTh>
-        <MudTh>Sıra</MudTh>
-        <MudTh>Kategori Adı</MudTh>
-        <MudTh>Yüklenme Tarihi</MudTh>
-    </HeaderContent>
-
-    <RowTemplate>
-        <MudTd DataLabel="#">
-            @if (context.parentlevel < 4)
+<MudGrid>
+    <MudIconButton Disabled="getparentbuttonOn" Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
+    <MudText Typo="Typo.body1">@title</MudText>
+</MudGrid>
+<br />
+<div class="dataTableWrapper">
+    <table id="example" class="display default first-data-table" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>SIRA</th>
+                <th>Kategori Adı</th>
+                <th>Yüklenme Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in category)
             {
-                <MudIconButton Title="Alt kategorileri getirmek için tıklayınız..." OnClick="()=>GetSubCategory(context)" Icon="@Icons.Filled.DriveFileMoveOutline" Color="Color.Secondary" Size="Size.Small" />
-                <MudIconButton Title="Alt kategori eklemek için tıklayınız..." OnClick="()=>AddSubCategory(context)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Small" />
+                <tr>
+                    <td>
+                        @if (item.parentlevel < 4)
+                        {
+                            <MudIconButton Title="Alt kategorileri getirmek için tıklayınız..." OnClick="()=>GetSubCategory(item)" Icon="@Icons.Filled.DriveFileMoveOutline" Color="Color.Secondary" Size="Size.Small" />
+                            <MudIconButton Title="Alt kategori eklemek için tıklayınız..." OnClick="()=>AddSubCategory(item)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Small" />
+
+                            @*<button title="Alt kategorileri getirmek için tıklayınız..." class="userlistbutton" @onclick="()=>GetSubCategory(item)">SİL</button>*@
+
+                            @*<button title="Alt kategori eklemek için tıklayınız..." class="userlistbutton" @onclick="()=>AddSubCategory(item)">DÜZENLE</button>*@
+                        }
+                    </td>
+                    <th scope="row">@category.IndexOf(item)</th>
+                    <td>@item.categoryname</td>
+                    <td>@item.createdate</td>
+                </tr>
             }
-        </MudTd>
-        <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
-        <MudTd DataLabel="Kategori Adı">@context.categoryname</MudTd>
-        <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
-    </RowTemplate>
-
-    <RowEditingTemplate>
-        <MudTd DataLabel="#"></MudTd>
-        <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
-        <MudTd DataLabel="Kategori Adı">
-            <MudTextField @bind-Value="@context.categoryname" Required />
-        </MudTd>
-        <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
-    </RowEditingTemplate>
-
-    <PagerContent>
-        <MudTablePager />
-    </PagerContent>
-</MudTable>
-<MudSwitch @bind-Checked="@editOn" Color="Color.Primary">Düzenle</MudSwitch>
- <MudIconButton Title="Bölüm eklemek için tıklayınız..." OnClick="()=>AddCategory(title)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Medium" />
-<br />
-<br />
+        </tbody>
+    </table>
+</div>
 
 @if (addSubCategoryOn)
 {
@@ -65,45 +60,69 @@
             <MudTextField @bind-Value="_addcategoryname" Label="Alt kategori" Variant="Variant.Text"></MudTextField>
         </MudItem>
         <MudItem xs="12" sm="4" md="4">
-            <MudButton OnClick="()=>_AddSubCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>
+            @*<MudButton OnClick="()=>_AddSubCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>*@
+            <button @onclick="()=>_AddSubCategory(title)">EKLE</button>
         </MudItem>
     </MudGrid>
 
 }
 @if (addCategoryOn)
 {
-     <MudGrid>
+    <MudGrid>
         <MudItem xs="12" sm="8" md="8">
             <MudTextField @bind-Value="_addcategoryname" Label="Bölüm" Variant="Variant.Text"></MudTextField>
         </MudItem>
         <MudItem xs="12" sm="4" md="4">
-            <MudButton OnClick="()=>_AddCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>
+            <button @onclick="()=>_AddCategory(title)">EKLE</button>
+            @*<MudButton OnClick="()=>_AddCategory(title)" Variant="Variant.Outlined" Color="Color.Secondary">Ekle</MudButton>*@
         </MudItem>
     </MudGrid>
 
 }
 
+
 @*
-    <MudItem xs="12" md="3">
-    <MudText Typo="Typo.h6" GutterBottom="true">BÖLÜMLER</MudText>
-    <MudPaper Width="100%">
-    <MudList  SelectedItemChanged="Change1" Clickable="true">
-    @foreach (var item in category1)
+    <MudTable Items="@category" T="FileOnTheCloud.Shared.DbModel.Category" Hover="true" Dense="true" ReadOnly="!editOn">
+
+    <ToolBarContent>
+    <MudIconButton Disabled="getparentbuttonOn" Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
+    <MudText Typo="Typo.body1">@title</MudText>
+    </ToolBarContent>
+
+    <HeaderContent>
+    <MudTh></MudTh>
+    <MudTh>Sıra</MudTh>
+    <MudTh>Kategori Adı</MudTh>
+    <MudTh>Yüklenme Tarihi</MudTh>
+    </HeaderContent>
+
+    <RowTemplate>
+    <MudTd DataLabel="#">
+    @if (context.parentlevel < 4)
     {
-    <MudListItem Text="@item.categoryname" />
+    <MudIconButton Title="Alt kategorileri getirmek için tıklayınız..." OnClick="()=>GetSubCategory(context)" Icon="@Icons.Filled.DriveFileMoveOutline" Color="Color.Secondary" Size="Size.Small" />
+    <MudIconButton Title="Alt kategori eklemek için tıklayınız..." OnClick="()=>AddSubCategory(context)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Small" />
     }
-    </MudList>
-    </MudPaper>
-    </MudItem>
-    <MudItem xs="12" md="3">
-    <MudText Typo="Typo.h6" GutterBottom="true">SINIF</MudText>
-    <MudPaper Width="100%">
-    <MudList Clickable="true">
-    @foreach (var item in category1)
-    {
-    <MudListItem Text="@item.categoryname" />
-    }
-    </MudList>
-    </MudPaper>
-    </MudItem>
+    </MudTd>
+    <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
+    <MudTd DataLabel="Kategori Adı">@context.categoryname</MudTd>
+    <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
+    </RowTemplate>
+
+    <RowEditingTemplate>
+    <MudTd DataLabel="#"></MudTd>
+    <MudTd DataLabel="Sıra">@Convert.ToInt32(category.IndexOf(context) + 1)</MudTd>
+    <MudTd DataLabel="Kategori Adı">
+    <MudTextField @bind-Value="@context.categoryname" Required />
+    </MudTd>
+    <MudTd DataLabel="Yüklenme Tarihi">@context.createdate</MudTd>
+    </RowEditingTemplate>
+
+    <PagerContent>
+    <MudTablePager />
+    </PagerContent>
+    </MudTable>
+    <MudIconButton Title="Bölüm eklemek için tıklayınız..." OnClick="()=>AddCategory(title)" Icon="@Icons.Filled.Add" Color="Color.Secondary" Size="Size.Medium" />
+    <br />
+    <br />
 *@

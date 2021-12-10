@@ -42,7 +42,9 @@ namespace FileOnTheCloud.Client.Pages.User
                 {
                     pagetitle = "Kullanıcı Düzenle";
 
-                    _usermodel = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyid/{userid}");
+                    string errormessage = "Bir sorun ile karşılaştık. Lütfen yönetici ile iletişime geçiniz ! ";
+
+                    _usermodel = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyid/{userid}", errormessage);
                 }
             }
         }

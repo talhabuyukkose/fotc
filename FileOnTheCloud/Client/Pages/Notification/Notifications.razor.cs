@@ -39,7 +39,9 @@ namespace FileOnTheCloud.Client.Pages.Notification
 
         async Task GetNotifications()
         {
-            notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
+            string errormessage = "Bildirim listenelemedi !";
+
+            notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}", errormessage);
         }
 
         async Task Seen(FileOnTheCloud.Shared.Model.GetNotification_WithEmail getNotification)

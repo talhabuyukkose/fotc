@@ -38,9 +38,13 @@ namespace FileOnTheCloud.Client.Shared
             {
                 email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
 
-                user = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyemail/{email}");
+                string errormessage = "Sistemde bir sorun oluştu ! Lütfen sistem yöneticisi ile iletişime geçiniz !";
 
-                notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}");
+                user = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.User>($"api/user/getbyemail/{email}", errormessage);
+
+                string errormessage2 = "Bildirimleriniz ile ilgili bir sorun oluştu ! Lütfen sistem yöneticisi ile iletişime geçiniz !";
+
+                notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}", errormessage2);
 
                 
             }

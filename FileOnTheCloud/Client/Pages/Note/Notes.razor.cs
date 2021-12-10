@@ -36,11 +36,13 @@ namespace FileOnTheCloud.Client.Pages.Note
 
                 geturl = role == "admin" ? "api/savedfile/get" : $"api/savedfile/getbyuser/{email}";
 
-                savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl);
+                string errormessage = "Notlar listenelirken bir sorun oluştu. Tekrar deneyiniz ! Sorun devam etmesi halinde yönetici ile iletişime geçiniz...";
+
+                savedFiles = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>(geturl, errormessage);
 
                 foreach (var item in savedFiles)
                 {
-                    item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 3, MidpointRounding.AwayFromZero).ToString().PadLeft(5, '0');
+                    item.filesize = Math.Round(Convert.ToDouble(item.filesize) / 1048576, 3, MidpointRounding.AwayFromZero).ToString();
                 }
 
             }
@@ -82,6 +84,8 @@ namespace FileOnTheCloud.Client.Pages.Note
             string succesmessage = "Dosya getirildi";
 
             var response = await helper.PostReturnValueTsAsync<FileOnTheCloud.Shared.DbModel.SavedFile>("api/savedfile/getfile", file, errormesage, succesmessage);
+
+
 
 
             await JsRuntime.InvokeVoidAsync("downloadFile", file.contenttype, response, file.filename);

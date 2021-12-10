@@ -36,7 +36,9 @@ namespace FileOnTheCloud.Client.Pages.User
             {
                 email = authstate.User.FindFirst(System.Security.Claims.ClaimTypes.Email).Value;
 
-                userlist = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.User>("api/user/get");
+                string errormessage = "Kullanıcılar listelenirken bir sorun oluştu !";
+
+                userlist = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.User>("api/user/get", errormessage);
             }
         }
 

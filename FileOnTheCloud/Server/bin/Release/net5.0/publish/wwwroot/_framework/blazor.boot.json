@@ -36,7 +36,7 @@
       "System.IdentityModel.Tokens.Jwt.dll": "sha256-uAEqth8VyArQ0Sr\/xfbRTeHe1FPOw\/GRj1fiEjck+oI=",
       "System.IO.Pipelines.dll": "sha256-3ET+mpR7F058YRj9YaLHOVXBqOW6iUxtIpeiKPYw4PA=",
       "FileOnTheCloud.Shared.dll": "sha256-PFADIN1PQMea3xmvW4Fs7KxxX7HS\/\/QKIfB1EL0Kd5c=",
-      "FileOnTheCloud.Client.dll": "sha256-jRI1k\/LhZm+elXlDh5kB2ME0qcRxRIpyc20FjWpEtqE=",
+      "FileOnTheCloud.Client.dll": "sha256-wMBZ9sR1hrLabfvlmoHXFr37yyIXn1NUUBzkVX6GC8E=",
       "Microsoft.CSharp.dll": "sha256-bLoasa0btaxRe\/qP9va3SgCBrfeitA5phKh8zBqWVgM=",
       "System.Buffers.dll": "sha256-Xai5OGlnRIR6cAnn7FSlJbvXm32HlDlXJ\/Xq+A1ocjc=",
       "System.Collections.Concurrent.dll": "sha256-2W+MvZaDfPd07X9yb3DQ36lDT0yO7hbod99IS7zErvw=",
@@ -91,7 +91,7 @@
       "System.Threading.dll": "sha256-uZNTlNHZAbu0azLOzogRxf8m27bGkEIIo9j+PcK2MSY=",
       "System.dll": "sha256-VzXXmgOwhgDF2\/AelRKUUBfBkcHVatr7FPbmdFeZM28=",
       "netstandard.dll": "sha256-4324h\/iY3c3N3eyBWz5DnwShLX5SFSUvWU8IFpC5LlA=",
-      "System.Private.CoreLib.dll": "sha256-aaHxzIbKv9W6h4Rk6QetbSnEhHthIXGw8qKS88D0dGw="
+      "System.Private.CoreLib.dll": "sha256-zCfmvIBsTBjMdzg3QwrsM9oBhihNGceZY2cBUpDjLuQ="
     },
     "extensions": null,
     "lazyAssembly": null,

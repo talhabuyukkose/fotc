@@ -48,7 +48,9 @@ namespace FileOnTheCloud.Client.Pages.Note
 
         public async Task GetList()
         {
-            var temp = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyparentid/{parentid}");
+            string errormessage = "Üst kategori getirilemedi !";
+
+            var temp = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyparentid/{parentid}", errormessage);
 
             if (temp.Count == 0)
             {
@@ -87,7 +89,8 @@ namespace FileOnTheCloud.Client.Pages.Note
 
             if (category.First().parentlevel > 1)
             {
-                var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}");
+                string errormessage = "Kategori getirilirken bir sorun oluştu !";
+                var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}", errormessage);
 
                 parentid = response.parentid;
 

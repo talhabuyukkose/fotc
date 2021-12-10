@@ -3,6 +3,7 @@ using MudBlazor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -28,10 +29,9 @@ namespace FileOnTheCloud.Client.Instrument
         }
 
 
-        public async Task<List<T>> GetListTsAsync<T>(string path)
+        public async Task<List<T>> GetListTsAsync<T>(string path,string errormessage)
         {
-            var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
-
+            //var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
             HttpResponseMessage httpResponse = await _httpclient.GetAsync(path);
 
@@ -44,7 +44,7 @@ namespace FileOnTheCloud.Client.Instrument
             }
             else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
             {
-                await modalManager.ShowMessageAsync("Bilgi", $"{classname.DisplayName} listelenemedi !");
+                await modalManager.ShowMessageAsync("Bilgi", errormessage);
             }
             else
             {
@@ -54,7 +54,7 @@ namespace FileOnTheCloud.Client.Instrument
             return new List<T>();
         }
 
-        public async Task<T> GetTsAsync<T>(string path)
+        public async Task<T> GetTsAsync<T>(string path, string errormessage)
         {
             var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
@@ -70,7 +70,7 @@ namespace FileOnTheCloud.Client.Instrument
             }
             else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
             {
-                await modalManager.ShowMessageAsync("Bilgi", $"{classname.DisplayName} listelenemedi !");
+                await modalManager.ShowMessageAsync("Bilgi", errormessage);
             }
 
             return await httpResponse.Content.ReadFromJsonAsync<T>();
@@ -128,6 +128,7 @@ namespace FileOnTheCloud.Client.Instrument
             return httpResponse.StatusCode;
 
         }
+
         public async Task<string> PostReturnValueTsAsync<T>(string path, T body, string errormessage, string successmessage)
         {
 
@@ -170,6 +171,6 @@ namespace FileOnTheCloud.Client.Instrument
 
             return httpResponse.StatusCode;
         }
-               
+
     }
 }

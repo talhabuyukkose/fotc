@@ -8,12 +8,10 @@
 
 @attribute [Authorize(Roles = "admin,kullanıcı")]
 
-
-        <MudIconButton Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Medium" />
-    
+<MudGrid>
+    <MudIconButton Title="Bir üst kategori için tıklayınız..." OnClick="()=>GetParentCategory()" Icon="@Icons.Filled.ArrowBack" Color="Color.Secondary" Size="Size.Small" />
     <MudText Typo="Typo.body1">@title</MudText>
-
-<br />
+</MudGrid>
 <br />
 <MudGrid>
     @foreach (var item in category)
@@ -26,8 +24,6 @@
 
 @if (showuploadpanelon)
 {
-
-
     <MudPaper @ondragenter="@(()=>_dragEnterStyle="drag-enter")"
           @ondragleave="@(()=>_dragEnterStyle=null)"
           @ondragend="@(()=>_dragEnterStyle=null)"

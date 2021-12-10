@@ -50,7 +50,9 @@ namespace FileOnTheCloud.Client.Pages.Category
 
         public async Task GetList()
         {
-            var temp = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyparentid/{parentid}");
+            string errormessage = "Üst kategori getirilemedi !";
+
+            var temp = await helper.GetListTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyparentid/{parentid}", errormessage);
 
             if (temp.Count == 0)
             {
@@ -62,11 +64,6 @@ namespace FileOnTheCloud.Client.Pages.Category
             }
 
             title = $"Bölümler {category.First().categorypath.Replace("/", " > ")} >";
-        }
-
-        private void rowEditCommit(object _category)
-        {
-            var temp = _category;
         }
 
         async void GetSubCategory(FileOnTheCloud.Shared.DbModel.Category _category)
@@ -86,7 +83,9 @@ namespace FileOnTheCloud.Client.Pages.Category
 
             if (category.First().parentlevel > 1)
             {
-                var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}");
+                string errormessage = "Kategori ile ilgili bir sorun oluştu. Sayfayı yenileyip tekrar deneyiniz !";
+
+                var response = await helper.GetTsAsync<FileOnTheCloud.Shared.DbModel.Category>($"api/category/getbyid/{category.First().parentid}", errormessage);
 
                 parentid = response.parentid;
 

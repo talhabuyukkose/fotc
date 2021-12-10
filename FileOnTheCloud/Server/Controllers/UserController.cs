@@ -69,7 +69,8 @@ namespace FileOnTheCloud.Server.Controllers
         [HttpPost("Set")]
         public async Task<ActionResult> Set([FromBody] Shared.DbModel.User _user)
         {
-            _user.password = Helper.Helper.Createhmacsha256(_user.password);
+            if (!string.IsNullOrEmpty(_user.password))
+                _user.password = Helper.Helper.Createhmacsha256(_user.password);
 
             string procedure = string.Empty;
 
