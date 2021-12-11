@@ -29,7 +29,7 @@ namespace FileOnTheCloud.Client.Instrument
         }
 
 
-        public async Task<List<T>> GetListTsAsync<T>(string path,string errormessage)
+        public async Task<List<T>> GetListTsAsync<T>(string path, string errormessage)
         {
             //var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
@@ -56,7 +56,7 @@ namespace FileOnTheCloud.Client.Instrument
 
         public async Task<T> GetTsAsync<T>(string path, string errormessage)
         {
-            var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
+            //var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
 
 
             HttpResponseMessage httpResponse = await _httpclient.GetAsync(path);
@@ -70,10 +70,35 @@ namespace FileOnTheCloud.Client.Instrument
             }
             else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
             {
-                await modalManager.ShowMessageAsync("Bilgi", errormessage);
+                if (!string.IsNullOrEmpty(errormessage))
+                    await modalManager.ShowMessageAsync("Bilgi", errormessage);
             }
 
             return await httpResponse.Content.ReadFromJsonAsync<T>();
+
+        }
+
+        public async Task<string> GetAsStringAsync(string path, string errormessage)
+        {
+            //var classname = typeof(T).GetCustomAttributes(typeof(DisplayNameAttribute), true).First() as DisplayNameAttribute;
+
+
+            HttpResponseMessage httpResponse = await _httpclient.GetAsync(path);
+
+            if (httpResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                await modalManager.ShowMessageAsync("Bilgi", $"Oturum süresi doldu ! Yenilemek için yönlendiriliyorsunuz.");
+
+                navigation.NavigateTo("/auth/login");
+
+            }
+            else if (httpResponse.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                if (!string.IsNullOrEmpty(errormessage))
+                    await modalManager.ShowMessageAsync("Bilgi", errormessage);
+            }
+
+            return await httpResponse.Content.ReadAsStringAsync();
 
         }
 

@@ -14,7 +14,7 @@
                 <a href="/user/users" class="button">KULLANICILAR <i>(ekle / düzenle)</i></a>
                 <a href="/note/addnote" class="button">YENİ NOT EKLE</a>
                 <a href="/category/categories" class="button">KATEGORİLER <i>(ekle / düzenle)</i></a>
-                 @if (notifications.Count > 0)
+                @if (notifications.Count > 0)
                 {
                     <MudBadge Content="@notifications.Count" Color="Color.Secondary" Overlap="true">
                         <a href="/notifications" class="button">BİLDİRİMLER</a>
@@ -25,6 +25,8 @@
                     <a href="/notifications" class="button">BİLDİRİMLER</a>
                 }
                 <a href="/auth/logout" class="button">ÇIKIŞ</a>
+
+                Kullanılabilir Disk  : @freediskcapacity GB
             </div>
         </section>
     </Authorized>
@@ -40,7 +42,7 @@
             </div>
             <div class="adminButtons">
                 <a href="/note/addnote" class="button">Not Ekle</a>
-                <button id="messageSend" class="button" style="margin-bottom: 20px;font-size:16px;" @onclick="SendNotification">Yönetici ile İletişime Geç</button>
+                <button title="Yöneticiye iletmek istediğiniz sorunları ve mesajları buradan yazabilirsiniz." id="messageSend" class="button" style="margin-bottom: 20px;font-size:16px;" @onclick="SendNotification">Yönetici ile İletişime Geç</button>
                 @if (notifications.Count > 0)
                 {
                     <MudBadge Content="@notifications.Count" Color="Color.Secondary" Overlap="true">

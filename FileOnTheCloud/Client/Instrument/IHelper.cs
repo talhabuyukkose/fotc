@@ -11,6 +11,8 @@ namespace FileOnTheCloud.Client.Instrument
 
         Task<T> GetTsAsync<T>(string path, string errormessage);
 
+        Task<string> GetAsStringAsync(string path, string errormessage);
+
         Task<System.Net.HttpStatusCode> DeleteTsAsync<T>(string path);
         
         Task<string> PostReturnValueTsAsync<T>(string path, T body, string errormessage, string successmessage);

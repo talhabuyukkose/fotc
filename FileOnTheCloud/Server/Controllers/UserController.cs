@@ -76,7 +76,7 @@ namespace FileOnTheCloud.Server.Controllers
 
             if (_user.id == 0)
             {
-                procedure = $"call adduser(@name,@surname,@title, @password, @department,@emailaddress);";
+                procedure = $"call adduser(@name,@surname,@title, @password, @department,@emailaddress,@role);";
             }
             else if (string.IsNullOrEmpty(_user.password))
             {

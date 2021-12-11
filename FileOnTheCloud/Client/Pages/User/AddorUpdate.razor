@@ -28,12 +28,19 @@
 
         <input type="text" placeholder="Ünvan" class="col-4" @bind-value="@_usermodel.title">
         <ValidationMessage For="@(()=> _usermodel.title)" />
+
+        <MudCheckBox @bind-Checked="@isadmin" Label="Admin mi ?" Color="Color.Secondary"></MudCheckBox>
+
         @if (userid != 0)
         {
             <button type="reset" @onclick="GotoUserPage">Vazgeç</button>
+            <button type="submit">Güncelle</button>
+        }
+        else
+        {
+            <button type="submit">Oluştur</button>
         }
 
-        <button type="submit">Oluştur</button>
     </EditForm>
 
 </div>

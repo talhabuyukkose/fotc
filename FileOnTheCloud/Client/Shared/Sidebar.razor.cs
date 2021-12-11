@@ -26,6 +26,8 @@ namespace FileOnTheCloud.Client.Shared
 
         private string roleName = String.Empty;
 
+        private string freediskcapacity = String.Empty;
+
         FileOnTheCloud.Shared.DbModel.User user = new();
 
         List<FileOnTheCloud.Shared.Model.GetNotification_WithEmail> notifications = new();
@@ -46,7 +48,9 @@ namespace FileOnTheCloud.Client.Shared
 
                 notifications = await helper.GetListTsAsync<FileOnTheCloud.Shared.Model.GetNotification_WithEmail>($"api/notification/getbyemail/{email}", errormessage2);
 
-                
+                freediskcapacity = await helper.GetAsStringAsync($"api/setting/GetAvailableFreeDisk", ""); 
+
+
             }
 
         }

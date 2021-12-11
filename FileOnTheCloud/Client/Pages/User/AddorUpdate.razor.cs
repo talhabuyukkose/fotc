@@ -22,6 +22,8 @@ namespace FileOnTheCloud.Client.Pages.User
 
         private string email;
 
+        private bool isadmin = false;
+
         FileOnTheCloud.Shared.Model.MailRequest mail = new FileOnTheCloud.Shared.Model.MailRequest();
 
         [Parameter]
@@ -51,7 +53,7 @@ namespace FileOnTheCloud.Client.Pages.User
 
         async Task AddorUpdateUser()
         {
-            _usermodel.role = "kullanıcı";
+            _usermodel.role = isadmin == true ? "admin" : "kullanıcı";
 
             var response = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.User>(
                  $"api/user/set", _usermodel
@@ -65,7 +67,7 @@ namespace FileOnTheCloud.Client.Pages.User
                 {
                     await SendNotification(email
                         , _usermodel.emailaddress
-                        ,$"Merhaba  Sn. {_usermodel.title} {_usermodel.name} {_usermodel.surname}{Environment.NewLine}{Environment.NewLine} https://www.akarecopy.com sistemimizde kullanıcınız oluşturuldu." +
+                        , $"Merhaba  Sn. {_usermodel.title} {_usermodel.name} {_usermodel.surname}{Environment.NewLine}{Environment.NewLine} https://www.akarecopy.com sistemimizde kullanıcınız oluşturuldu." +
                         $"{Environment.NewLine}\t Sistemimize hoşgeldiniz." +
                         $"{Environment.NewLine} Kullanıcı adınız :\"{_usermodel.emailaddress}\"" +
                         $"{Environment.NewLine} Şifre : {_usermodel.password}" +
@@ -75,7 +77,7 @@ namespace FileOnTheCloud.Client.Pages.User
                 GotoUserPage();
             }
         }
-      
+
         async Task SendNotification(string fromemail, string toemail, string body)
         {
 
