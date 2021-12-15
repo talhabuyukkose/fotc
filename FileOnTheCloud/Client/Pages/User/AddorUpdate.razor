@@ -4,6 +4,12 @@
 @page "/user/edituser/{userid:int}"
 
 @attribute [Authorize(Roles = "admin")]
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
+
 
 <div class="newUser">
     <div class="newUserTitle">

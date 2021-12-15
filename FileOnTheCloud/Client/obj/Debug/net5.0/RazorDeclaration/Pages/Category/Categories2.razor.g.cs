@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace FileOnTheCloud.Client.Pages.Note
+namespace FileOnTheCloud.Client.Pages.Category
 {
     #line hidden
     using System;
@@ -138,23 +138,13 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 1 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Pages\Note\AddNote.razor"
-using Microsoft.AspNetCore.Authorization;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/note/addnote")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/note/addnote/{parentid:int}")]
-    public partial class AddNote : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Categories2 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHelper helper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IModalManager modalManager { get; set; }

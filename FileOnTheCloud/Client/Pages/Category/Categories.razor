@@ -10,6 +10,13 @@
 
 @attribute [Authorize(Roles = "admin")]
 
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
+
+
 <button class="button col-3 col-6-mobile" @onclick="()=>AddCategory(title)">BÖLÜM EKLE</button>
 <br />
 

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using MudBlazor;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FileOnTheCloud.Client.Pages.Note
@@ -29,6 +31,7 @@ namespace FileOnTheCloud.Client.Pages.Note
         private string title = "Bölümler";
 
         private bool showuploadpanelon = false;
+
 
         List<FileOnTheCloud.Shared.DbModel.Category> category = new();
         FileOnTheCloud.Shared.DbModel.Category selectedcategory = new();
@@ -181,10 +184,14 @@ namespace FileOnTheCloud.Client.Pages.Note
                     multipartContent.Add(new StringContent(pair.Value), $"\"{pair.Key}\"");
                 }
 
+
                 string errormessage = "Dosya yükleme esnasında bir hata oluştu ! Yönetici ile iletişime geçiniz !";
                 string successmessage = "Dosya yükleme başarılı !";
 
+              
+
                 var response = await helper.PostFileTsAsync("api/savedfile/SetFile", multipartContent, errormessage, successmessage);
+
 
                 if (response == System.Net.HttpStatusCode.OK)
                 {
@@ -194,8 +201,7 @@ namespace FileOnTheCloud.Client.Pages.Note
                 }
             }
         }
-
-
+        
         void Clear()
         {
             fileNames.Clear();

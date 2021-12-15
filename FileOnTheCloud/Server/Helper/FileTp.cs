@@ -74,7 +74,7 @@ namespace FileOnTheCloud.Server.Helper
 
                 con.Encoding = System.Text.Encoding.GetEncoding(1254);
 
-                FtpStatus ftpStatus = await con.UploadFileAsync(localpath, remotepath, FtpRemoteExists.Skip, true, FtpVerify.Retry);
+                FtpStatus ftpStatus = await con.UploadFileAsync(localpath, remotepath, FtpRemoteExists.Overwrite, true, FtpVerify.Retry);
 
                 return ftpStatus == FtpStatus.Success;
             }
@@ -95,7 +95,7 @@ namespace FileOnTheCloud.Server.Helper
 
                 con.Encoding = System.Text.Encoding.GetEncoding(1254);
 
-                FtpStatus ftpStatus = await con.UploadAsync(filedata, remotepath, FtpRemoteExists.Skip, true, progress, token);
+                FtpStatus ftpStatus = await con.UploadAsync(filedata, remotepath, FtpRemoteExists.Overwrite, true, progress, token);
 
                 
 

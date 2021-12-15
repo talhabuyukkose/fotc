@@ -36,13 +36,15 @@ namespace FileOnTheCloud.Server.Controllers
             {
                 var output = await connection.QueryAsync<Shared.DbModel.Category>("select * from public.category where isdelete=false order by categoryname asc");
 
+                output = output.OrderBy(o => o.categoryname).ToList();
+
                 return Ok(output);
             }
         }
 
-        
 
-       [HttpGet("GetById/{id}")]
+
+        [HttpGet("GetById/{id}")]
         public async Task<ActionResult<Shared.DbModel.Category>> GetById(int id)
         {
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
@@ -71,6 +73,8 @@ namespace FileOnTheCloud.Server.Controllers
             {
                 var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentlevel={level} order by categoryname asc");
 
+                output = output.OrderBy(o => o.categoryname).ToList();
+
                 return Ok(output);
             }
         }
@@ -81,6 +85,8 @@ namespace FileOnTheCloud.Server.Controllers
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
                 var output = await connection.QueryAsync<Shared.DbModel.Category>($"select * from public.category where isdelete=false and parentid={id} order by categoryname asc");
+
+                output = output.OrderBy(o => o.categoryname).ToList();
 
                 return Ok(output);
             }

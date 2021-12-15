@@ -71,6 +71,7 @@ namespace FileOnTheCloud.Client.Pages.Note
                     savedFiles.Remove(file);
                 }
             }
+            StateHasChanged();
         }
 
         protected async Task DownloadNote(FileOnTheCloud.Shared.DbModel.SavedFile file)

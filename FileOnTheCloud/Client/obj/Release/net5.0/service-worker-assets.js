@@ -17,7 +17,7 @@
       "url": "_content\/Blazored.Modal\/blazored.modal.js"
     },
     {
-      "hash": "sha256-61zRu3xu6UskQdq4mk7zjcv\/dbKQvMWtuqmfL78Dp4Y=",
+      "hash": "sha256-+Ls1j80DJkzPGLOIW9LFbiB4M51w1LR3JrSCkF7GP8g=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -865,11 +865,11 @@
       "url": "_framework\/FileOnTheCloud.Shared.pdb"
     },
     {
-      "hash": "sha256-Pih0vaB5SjZDW9Bms1rydtLuZkRJuvuCmgVj41F8U5s=",
+      "hash": "sha256-hKeuczx2D3OOw\/QiBVCrG4obZSqIgxAVEKTxkSk8bYA=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
-      "hash": "sha256-54LptCsi0zZYxX2EWMqppdF75VdkYkJtbcq55Ymdlak=",
+      "hash": "sha256-tVPFGySOFAVCCDHNYP3lY8D57WvayvTLffFCoKm3aOo=",
       "url": "_framework\/FileOnTheCloud.Client.pdb"
     },
     {
@@ -1749,7 +1749,7 @@
       "url": "assets\/css\/images\/search.png"
     },
     {
-      "hash": "sha256-9KMZiGn8j8Y9sdzI3H6PO+geZkWOF611qe9OUUm+Noo=",
+      "hash": "sha256-o71sgn\/e1\/nxCUwK7jra6S0cs3BjwJMsHRoxWIPzG+Q=",
       "url": "assets\/css\/main.css"
     },
     {
@@ -1893,5 +1893,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "m2WkX3M\/"
+  "version": "cwOlp551"
 };

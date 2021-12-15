@@ -145,13 +145,6 @@ using Microsoft.AspNetCore.Authorization;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 9 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\Pages\Note\AddNote.razor"
-           [Authorize(Roles = "admin,kullanıcı")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/note/addnote")]
     [Microsoft.AspNetCore.Components.RouteAttribute("/note/addnote/{parentid:int}")]
     public partial class AddNote : Microsoft.AspNetCore.Components.ComponentBase

@@ -3,6 +3,11 @@
 @page "/user/users"
 
 @attribute [Authorize(Roles = "admin")]
+<AuthorizeView>
+    <NotAuthorized>
+        <LoginRouting />
+    </NotAuthorized>
+</AuthorizeView>
 
 
 <a href="/user/adduser" class="button col-3 col-6-mobile">Kullanıcı Ekle</a>
@@ -14,10 +19,11 @@
             <tr>
                 <th></th>
                 <th>KULLANICI İSMİ</th>
-                <th>BÖLÜM</th>
-                <th>KAYIT TARİHİ</th>
+                <th>KULLANICI SOYADI</th>
                 <th>ÜNVAN</th>
+                <th>BÖLÜM</th>
                 <th>E-POSTA</th>
+                <th>YETKİ</th>
                 <th></th>
             </tr>
         </thead>
