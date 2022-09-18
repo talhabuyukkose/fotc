@@ -95,7 +95,7 @@ namespace FileOnTheCloud.Server
 
             services.Configure<JwtSetting>(Configuration.GetSection("Jwt"));
 
-            services.AddTransient<IMailService, Services.MailService>();
+            services.AddTransient<IMailService, Services.MailKit>();
 
 
         }

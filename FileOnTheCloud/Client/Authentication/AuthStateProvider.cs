@@ -36,7 +36,7 @@ namespace FileOnTheCloud.Client.Authentication
 
                 return _anonymous;
             }
-           
+
             securityToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
 
             var email = securityToken.Claims.Where(w => w.Type == "email").FirstOrDefault().Value;
@@ -59,13 +59,13 @@ namespace FileOnTheCloud.Client.Authentication
 
             return new AuthenticationState(
                         new ClaimsPrincipal(
-                    new ClaimsIdentity(new[]
-              {
-                  new Claim(ClaimTypes.Email, email.ToString()),
-                  new Claim(ClaimTypes.Role, role.ToString())
-              }, "apiauth_type")
-              )
-                );
+                            new ClaimsIdentity(
+                                new[]
+                                {
+                                    new Claim(ClaimTypes.Email, email.ToString()),
+                                    new Claim(ClaimTypes.Role, role.ToString())
+                                }, 
+                                "apiauth_type")));
             //return new AuthenticationState(
             //    new ClaimsPrincipal(
             //  new ClaimsIdentity(Jwtparser.ParseClaimsFormJwt(token), "jwtAuthType")

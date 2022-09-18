@@ -67,69 +67,76 @@ using Microsoft.AspNetCore.Components.Authorization;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
-using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
-using FileOnTheCloud.Client;
+using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 11 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+using FileOnTheCloud.Client;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using FileOnTheCloud.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 14 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using FileOnTheCloud.Client.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 16 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using Blazored.SessionStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 17 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 18 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using FileOnTheCloud.Client.Instrument;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 20 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using FileOnTheCloud.Client.CustomComponents.Modal;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 22 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using Blazored.Modal;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 23 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using Blazored.Modal.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
+#line 25 "C:\Users\talha\source\repos\FTC\FileOnTheCloud\Client\_Imports.razor"
 using MudBlazor;
 
 #line default

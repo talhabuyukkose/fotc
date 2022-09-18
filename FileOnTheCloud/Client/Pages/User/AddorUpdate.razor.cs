@@ -67,11 +67,11 @@ namespace FileOnTheCloud.Client.Pages.User
                 {
                     await SendNotification(email
                         , _usermodel.emailaddress
-                        , $"Merhaba  Sn. {_usermodel.title} {_usermodel.name} {_usermodel.surname}{Environment.NewLine}{Environment.NewLine} https://www.akarecopy.com sistemimizde kullanıcınız oluşturuldu." +
-                        $"{Environment.NewLine}\t Sistemimize hoşgeldiniz." +
-                        $"{Environment.NewLine} Kullanıcı adınız :\"{_usermodel.emailaddress}\"" +
-                        $"{Environment.NewLine} Şifre : {_usermodel.password}" +
-                        $"{Environment.NewLine}{Environment.NewLine} İyi günler diliyoruz.");
+                        , $"Merhaba  Sn. {_usermodel.title} {_usermodel.name} {_usermodel.surname}</br>{Environment.NewLine}{Environment.NewLine} https://www.akarecopy.com sistemimizde kullanıcınız oluşturuldu." +
+                        $"</br>Sistemimize hoşgeldiniz." +
+                        $"</br> Kullanıcı adınız :\"{_usermodel.emailaddress}\"" +
+                        $"</br> Şifre : {_usermodel.password}" +
+                        $"</br></br> İyi günler diliyoruz.");
                 }
 
                 GotoUserPage();

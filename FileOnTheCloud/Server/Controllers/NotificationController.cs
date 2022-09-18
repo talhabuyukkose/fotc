@@ -18,8 +18,8 @@ namespace FileOnTheCloud.Server.Controllers
     [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
-   
-    
+
+
     public class NotificationController : ControllerBase
     {
 
@@ -93,7 +93,7 @@ namespace FileOnTheCloud.Server.Controllers
 
                     mail.ToEmail = string.Join(";", users.Select(s => s.emailaddress));
                 }
-
+                
                 await _mailService.SendEmailAsync(mail);
 
                 string procedure = $"call addnotification('{mail.FromEmail}','{mail.ToEmail}','{mail.Body}',{mail.replyid})";
@@ -104,6 +104,7 @@ namespace FileOnTheCloud.Server.Controllers
 
                     return Ok(output);
                 }
+                
             }
             catch (Exception ex)
             {

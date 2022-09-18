@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FXSvxfsW56RqhOSy83lf1a8m2kfmSs2hP40oC1g3X6st/nZzy813KmeYZV9MApO6NGerbtLDTPf15gKwniEFvQ==",
+  "dgSpecHash": "0X5hqfAd/ADkzjDZX9tozazM+uECFvHcOmrUnE6pFsSN6MWMP/KoIltQR2eycTKXfNF3rpxogDUIv5f2r1zqpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\talha\\source\\repos\\FTC\\FileOnTheCloud\\Client\\FileOnTheCloud.Client.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,7 @@
     "C:\\Users\\talha\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\talha\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.12\\microsoft.netcore.app.runtime.browser-wasm.5.0.12.nupkg.sha512"
+    "C:\\Users\\talha\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.17\\microsoft.netcore.app.runtime.browser-wasm.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

@@ -39,7 +39,7 @@ namespace FileOnTheCloud.Client.CustomComponents.Notification
 
             mail.ToEmail = toemail;
             mail.FromEmail = fromemail;
-            mail.Subject = "Gönderen :" + fromemail;
+            mail.Subject = "Gönderen : " + fromemail;
             mail.replyid = replyid;
 
             var httpResponse = await _httpclient.PostAsJsonAsync("api/notification/send", mail);
