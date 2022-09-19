@@ -341,7 +341,7 @@
       "url": "_framework\/FileOnTheCloud.Shared.dll"
     },
     {
-      "hash": "sha256-LDn2pd01RIpjij2MwQOUXs4+6ovLYQt8qygOp5rkVeU=",
+      "hash": "sha256-42XKVaxV1G7i5jJ3IHOSTY5H+RHzeU+U7cP+VXojZYo=",
       "url": "_framework\/FileOnTheCloud.Client.dll"
     },
     {
@@ -565,7 +565,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-JaT98ofALN6bsGL3r3wGRPumc3PWnJX2XQySvfiWF9k=",
+      "hash": "sha256-33OmcogMGg9C54+w5b\/rJHvjQluSbHpsrLbG+v6cjGg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -573,5 +573,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "K0aZcjNh"
+  "version": "hWdgdOlI"
 };

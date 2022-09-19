@@ -116,11 +116,11 @@ namespace FileOnTheCloud.Server.Controllers
         [HttpPost("Delete")]
         public async Task<ActionResult> Delete([FromBody] Shared.DbModel.Category category)
         {
-            string procedure = $"call deletecategory({category.id});";
+            string procedure = $"UPDATE public.category SET isdelete=true , deletedate=timezone('turkey', now()) WHERE id={category.id};";
 
             using (var connection = new Npgsql.NpgsqlConnection(connectionstring))
             {
-                await tp.DeleteDir(category.categorypath);
+                await tp.DeleteDir($"{category.categorypath.TrimEnd('/')}/{category.categoryname}");
 
                 var output = await connection.ExecuteAsync(procedure);
 

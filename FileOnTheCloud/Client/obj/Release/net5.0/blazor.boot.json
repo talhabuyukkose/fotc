@@ -210,13 +210,13 @@
       "netstandard.dll": "sha256-W3q3PN+lpRB+tRJEIhtMgYOGFv0pauEeeCS9iIRkKAM=",
       "System.Private.CoreLib.dll": "sha256-9rUJv1mXEQdGt\/kWiJ1ITPPzp3cAi3lSmqHVTisp7w0=",
       "FileOnTheCloud.Shared.dll": "sha256-tCYf6qqaZUdZtTreoUqdRleFa3oIwV5TIRmBW1v+Axg=",
-      "FileOnTheCloud.Client.dll": "sha256-LDn2pd01RIpjij2MwQOUXs4+6ovLYQt8qygOp5rkVeU="
+      "FileOnTheCloud.Client.dll": "sha256-42XKVaxV1G7i5jJ3IHOSTY5H+RHzeU+U7cP+VXojZYo="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FileOnTheCloud.Client.pdb": "sha256-CYIOnNExwzKlNwrqoqdrpeXS4I17tWUVVU7RXP2auYo="
+      "FileOnTheCloud.Client.pdb": "sha256-Lr+EGQj44NesrZyJk\/q\/nLs6z5yRoV9qFsGMK0YvHHo="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",

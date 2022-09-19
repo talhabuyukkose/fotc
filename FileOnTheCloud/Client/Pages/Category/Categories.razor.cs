@@ -77,6 +77,20 @@ namespace FileOnTheCloud.Client.Pages.Category
                 navigation.NavigateTo($"/category/categories/{_category.id}");
             }
         }
+
+        async void DeleteCategory(FileOnTheCloud.Shared.DbModel.Category _category)
+        {
+
+            bool confirmed = await modalManager.ConfirmationAsync("Onay bekleniyor", $"Klasör silinecek. Onaylıyor musunuz ?{Environment.NewLine} Uyarı : Klasör silindiğinde altındaki klösörler ve dosyalar silinir ! ");
+
+            if (!confirmed) return;
+
+            string successmessage = "Kategori silindi !";
+
+            string errormessage = "Kategori silinirken bir hata oluştu !";
+
+            var response = await helper.PostTsAsync<FileOnTheCloud.Shared.DbModel.Category>("api/category/delete", _category, errormessage, successmessage);
+        }
         async void GetParentCategory()
         {
             getparentbuttonOn = true;
